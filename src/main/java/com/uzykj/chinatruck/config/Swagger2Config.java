@@ -19,9 +19,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 
 /**
- * @author ghostxbh
- * @date 2020.2.8
- * @description swagger配置
+ * @author ghostxbh swagger配置
  */
 @Configuration
 @EnableSwagger2

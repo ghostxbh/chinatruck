@@ -11,9 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.annotation.Resource;
 
 /**
- * Created by fangjicai on 2020/4/2.
+ * @author ghostxbh handler
  */
-
 @Configuration
 @EnableWebMvc
 public class HandlerConfiguration implements WebMvcConfigurer {
