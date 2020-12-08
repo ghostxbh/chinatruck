@@ -6,9 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author xbh
- * @date 2020/12/7
- * @description
+ * @author ghostxbh
  */
 @Data
 @Builder
@@ -40,5 +38,9 @@ public class JsonResult<T> {
 
     public JsonResult<?> fail(String message) {
         return new JsonResult(FAIL, message);
+    }
+
+    public JsonResult<?> error(RuntimeException e) {
+        return new JsonResult(FAIL, e.getMessage());
     }
 }

@@ -1,6 +1,5 @@
 package com.uzykj.chinatruck.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +18,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(value = "parts")
 public class Parts {
     @Id
-    @JsonProperty("_id")
     private ObjectId _id;
     // 实体id
     private String entity_id;
