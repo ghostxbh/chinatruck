@@ -4,22 +4,17 @@ import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.uzykj.chinatruck.domain.Parts;
 import com.uzykj.chinatruck.domain.dto.DataQueueDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
- * @author xbh
- * @date 2020/12/7
- * @description
+ * @author ghostxbh
  */
 @Slf4j
 @Service
@@ -43,7 +38,7 @@ public class QueueQueryService {
                 HttpResponse execute = request.execute();
                 String body = execute.body();
                 log.info("queue response body: {}", body);
-                List<Parts> partsList = JSONArray.parseArray(JSONObject.toJSONString(body), Parts.class);
+                List<Parts> partsList = JSONArray.parseArray(body, Parts.class);
 
                 partsService.batchSave(partsList);
             } catch (Exception e) {
