@@ -6,7 +6,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @author ghostxbh
+ */
 @Component
 public class LoginIntercepter extends HandlerInterceptorAdapter {
 	/**  
