@@ -1,0 +1,3171 @@
+ ------------------------------------Html-Body------------------------------- */
+
+body {font-family: Arial,sans-serif;;color: #666;background: #fff;font-size: 13px;line-height: 1.6em;}
+
+html, body {width:100%; padding:0; margin:0;}
+
+*{ margin:0; padding:0;}
+
+fieldset{ border:none;}
+
+::-moz-selection{background:#000;color:#fff;text-shadow:none}
+
+::selection{background:#000;color:#fff;text-shadow:none}
+
+/* ---------------------------------------------------------------------------- */
+
+html { -webkit-text-size-adjust: none;}
+
+.video embed,.video object,.video iframe { width: 100%;  height: auto;}
+
+img{ max-width:100%;}
+
+ul.sidebar_item li h1 a img{width:38px;}
+
+li,ul{list-style:none;padding:0;margin:0}
+
+h1 {font-size: 36px;}
+
+h2 {font-size: 34px;}
+
+h3 {font-size: 30px;}
+
+h4 {font-size: 26px;}
+
+h5 {font-size: 24px;}
+
+h6 {font-size: 20px;}
+
+hr{ display:block; width:100%; height:1px; background:#eee; margin:8px 0; border:none;}
+
+.mar{ margin:50px 0;}
+
+.mar15{ margin:15px 0;}
+
+.col{ color:#e25d4a}
+
+.col1{ color:#999;}
+
+.pad{ padding:0 5px;}
+
+.martop{ margin-top:30px;}
+
+.marbot{ margin-bottom:8px;}
+
+.pos-retive{ position:relative}
+
+input {
+
+	outline: none; font-family:"Arial";
+
+}
+
+textarea,select{ font-family:"Arial"}
+
+input[type=search] {
+
+	-webkit-appearance: textfield;
+
+	-webkit-box-sizing: content-box;
+
+	font-family: inherit;
+
+	font-size: 100%;
+
+}
+
+input::-webkit-search-decoration,
+
+input::-webkit-search-cancel-button {
+
+	display: none; /* remove the search and cancel icon */
+
+}
+
+h1,h2,h3,h4,h5,h6 {font-weight: 600;color: #000;} 
+
+p { color:#333;}
+
+a {
+
+   color: #333; text-decoration:none;
+
+   /*-webkit-transition: all .2s ease-in-out;
+
+   -moz-transition: all .2s ease-in-out;
+
+   transition: all .2s ease-in-out;*/
+
+}
+
+.nav_fixed {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    background: #fff;
+
+    z-index: 99999;border-bottom: 1px solid #e9e9e9;
+
+    height: 62px;
+
+}
+
+.mar-right{ margin-right:10px;}
+
+.weizhi{height:34px; line-height:34px; font-size:14px; color:#888; margin:13px 0; overflow:hidden; background:url(../images/home.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/home.jpg*/ no-repeat left center;}
+
+.weizhi span{ display:inline-block; float:left;}
+
+a:hover,a:focus {color: #666;text-decoration: none;}
+
+
+
+.f-left{float: left;}
+
+.t-center{text-align: center; margin: 0 auto;}
+
+.t-right{text-align: right;}
+
+.t-left{text-align: left;}
+
+.activenone{ display:none;}
+
+
+
+.clear{content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix:after, .clearfix:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
+
+
+
+@font-face {
+
+    font-family: 'franklin';
+
+    src: url('../webfont/itc_franklin_gothic_lt_medium_condensed-webfont.eot')/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/webfont/itc_franklin_gothic_lt_medium_condensed-webfont.eot*/;
+
+    src: url('../webfont/itc_franklin_gothic_lt_medium_condensed-webfont.eot-#iefix')/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/webfont/itc_franklin_gothic_lt_medium_condensed-webfont.eot?#iefix*/ format('embedded-opentype'),
+
+         url('../webfont/itc_franklin_gothic_lt_medium_condensed-webfont.woff2')/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/webfont/itc_franklin_gothic_lt_medium_condensed-webfont.woff2*/ format('woff2'),
+
+         url('../webfont/itc_franklin_gothic_lt_medium_condensed-webfont.woff')/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/webfont/itc_franklin_gothic_lt_medium_condensed-webfont.woff*/ format('woff'),
+
+         url('../webfont/itc_franklin_gothic_lt_medium_condensed-webfont.svg#franklin')/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/webfont/itc_franklin_gothic_lt_medium_condensed-webfont.svg#franklin*/ format('svg');
+
+    font-weight: normal;
+
+    font-style: normal;
+
+
+
+}
+
+
+
+/* search input field */
+
+.top-lft{ width:530px; position:relative; top:9px; left:40px;}
+
+.top-lft button[type=button] {  height:46px;border:none; background:#e25d4a;
+
+	width:62px; border-left:none; border-bottom-right-radius:30px; border-top-right-radius:30px; padding:0; position:absolute; right:0; top:0; cursor:pointer;color:#fff; text-align:center;}
+
+.top-lft button[type=button] i.icon-sousuo{ font-size:30px; color:#fff;}
+
+.top-lft input[type=text] {border:2px solid #F79D91; padding:6px 0 6px 5px; height:46px; line-height:46px;  float:left;width:100%; border-radius:30px; text-indent:14px; box-sizing: border-box;}
+
+.top-lft input[type=text]:focus{outline-offset: -2px;box-shadow:0px 2px 3px #e9d6dd; border-color:#e9d6dd;}
+
+
+
+.topmid{ width:100%;}
+
+.logo{width:363px;}
+
+/* placeholder */
+
+
+
+
+
+/* ------Header----- */
+
+
+
+.container{ max-width:1280px; margin:0 auto; min-width:320px;width: 1280px;}
+
+.hdtop{ margin:0 auto;min-width:320px; height:40px; line-height:40px; font-size:13px; background:#fff; border-bottom:1px solid #e9e9e9;}
+
+.hdtop b{ font-weight:normal; color:#333;}
+
+.hdtop b i{ font-style:normal; font-size:15px; color:#333;}
+
+.hdtop b.email{ padding-left:15px;}
+
+.hdtop b.email i{ margin-right:5px; font-size:16px; position:relative; top:2px;}
+
+.hdright{ overflow:hidden;}
+
+.top_sns{ float:left; padding-right:15px;}
+
+.top .top_sns{ float:right; padding:0; margin:25px 0 0;}
+
+.top_sns a{ display:inline-block; padding:0 8px; font-size:18px; color:#666; float:left;}
+
+.top_sns a.icontwt{ font-size:15px;}
+
+.top_sns a.icongl{ font-size:20px;}
+
+.hdright ul{float:left;}
+
+.hdright ul li{ float:left; font-size:10px; color:#333; margin-left:10px;height:41px; line-height:41px;}
+
+.hdright ul li a{ padding:0 5px; font-size:13px; color:#333;font: 13px/40px Arial;}
+
+.hdright ul li a:hover{ color:#000; text-decoration:underline;}
+
+.hdright ul li i{ font-size:14px; color:#000; float:left;}
+
+.hdright ul li i.icon-reg{ font-size:19px; position:relative; top:1px;}
+
+.hd-rit{ float:left;}
+
+.hd-rit a{ padding-left:15px;}
+
+.hd-rit a i{ font-size:18px;}
+
+.hd-rit a.cat{ position:relative; padding-right:12px;}
+
+.hd-rit a.cat em{ position:absolute; width:16px; height:16px; border-radius:50%; background:#e67563; color:#fff; display:block;top:-5px;right: 0;line-height: 16px;font-style: normal;text-align: center; font-size:12px;}
+
+.hd-rit a.cat i{ font-size:16px;}
+
+.top{ overflow:hidden;margin:10px auto 0;padding:0;}
+
+.top-lft a.county{cursor:pointer; display:block;}
+
+.top-lft a.county b{ display:inline-block;  background:url(../images/sanjiao.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/sanjiao.jpg*/ no-repeat center; width:8px; height:8px;}
+
+.top-lft .countybox{ overflow:hidden; display:none; padding:10px 15px; background:#fff; border:1px solid #f0f0f0; position:absolute; top:30px; z-index:9999999;
+
+-webkit-box-shadow: 0 2px 5px rgba(230,230,230,.8);
+
+	-moz-box-shadow: 0 2px 5px rgba(230,230,230,.8);
+
+	box-shadow: 0 2px 5px rgba(230,230,230,.8);
+
+}
+
+.top-lft .countybox li{ height:15px; line-height:15px; padding:8px 0;}
+
+.top-lft .countybox i{ display:inline-block; float:left; margin-right:10px;}
+
+.top-right{ width:313px;}
+
+.topNav{ float:left; margin-left:12px; color:#000;}
+
+.topNav dl h3{ font-size:12px;width:70px;padding:0 6px; display:inline-block;}
+
+.topNav dl h3 a{color:#333}
+
+.topNav dl h3 i{ font-size:10px; padding:0 5px; color:#333;}
+
+.topNav dl a span{
+
+    background: url(../images/countries-flag.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/countries-flag.png*/ no-repeat;
+
+    width: 16px;
+
+    height: 13px;
+
+    display: inline-block;
+
+    margin-right:5px;
+
+}
+
+.topNav dl a.EUR span{
+
+    background-position: -100px -60px;
+
+}
+
+.topNav dl a.USD span{
+
+    background-position: -320px -200px;
+
+}
+
+.topNav dl a.GBP span{
+
+    background-position: -260px -200px;
+
+}
+
+.topNav dl dd ul{ overflow:hidden; padding:10px 6px; background:#fff;-moz-box-shadow: 0 3px 10px rgba(0,0,0, 0.15);
+
+    -webkit-box-shadow: 0 3px 10px rgba(0,0,0, 0.15);
+
+    box-shadow: 0 3px 10px rgba(0,0,0, 0.15); position:absolute; z-index:999; border:1px solid #ddd;}
+
+.topNav dl dd ul li a{color:#333;}
+
+.topNav dl dd ul li a:hover{color:#111;}
+
+.topNav1{ display:inline-block; width:140px; overflow:hidden; text-align:center; float:left;}
+
+.topNav1 button{ cursor:pointer;}
+
+.topNav1 ul{ background:#fff; overflow:hidden; position:absolute; padding:15px 20px; left:50px;-moz-box-shadow: 0 3px 10px rgba(0,0,0, 0.15);
+
+    -webkit-box-shadow: 0 3px 10px rgba(0,0,0, 0.15);
+
+    box-shadow: 0 3px 10px rgba(0,0,0, 0.15);}
+
+.topNav1 ul li{ background:#fff;}
+
+.topNav1 a{ margin:0; padding:0;}
+
+.topNav1 button{ border:none; background:none;}
+
+
+
+
+
+.reveal-modal-bg {position: fixed; height: 100%; width: 100%; z-index: 100; display: none; top: 0; left: 0; background:rgba(00, 00, 00, 0.8);}
+
+.reveal-modal { visibility: hidden; top: 100px; left:5%;width:90%; position: absolute; z-index: 101;
+
+-moz-border-radius: 2px; 
+
+-webkit-border-radius: 2px; 
+
+border-radius: 2px; 
+
+-moz-box-shadow: 0 0 10px rgba(0,0,0,.4); 
+
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4); 
+
+-box-shadow: 0 0 10px rgba(0,0,0,.4); background-color: #FFF; 		}		
+
+.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+
+.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+
+.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+
+.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+
+.reveal-modal .close-reveal-modal { width:30px; height:30px; text-align:center; line-height:30px;font-size:0; position: absolute; top: 8px; right:8px; color: #fff;   cursor: pointer; background:url(../images/cancel_round.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/cancel_round.png*/ no-repeat center; background-size:20px;} 
+
+
+
+
+
+.catbox{ overflow:hidden; display:none; position:absolute; right:0; top:30px; border:1px solid #eee; padding:10px 15px 0 15px; background:#fff;}
+
+.catbox h4{ font-size:14px; font-weight:normal; color:#666;}
+
+.catbox h4 img{ width:30px; display:block; margin:0 auto;}
+
+.catbox h5{ font-size:14px; font-weight:normal; padding-bottom:12px; color:#666;}
+
+.catbox ul{ overflow:hidden;}
+
+.catbox ul li{ padding-bottom:10px;}
+
+.catbox ul li .c-img{}
+
+.catbox ul li .c-img img{ width:50px; height:50px; float:left; margin-right:10px; border:1px solid #eee;}
+
+.catbox ul li h3{ font-size:13px; font-weight:normal; height:26px; line-height:26px; overflow:hidden;}
+
+.catbox ul li p{ color:#fc5b03;}
+
+.catbox ul li a{ margin:0; float:none;}
+
+.catbox ul li .c-tex{ width:50px; overflow:hidden;}
+
+.h-top{ background:#349eae; text-align:center; color:#fff; height:38px; line-height:38px; font-size:16px; margin-bottom:10px;}
+
+.navbar-brand{ position:absolute; left:568px;width:153px;top:-85px; z-index:999;}
+
+.navbar-default { border: 0; background-color: #f5f5f5;
+
+-webkit-transition: padding .3s;
+
+ -moz-transition: padding .3s;
+
+transition: padding .3s; }
+
+.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}
+
+.navbar-toggle:focus{outline:0}
+
+.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
+
+.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
+
+.navbar-default .navbar-brand img{display:block; width:153px; margin:0 auto;}
+
+.navbar-default .navbar-nav>li>a{color:#000;border-radius:0;height: 48px;overflow: hidden;}
+
+.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{color:#364487;background-color:transparent}
+
+.nav{margin-bottom:0;list-style:none; text-align:center; float:left !important;}
+
+.nav>li{display:inline-block; padding:0 0px; height:52px; line-height:52px;}
+
+.nav>li.on a{ /*border-bottom:4px solid #364487;*/}
+
+/*.nav>li.on a{ color:#364487;}*/
+
+.nav>li.on span{ color:#364487;}
+
+.nav>li>a{display:inline-block;text-transform:capitalize; font-size:16px; position:relative; z-index:2;  font-family: "Arial", Verdana, Arial, sans-serif;}
+
+.nav>li>span{ display:inline-block; width:16px; font-size:10px; color:#999; text-align:center;}
+
+.nav>li>em{ display:inline-block; background:url(../images/xiala_03.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/xiala_03.jpg*/ no-repeat; height:6px; width:10px; position:relative; left:-14px; top:-2px;}
+
+.navBar1{ position:relative;margin:0 auto; height:52px; line-height:52px; max-width:1280px;overflow:hidden;}
+
+.brand{color:#000;float:left; padding:0 20px; text-transform:capitalize; font-size:15px;text-align:center;}
+
+.brand a{ font-family:"franklin" !important;line-height: 37px !important;}
+
+.brand a:hover{background:#364487;color:#fff;border-radius:0;}
+
+.brand i{ display:inline-block; width:20px; position:relative; top:5px; margin-right:10px;}
+
+.brand hr{ border-bottom:1px solid #fff; display:block; margin:0; margin-bottom:3px;}
+
+.nav li.on .nav .sub .submid dl dt a{ color:#ff6f3d;}
+
+.nav .sub{ display:none; padding:40px 0;  position:absolute; top:52px;  background:#fff; line-height:30px; width:100%; left:0; right:0; z-index:1;-moz-box-shadow: 0 3px 10px rgba(0,0,0,.15);-webkit-box-shadow: 0 3px 10px rgba(0,0,0,.15);
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.15); border-top:1px solid #e6e6e6;}
+
+.nav .sub .submid{ width:1180px; margin:0 auto; overflow:hidden;}
+
+.nav .sub .submid a{ border:none;}
+
+.nav .sub .submid dl{ float:left; margin:13px;text-align:left; padding-right:40px;}
+
+.g-gao1{ float:left; width:355px; height:235px; margin-left:10px;}
+
+.nav .sub .submid dl dt{ color:#222; font-size:15px; text-transform:uppercase; height:32px; line-height:32px;}
+
+.nav .sub .submid dl dt a{ color:#222;}
+
+.nav .sub .submid dl dd{ background:url(../images/jiantou.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/jiantou.jpg*/ no-repeat left center; padding-left:15px; height:32px; line-height:32px;}
+
+.nav .sub .submid dl dd a{ color:#444; font-size:15px;}
+
+.nav .sub .submid dl dd a:hover{text-decoration:underline;}
+
+.tel{ overflow:hidden; margin-top:8px;}
+
+.tel i{ padding-right:5px;}
+
+.tel strong{ font-size:17px; color:#333;font-family:"courier_newregular";}
+
+
+
+/* ------banner----- */
+
+.first-screen{ width:100%;margin-top: 0px;}
+
+.bran-tc{ width:130px; border:1px solid #e7e8f0; padding:0;z-index:2; background:#fff;}
+
+/*.bran-tc li{ text-align:center;}*/
+
+.bran-tc li.iton{ background:#fff; border-left:3px solid #60adf5;}
+
+.bran-tc li a:hover{ text-decoration:underline;/* background-color: #FFF;color: red; */ color: #fd4413;}
+
+.bran-tc li h3{font-size:13px; margin:8px 0; height: 36px; line-height: 18px; }
+
+
+
+.boxmid{ border:1px solid #d4d7e5; border-top:none;    padding: 10px;}
+
+.firstright{ margin-left:180px;}
+
+.f-lanmu{ width:27.5%;margin-top:20px;}
+
+.spbox{ padding:10px;}
+
+.sp-action{    display: block;
+
+    width: 60px;
+
+    height: 55px;
+
+    position: absolute;
+
+    margin: -140px auto 0 150px;
+
+    background-image: url(../images/ka_sp_action.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/ka_sp_action.png*/;
+
+    background-position: center -55px;}
+
+.banner{ width:54%; overflow:hidden;/*background:url(../images/shuiyin.jpg) no-repeat center;*/ position: absolute;
+
+    height: 600px;
+
+    left: 150px;
+
+    margin-top: 35px;
+
+    z-index: 99998 !important;}
+
+.banner-cont{box-shadow: rgb(134, 133, 133) 1px 10px 15px;-moz-box-shadow: rgb(134, 133, 133) 1px 10px 15px;-webkit-box-shadow: rgb(134, 133, 133) 1px 10px 15px;}
+
+.close{ width:26px; height:26px; background:#fff; font-size:22px!important; display:block; position:absolute; top:10px; right:24px; text-align:center; line-height:26px; color:#de0e0e; border:2px solid #de0e0e;}
+
+a.close:hover{ color:#de0e0e;}
+
+.focusBox{position:relative;width:100%;overflow:hidden; height:600px; text-align:center;}
+
+.focusBox .pic{position:relative;z-index:0;height:600px;}
+
+.focusBox .pic img{ height:649px; display:block; position:absolute; left:50%; margin-left:-960px;}
+
+.focusBox .hd{width:100%;position:absolute;bottom:15px;text-align:center;font-size:0;z-index:1}
+
+.focusBox .hd li{margin:0 5px;height:14px;overflow:hidden;width:14px;cursor:pointer;display:inline-block;zoom:1; background:#fff; border-radius:7px;}
+
+.focusBox .hd .on{ background:#a259aa;}
+
+.focusBox .next,.focusBox .prev{width:50px;height:50px;margin:-60px 0 0;display:none;background:url(../images/ad_ctr.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/ad_ctr.png*/ no-repeat 0 0;position:absolute;top:50%;z-index:10;cursor:pointer;text-indent:-9999px;}
+
+.focusBox .prev{left:40px;}
+
+.focusBox .next{background-position:0 -50px;right:40px;}
+
+
+
+.swiper-container {
+
+        width: 100%;
+
+        height:auto;
+
+    } 
+
+.szprobox{ overflow:hidden; width: 90%; padding:20px 5%; height: auto!important;}
+
+.szprobox .bzimg{width: 30%!important; overflow: hidden; height: auto!important; border:1px solid #ddd!important;;}
+
+.szprobox .bzimg h3{height: 30px; line-height: 30px; overflow: hidden; font-size:16px; font-weight: normal; text-align: center; background:#fff;}
+
+.szprobox .bzimg h3 a{white-space: initial; display: block;}
+
+.szprobox div{width: auto!important; height: auto!important;}
+
+.sz-prolist{ width: 65%!important; overflow: hidden; float: right;} 
+
+.sz-prolist dd{width: 100%!important; margin: 0 0 10px; overflow:hidden;}
+
+.sz-prolist dd .szproimg{ float: left;width: 35%!important; overflow: hidden; border:1px solid #666 !important;}
+
+.sz-prolist dd .szproimg img{ max-width:100%;}
+
+.sz-prolist dd .szprotext{width: 55%!important; overflow: hidden; padding-left: 5%!important;float: left; display: block; overflow: hidden; border: none; /*white-space: nowrap;*/line-height: 22px;}
+
+.sz-prolist dd .szprotext h3{ font-size:14px; margin-bottom:10px;}
+
+.sz-prolist dd p{ text-align: left; color: #000;}
+
+.sz-prolist dd p em{ font-style: normal;  padding-right: 5px; color: #666;}
+
+.sz-prolist dd .addcart{width: 100%!important; overflow: hidden; text-align: left;float: left; display: block; overflow: hidden;   border: none; white-space: nowrap;line-height: 22px; }
+
+.sz-prolist dd .addcart a{ display: inline-block!important; height: 36px!important; line-height: 36px!important; border:1px solid #ddd!important; padding:0 10px!important; float: left; margin:10px 10px 0 0;color: #183152;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    text-transform: capitalize;}
+
+.sz-prolist dd .addcart a.email{ font-size:18px; font-weight:bold;}
+
+.sz-prolist dd .addcart a:hover{ border:1px solid #fd4413; background:#fd4413; color:#fff;}
+
+.prolist1 .sz-prolist{width:100%!important;}
+
+.prolist1 .sz-prolist dd{ width:50%!important; float:left!important; margin-bottom:20px;}
+
+.prolist1 .sz-prolist dd .szproimg{ float:left;}
+
+/* ------banner----- */
+
+
+
+/*第二屏*/
+
+.part-query{ overflow:hidden; margin:20px 0; border-top: 1px solid #c3c5c5;}
+
+.part-query h3{ font-size:24px; font-family:"franklin"; font-weight:normal; padding:40px 0;}
+
+.part-query h3 i{ font-size:30px; margin-right:10px; float:left;}
+
+.part-query h3 em{ display:block; height:3px; background:#dc5d25; width:30px; margin-left:40px; margin-top:6px;}
+
+.query-lft{ width:24%; }
+
+.query-rit{ margin-left:30%;}
+
+.query-rit ul{ overflow:hidden;}
+
+.query-rit li{ float:left; width:31%; margin-left:2%;}
+
+.query-rit li label{ display:block; font-size:14px; color:#000; height:30px; line-height:30px; margin-bottom:8px;}
+
+.query-rit li label span{ padding-left:10px;color:#f1723a;}
+
+.query-rit li label span i{ font-style:normal; font-size:12px;  padding:0 5px;}
+
+.query-rit li input{ border:1px solid #e5e5e5; height:40px; line-height:40px; background:#f6f6f6; text-indent:14px; width:98%; border-radius:3px; padding:4px 0; font-size:12px;margin-bottom:8px;}
+
+.message{ position:relative;}
+
+.message .liulan{width: 64px; background:#fff;cursor: pointer; position: relative;font-size: 28px;vertical-align: top;line-height: 12px;text-align: center; text-indent: 0;position: absolute;right: 0;z-index: 5;}
+
+.message .files{position:absolute;left:-1000px;top:52px;heigth:26px;cursor:pointer;filter: Alpha(opacity=0);-moz-opacity:0;opacity:0;}
+
+.bot1{ border:none; background:none; border-radius:3px; background:#f1723a; color:#fff; font-family:"franklin";font-weight:bold; height:40px; line-height:40px; padding:0 20px; font-size:17px; display:block;    cursor: pointer; text-align:center;}
+
+.bot3{ border:none; background:none; border-radius:3px; background:#dadada; color:#333; font-family:"franklin"; height:40px; line-height:40px; padding:0 20px; font-size:17px; display:block;    cursor: pointer; text-align:center;}
+
+.bot2{ border:none; background:none; border-radius:3px; background:#364487; color:#fff; font-family:"franklin"; height:40px; line-height:40px; padding:0 20px; font-size:17px; display:block;    cursor: pointer; text-align:center;}
+
+a.bot1:hover{ color:#fff; text-decoration:underline;}
+
+a.bot2:hover{ color:#fff; text-decoration:underline;}
+
+a.bot3:hover{ color:#333; text-decoration:underline;}
+
+.query-rit button{ margin:38px auto 0; width:120px;}
+
+/*adlist*/
+
+.dalist,.dalist1{ overflow:hidden;max-width:1240px;min-width:320px; margin:0 auto;}
+
+.dalist{border-radius:10px; padding:35px 0;z-index:9999; border-radius:10px;}
+
+.dalist li{ float:left; width:32.33%;}
+
+.dalist li:nth-child(2){ margin:0 1%;}
+
+.mar-lr{ margin:0 5px;}
+
+.bestsale{ overflow:hidden; margin:10px 0;}
+
+.bestsale ul{ width:100%; overflow:hidden; margin-bottom:60px;}
+
+.bestsale ul li{ float:left;}
+
+.bestsale ul li.best01{ width:32%; max-width:391px;}
+
+.bestsale ul li.best01 .marbot{ margin-bottom:8%!important;} 
+
+.bestsale ul li.best02{ width:32%; max-width:391px; margin:0 2%;}
+
+.hengfu{ overflow:hidden;margin:0 auto;    padding: 0;
+
+    width: 1280px;}
+
+/*about*/
+
+.about{ overflow:hidden; width:1200px; margin:40px auto 0;}
+
+.about h1{ font-size:22px; text-transform:uppercase; letter-spacing:4px; font-weight:normal; text-align:center; font-family:"baskerville_old_faceregular";}
+
+.about h3{ font-size:17px; line-height:24px; color:#666; text-align:center; font-weight:normal; width:700px; margin:15px auto;}
+
+.about h4{ font-weight:normal; text-align:center;}
+
+.about h4 a{ text-decoration:underline; color:#7fbeb9; font-size:14px; font-style:italic;}
+
+.abmid{ background:url(../images/ros_17.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/ros_17.jpg*/ no-repeat right center; height:400px; padding:15px 0 0; margin:50px 0;}
+
+.ablft{ width:560px; background:#fff; height:260px; margin:25px 0; padding:30px 40px 40px;}
+
+.ablft h2{ text-align:left; height:40px; line-height:40px; font-size:26px; text-transform:uppercase; color:#333;font-family:"baskerville_old_faceregular";}
+
+.ablft p{ font-size:24px; letter-spacing:1px; color:#89898A; padding:8px 0 10px; line-height:30px; text-transform:uppercase; }
+
+.abtext{ font-size:15px; line-height:26px; padding-top:10px;}
+
+/*----产品----*/
+
+.tit2{margin:10px auto 30px; overflow:hidden; padding:25px 0;border-radius:10px; text-align:center;}
+
+.tit2 span{ display:block;font-size:13px; text-transform:uppercase; letter-spacing:10px; font-family:"Arial";height:40px; color:#000;}
+
+.tit2 h3{ font-family:"courier_newregular";text-transform:capitalize; font-weight:500;letter-spacing: -2px;font-size:64px; text-align:center; margin:0 auto; color:#ff37ad;}
+
+.tit2 h3 b{ font-weight:normal; font-size:34px; color:#222;}
+
+.tit2 h4,.tit h4{ text-align:center; font-weight:normal; font-size:10px; color:#999; float:right;}
+
+.tit2 h4 a,.tit h4 a{ font-size:14px; padding:0 16px;}
+
+.tit2 h4 a:hover,.tit h4 a:hover{ color:#f98bcf;}
+
+.tit{ overflow:hidden; background:url(../images/titbg_12.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/titbg_12.jpg*/ repeat-x; padding:0 10px; height:40px; line-height:40px; border:1px solid #d4d7e5;}
+
+.tit a{float: right;border: 1px solid #d4d7e5;background: #fff;border-radius: 2px;height: 30px;line-height: 18px;padding: 0 5px;margin-top: 4px;color: #8992c0;}
+
+.tit b{ display:inline-block; width:4px; height:20px; background:#de4a1f; float:left; margin:6px 10px 0 0}
+
+.f-right{float: right;line-height: 30px !important; }
+
+.tit h5{ text-align:center; font-weight:normal; font-size:14px; color:#666; position:relative; top:-20px;}
+
+.tit h3{font-size:16px;color:#273859;font-family:"franklin";text-transform:capitalize; font-weight:500;line-height:40px;}
+
+.tit h3 i{ font-size:26px; color:#314263; float:left; margin-right:8px;}
+
+.tit h3 i.icon1{ font-size:21px;}
+
+.tit h3 i.icon2{ font-size:20px;}
+
+.tit span{ height:1px;width:60px; margin:0 auto 20px; background:#666; display:block;}
+
+.tit h3 span{ font-weight:normal; padding-left:10px;}
+
+.tit p{ text-align:center; height:50px; line-height:50px; text-transform:uppercase; color:#888;}
+
+.tit p a{ color:#2db8ae;}
+
+.tit p.p1{ text-transform:capitalize; font-size:15px;}
+
+
+
+.tit1{ margin:18px auto; overflow:hidden;}
+
+.tit1 h3{  font-family:"franklin";text-transform:uppercase; font-weight:500;font-size:28px; text-align:center; margin:0 auto; height:40px; line-height:40px; display:table;}
+
+.tit1 em{ display: block;height: 3px;background: #dc5d25;width: 30px; margin:0 auto;}
+
+.tit1 span{height:1px;width:60px; margin:0 auto 20px; background:#666; display:block;}
+
+.tit1 h5{ font-weight:normal; text-align:center; font-size:13px; color:#666;}
+
+.proground{ width:100%; overflow:hidden; padding-bottom:60px;}
+
+.probox{ background:#fff; height:694px;border-bottom:1px solid #ddd;}
+
+.probox > ul{ width:200px;float:left;display: -webkit-flex; /* Safari */display: flex;flex-direction:column; height:100%;}
+
+.probox > ul li{background:#fff; border-width:1px 1px 0 1px; border-color:#ddd #ddd #ddd #ddd; border-style:solid; height:25%; position:relative; cursor:pointer;}
+
+.probox > ul li p{ display:block; margin:0 auto; text-align:center; height:60%;display: -webkit-flex; /* Safari */display: flex; align-items:center; }
+
+.probox > ul li p img{margin:0 auto;}
+
+.probox > ul li h3{ text-align:center; font-size:18px; font-family:"franklin"; font-weight:normal;}
+
+.probox > ul li.curr{ border-right:0;/*border-left:5px solid #6cc9e3;border-left: 2px solid #f00;border-bottom: 2px solid #f00;*/}
+
+.probox > ul li.curr i{height: 100%;display: block; width: 2px;background: #fff;position: absolute;right: -2px;top: 0;}
+
+.probox .tabcon{ margin-left:200px;margin-top: 0px;  border-left:1px solid #ddd; border-bottom:1px solid #ddd;}
+
+.pro li .li-item:hover{border: 1px solid #ccc;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);z-index: 2;transition: box-shadow 0.25s linear 0s, min-height 0.35s linear 0s; background:#fff;}
+
+.pro li img{ width:100%;}
+
+.pro li h3{margin:0;font-size:15px; color:#666; font-weight:normal; height:44px; line-height:22px; overflow:hidden; padding:4px 0; }
+
+.pro li h3 a{ color:#666;}
+
+.pro li h4{margin:0;font-size:20px; color:#333; height:32px; line-height:32px; font-weight:normal;}
+
+.pro li h4 p{ display:inline-block;}
+
+.pro li h4 .old-price{ padding:0 8px; font-size:15px; font-weight:normal; color:#999; text-decoration:line-through;}
+
+.pro li .li-item .infomore{ overflow:hidden; height:26px; line-height:26px; display:none;}
+
+.pro li .li-item:hover .infomore{ display:block;}
+
+.pro li .infomore a{width:30px; height:30px; line-height:30px; text-align:center; display:inline-block; float:left; margin-left:4px;}
+
+.pro li .infomore a.wishbox.icon-shoucang{ font-size:20px;}
+
+.pro li .infomore a.wishbox.icon-shoucang:hover{ color:#364487;}
+
+.pro li .infomore a.bagbox.icon-gouwu{ font-size:23px; line-height:22px;}
+
+.pro li .infomore a.bagbox.icon-gouwu:hover{ color:#364487;}
+
+
+
+
+
+.prolist{ overflow:hidden; position:relative; width:1240px; margin:0 auto 60px;}
+
+.prolist li{ display:inline-block; float:left; width:302px; margin:0 4px; overflow:hidden;}
+
+.prolist li.te .effect-duke{overflow:hidden;}
+
+.prolist li.te .effect-duke img{ height:222px;}
+
+.more{ display:block; height:30px; line-height:30px;text-align: center; color:#fff; background:#f3f6fd; text-transform:uppercase; font-size:14px; margin:15px 0; padding:0 10px; color:#fff;}
+
+.tuijian{ margin:25px 0;}
+
+.tuijian img{ width:100%;}
+
+figure.effect-duke img{
+
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+
+	transition: opacity 0.35s, transform 0.35s;
+
+}
+
+
+
+figure.effect-duke:hover img {
+
+	opacity: 1;
+
+	-webkit-transform: scale3d(1.02,1.02,1);
+
+	transform: scale3d(1.02,1.02,1);
+
+}
+
+.rx-list{ width:58%; max-width:773px;}
+
+.more1:hover{ color:#000; text-decoration:underline;}
+
+.rx-tit{ width:41%; max-width:565px;overflow:hidden;}
+
+.rx-tit img{ width:100%;}
+
+.prolft{ width:220px;border:1px solid #ddd;}
+
+.prolft h3{ font-size:15px; height:46px; line-height:46px; color:#333; text-align:center; border-bottom:1px solid #ddd; margin:0 auto}
+
+.fenlist{ overflow:hidden; margin:15px 0;}
+
+.fenlist dt{ font-size:15px; height:36px; line-height:36px; padding-left:16px;}
+
+.fenlist dd{ height:26px; line-height:26px; padding-left:8px;}
+
+.fenlist dd{ position:relative;}
+
+.fenlist dd a i.gw-checkout {display: inline-block;
+
+    width: 14px;
+
+    height: 14px; position:relative; top:11px;
+
+    -moz-transform: translate(0, -50%);
+
+    -ms-transform: translate(0, -50%);
+
+    -o-transform: translate(0, -50%);
+
+    -webkit-transform: translate(0, -50%);
+
+    transform: translate(0, -50%);
+
+    background-color: white;
+
+    border: solid 1px #e1e1e1;
+
+    border-radius: 2px; margin:0 5px;}
+
+.fenlist dd i.gw-checkout input{ width:13px; height:13px;display:inline-block; position:relative; top:1px;left:1px; display:none;}
+
+.fenlist dd a:hover i.gw-checkout:after,.fenlist dd span.m-selected-filter-item  i.gw-checkout:after{font-family: "iconfont";
+
+    content: "\e614";
+
+    display: inline-block;
+
+    font-weight: normal;
+
+    position:relative;
+
+    width: 14px;
+
+    height: 14px;
+
+    line-height: 14px;
+
+   font-size: 7px;
+
+   border: solid 1px #ff8261;
+
+    background-color: #ff8261;
+
+    top:8px;
+
+    color:#fff;
+
+    -moz-transform: translate(0, -50%);
+
+    -ms-transform: translate(0, -50%);
+
+    -o-transform: translate(0, -50%);
+
+    -webkit-transform: translate(0, -50%);
+
+    transform: translate(0, -50%);
+
+    -moz-transition: 0.3s all ease;
+
+    -o-transition: 0.3s all ease;
+
+    -webkit-transition: 0.3s all ease;
+
+    transition: 0.3s all ease;
+
+    border-radius: 2px;}
+
+.fenlist dd a:hover i.gw-checkout:after{ top:6px; left:-1px;}
+
+input[type=checkbox]:checked + label:after, input[type=checkbox]:checked + .label label:after {
+
+    font-size: 8px;
+
+    background-color: #ff8261;}
+
+
+
+
+
+.fenlist dd a{ font-size:13px; color:#666;}
+
+.fenlist dd a:hover,.fenlist dd.pro-on a{ color:#ff8261; text-decoration:underline;}
+
+.fenlist dd a:hover em,.fenlist dd.pro-on a em{color:#ff8261}
+
+.fenlist dd a em{font-style:normal; color:#B3B2B2; padding-left:5px;}
+
+.prorit{ margin-left:240px;}
+
+.saixuan{ overflow:hidden; background:#f6f6f6;}
+
+.view-list{ overflow:hidden;} 
+
+.view-list label{ margin:10px; display:inline-block; height:37px; line-height:37px; font-size:16px;}
+
+.view-list a{ display:inline-block; width:30px; line-height:30px; background:url(../images/view-mode-icon.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/view-mode-icon.jpg*/ no-repeat; height:30px; position:relative; top:8px;}
+
+.view-list a.ls1{ background-position:0 0;}
+
+.view-list a.ls2{ background-position:-29px 0;}
+
+.view-list a.ls3{ background-position:-58px 0;}
+
+.view-list a:hover{ background:url(../images/view-mode-icon-cur.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/view-mode-icon-cur.png*/ no-repeat;}
+
+.view-list a.ls1:hover{ background-position:0 0;}
+
+.view-list a.ls2:hover{ background-position:-29px 0;}
+
+.view-list a.ls3:hover{ background-position:-58px 0;}
+
+.narrow-by-list{ overflow:hidden;}
+
+#narrow-by-list dt{ float:left; width:120px; font-weight:bold; margin-bottom:10px;}
+
+#narrow-by-list dd{ margin-left:120px;margin-bottom:10px;}
+
+#narrow-by-list dd ol{ width:100%; overflow:hidden;}
+
+#narrow-by-list dd ol li{ float:left; padding-right:20px; padding-bottom:5px;}
+
+#narrow-by-list dd ol li a{ color:#666;}
+
+#narrow-by-list dd ol li a:hover{ color:#ff8261; text-decoration:underline;}
+
+#narrow-by-list dd ol li a.on{color:#ff8261;}
+
+.pro{ overflow:hidden; width:1280px; position:relative; margin:30px 0 0;}
+
+.pro li{overflow:hidden; float:left; width:295px; margin:0 6px 35px; position:relative;}
+
+.pro li .mo-block{ position:absolute; top:200px; width:100px; height:60px; left:100px;}
+
+.pro li .mo-block .wishbox a{ width:32px; line-height:32px; height:32px; display:inline-block; background:url(../images/ax.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/ax.png*/; margin:0 5px;}
+
+.pro li .mo-block .wishbox a.wishico{ background-position:0 0;}
+
+.pro li .mo-block .wishbox a.wishico:hover{ background-position:-32px 0;}
+
+.pro li .mo-block .wishbox a.j-cat{ background-position:-64px 0;}
+
+.pro li .mo-block .wishbox a.j-cat:hover{ background-position:-96px 0;}
+
+.pro li .quickview{ text-align:center; margin:10px 0;}
+
+.pro li .quickview a{ display:inline-block; border-radius:3px;display:block; height:32px; line-height:32px; background:url(../images/ax_bg.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/ax_bg.png*/ repeat; width:80px; margin-left:5px; color:#444;}
+
+.pro li .quickview a:hover{ color:#42a4b3; text-decoration:underline;}
+
+.pro li img{ width:100%;}
+
+.pro li em{ position:absolute; top:-8px; right:-5px; background:#f30; color:#fff; display:block; border-radius:50%; padding:14px 5px 0; font-style:normal; width:40px;height:36px; line-height:16px; text-align:center; font-size:12px;}
+
+.pro li em b{ display:block; font-size:16px;}
+
+.pro li h3{ font-size:15px; color:#666; font-weight:normal; height:44px; line-height:22px; overflow:hidden; padding:8px 5px;}
+
+.pro li h3 a{ color:#666;}
+
+.pro li h4{ text-align:center; font-size:20px; color:#333; height:32px; line-height:32px; font-weight:normal;}
+
+.pro li h4 p{ display:inline-block;}
+
+.pro li h4 .old-price{ padding:0 8px; font-size:15px; font-weight:normal; color:#999; text-decoration:line-through;}
+
+
+
+.c-show{ width:100%;overflow:hidden; clear:both; padding:20px 0;}
+
+.c-show .slick-initialized .slick-slide .showlist{-webkit-transition: -webkit-transform .2s linear 0s; transition: transform .2s linear 0s; background:#fff;}
+
+.c-show .slick-initialized .slick-slide .showlist:hover{ transform: scale(1.04);}
+
+.c-show .showlist{ float:left;margin:10px;}
+
+.c-show .showlist a{ display:block; padding:8px 8px 0;}
+
+.c-show .showlist span.sbg{ background:url(../images/listbg.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/listbg.png*/ no-repeat bottom; display:block; height:6px;}
+
+.c-show .showlist .info{ position:relative; display:block;}
+
+.c-show .showlist .info p{ height:32px; line-height:16px;}
+
+.c-show .showlist h3{ font-size:15px; height:40px; line-height:40px; margin:0; font-weight:normal;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+.c-show .showlist span.like{ display:inline-block;font-size:13px; height:22px; line-height:30px; height:30px; text-align:right; width:100%; color:#999;}
+
+.slick-arrows{position:relative}
+
+.slick-next,.slick-prev{position:absolute;display:block;height:29px;width:29px;line-height:0;cursor:pointer;background:0 0;color:transparent;top:-65px;padding:0;outline:0;color:#c69c6d; background:#eee; z-index:999; border:none; font-size:0;opacity:0.6;}
+
+.slick-prev{left:60%; background:url(../images/lulin_36.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/lulin_36.png*/ no-repeat;}
+
+.slick-next{right:35%; background:url(../images/lulin_38.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/lulin_38.png*/ no-repeat;}
+
+.slick-next:hover,.slick-prev:hover{opacity:1}
+
+/*HOT*/
+
+.pro1 .li-item{ position:relative; min-height:337px;margin-bottom:10px ;border:1px solid #ddd;  box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+
+.pro1 .li-item{ padding:2px 8px 9px;transition: box-shadow 0.25s linear 0s, min-height 0.35s linear 0s; min-height:342px;width:258px !important;margin-left: 10px !important; }
+
+.pro1 .li-item .img{ width:80%; padding-bottom:80%; position:relative; height:0;margin-left:10%;  }
+
+.pro1 .li-item .img img{ width:100%;}
+
+.Discount {position: absolute;z-index: 999;right: 2px;top: 2px;
+
+    width: 50px;
+
+    height:40px;
+
+    border-radius: 50px;
+
+    line-height: 16px;
+
+    padding-top: 10px;
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    background: #e45384; display:none;
+
+}
+
+.Discount b{ font-size:16px;}
+
+.pro1 .li-item:hover{border: 1px solid #ccc;box-shadow: 5px 5px 5px rgba(204, 201, 201, 0.43);z-index: 2;transition: box-shadow 0.25s linear 0s, min-height 0.35s linear 0s; background:#fff;}
+
+.tab li:hover{border: 1px solid #ccc; /*   box-shadow: 8px 8px 5px rgb(232, 231, 231); */z-index: 2;transition: box-shadow 0.25s linear 0s, min-height 0.35s linear 0s; background:#fff;}
+
+.pro1 img{ width:100%;}
+
+.pro1 h3{ font-size:13px; color:#666; font-weight:normal; height:60px; line-height:20px; overflow:hidden;}
+
+.pro1 h3 a{ color:#222;}
+
+.pro1 h4{font-size:16px; color:#333; height:32px; line-height:32px; font-weight:normal; text-align:center;border-top: 1px solid #f0f0f0}
+
+.pro1 h4 p{ display:inline-block;}
+
+.pro1 h4 p span.price{ color:#f30;}
+
+.pro1 h4 .old-price{ padding:0 8px; font-size:15px; font-weight:normal; color:#999; text-decoration:line-through;}
+
+.pro1 h4 .old-price span.price{ color:#999;}
+
+.pro1 .li-item .infomore{ overflow:hidden;display:none; text-align:center;margin-top:8px;}
+
+.pro1 .li-item .review{ display:none;}
+
+.pro1 .li-item:hover .infomore,.pro1 .li-item:hover .review{ display:block;}
+
+.pro1 .li-item:hover .old-price,.pro1 .li-item:hover .special-price{ display:none;}
+
+.pro1 .infomore a{width:30px; height:30px; line-height:30px; text-align:center; display:inline-block; margin-left:4px; border:1px solid #ddd; border-radius:3px;padding: 0;overflow: hidden;}
+
+.pro1 .infomore a:hover{ background:#fd4413; color:#fff; border:1px solid #fd4413;}
+
+.pro1 .infomore .fa-heart-o{margin-top:6px;}
+
+.pro1 .infomore a.icon1{ font-size:16px;}
+
+.pro1 .infomore a.icon2{ font-size:16px;}
+
+.pro1 .infomore a.icon3{ font-size:14px;}
+
+.review{ height:30px; color:#000; font-size:13px; margin-top:8px; position:absolute; top:10px; left:10px; padding-left:90px;}
+
+.review span{ display:block;  width:55px;height:16px; line-height:16px; margin-right:5px; position:absolute; top:1px; color:#f1723a; z-index:2; overflow:hidden; font-size:20px; left:1px;}
+
+.review span i{ font-size:16px;}
+
+.review b{ display:block;;width:85px; height:16px; line-height:16px; margin-right:5px; position:absolute; left:0; top:0; color:#f1723a; z-index:1;font-size:20px;}
+
+.review b i{ font-size:16px;}
+
+.pro1 .swiper-button-prev,.pro1 .swiper-button-next{ background:none; position:absolute; z-index:999; height:40px; line-height:40px; width:30px; text-align:center;}
+
+.pro1 .swiper-button-prev i,.pro1 .swiper-button-next i{ font-size:60px; color:#333;}
+
+.pro1 .swiper-button-prev{ left:0;}
+
+.pro1 .swiper-button-next{right:26px;}
+
+
+
+/*底部*/
+
+.fottop{ border-bottom:1px solid #e4e4e4; padding:10px 0 15px;}
+
+.foot{margin:0 auto;clear:both; position:relative;padding-top:15px; background:#fff; border-top:1px solid #f3f6fd;}
+
+.backtop{ overflow:hidden; display:block; background:url(../images/topbot_03.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/topbot_03.png*/ no-repeat; height:60px; width:80px; position:fixed; right:10px; cursor:pointer; bottom:200px;}
+
+.fotmid{margin:0 auto; width:90%;}
+
+.footlist{ overflow:hidden; padding:30px 0 0;}
+
+.footlist li{ float:left;overflow:hidden; width:20%;}
+
+.footlist li h4{ font-size:18px; text-transform:uppercase; font-weight:normal; margin-bottom:12px; color:#000; font-family:"franklin";}
+
+.footlist li p{ line-height:30px; margin:0; font-size:13px;}
+
+.footlist li p a{ color:#333;}
+
+.footlist li p a:hover{ text-decoration:underline; color:#000;}
+
+.footlist li>div{ margin-top:15px;}
+
+.footlist li.f-te{ width:36%; float:right; position:relative; top:-10px;}
+
+.footlist li.f-te dt{ margin-bottom:15px;}
+
+.footlist li.f-te dd{ overflow:hidden; margin:10px 0;  font-size:14px;color:#444; padding-left:18px;}
+
+.footlist li.f-te dd p{ background:none; font-size:12px; color:#646464; font-weight:normal; margin:10px 0;}
+
+.footlist li.f-te dd img{ float:left; margin-right:8px;}
+
+.footlist li.f-te .top_sns{ padding-left:20px; margin:0;}
+
+.footlist li.f-te .top_sns a{display: inline-block;
+
+    padding: 0 8px;
+
+    font-size: 18px;
+
+    float: left;
+
+    border: 1px solid #999;
+
+    border-radius: 100%;
+
+    height: 30px;
+
+    width: 30px;
+
+    padding: 0;
+
+    margin: 0 10px;
+
+    text-align: center;
+
+    line-height: 30px;
+
+    color: #222;}
+
+.fotrit{ font-size:13px; color:#333; font-weight:600;}
+
+.fotrit input[type="text"]{ border:1px solid #d9d9d9; padding:5px; height:30px; line-height:30px; margin-left:15px; width:200px;}
+
+.fotrit button[type="button"]{ background:#333; padding:0 10px; color:#fff; text-transform:uppercase; border:none; height:30px; line-height:30px;}
+
+.fottop{font-style:italic; color:#666; font-size:15px;}
+
+.fottop a{ display:inline-block; margin:0 5px;}
+
+.list-div{ margin:10px 40px;}
+
+.list-div a{ width:55px; height:55px; display:inline-block; float:left; margin-right:5px;}
+
+.list-div a i{ display:inline-block; height:55px; width:55px;}
+
+.new-let{background:#fd5397; padding:20px 0 0; text-align:center; font-size:26px; color:#fff;}
+
+.new-let h4{font-size:17px; text-transform:capitalize; font-weight:normal; margin-bottom:12px; color:#fff; margin:20px 0;}
+
+.new-let h3{ color:#fff; font-size:36px; font-weight:bold; color:#fff;text-transform:capitalize; margin:20px 0;}
+
+.footlist li.f-te dd.newsletter{ overflow:hidden;position:relative; width:80%;}
+
+.footlist li.f-te dd.newsletter input{ height:38px; line-height:38px; border:1px solid #ddd; font-family:"Arial"; width:76%;float:left; text-indent:12px; color:#999;}
+
+.footlist li.f-te dd.newsletter button{ background:none; height:40px; border:none; color:#fff; font-size:14px; width:24%;float:right; position:absolute; right:0; text-transform:capitalize; background:#f1723a;}
+
+
+
+.fotbot{margin:20px auto; color:#333; height:50px; line-height:50px; text-align:center; border-top:1px solid #eee;}
+
+.find{ overflow:hidden; text-align:center; position:relative; bottom:-10px;}
+
+.find a{ display:inline-block;  width:60px; height:60px; margin:0 5px;}
+
+.djbox{ overflow:hidden;}
+
+.djbox .xing{ background-image: url(../images/conent_star_icon.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/conent_star_icon.png*/;display: inline-block; width: 95px;height: 14px;overflow: hidden; margin:8px 8px 0 0;}
+
+.djbox span {margin-right: 10px;}
+
+.no5{ background-position:0 0;}
+
+.no4{background-position:0 -25px;}
+
+.no3{background-position:0 -50px;}
+
+.no2{background-position:0 -75px;}
+
+.no1{background-position:0 -100px;}
+
+
+
+/*子页*/
+
+.zy-banner{ width:100%; height: 175px; margin:0 auto; overflow:hidden; text-align:center;}
+
+ .zy-banner img {
+
+     margin-top: -5px!important;
+
+ }
+
+.section_select{ margin:10px 0;}
+
+.section_select select{
+
+	background:url(../images/select.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/select.png*/ no-repeat right center #fff;
+
+    -webkit-box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    box-sizing: border-box;
+
+    border-radius: 3px;
+
+    border: 1px solid #d9dbdc;
+
+    -webkit-appearance: none;
+
+    -ms-appearance: none;
+
+    -moz-appearance: none;
+
+    -o-appearance: none;
+
+    appearance: none;
+
+    padding: 10px 9px 8px;
+
+    text-indent: 0.01px;
+
+    text-overflow: '';
+
+	}
+
+.omega{ margin-left:10px;}
+
+.omega select{ width:180px;}
+
+/*.page{margin-top:35px; margin-bottom:25px;text-align: center;font-size: 0; clear:both;}*/
+
+.page a.pageup-dis, .page a.pagedown-dis {background-color: #eff2f0;color: #bcbebd;cursor: default;}
+
+.page a{display: inline-block;width: auto;vertical-align: top;border-radius: 3px;
+
+-moz-border-radius: 3px;-webkit-border-radius: 3px;overflow: hidden;}
+
+.page a.current,.page a.current:hover {background-color: #a642b0;color: #FFF;font-weight: bold;}
+
+/*.page a:hover{background-color: #a642b0;text-decoration: none; color:#fff;}*/
+
+
+
+/*内页*/
+
+.weizhi{ font-size:12px; background:url(../images/weizhi.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/weizhi.png*/ no-repeat left center; padding-left:19px;}
+
+.zymenu{width: 100%;height: 60px;background: #f9f9f9;font-size: 18px; border-bottom: 1px solid #ece8e8; position:relative;    float: left;}
+
+.zytit{ color:#000;font-family:"franklin"; text-align:center; font-size:24px; font-weight:normal;float:left; height:60px; line-height:50px; padding-right:15px;}
+
+.zytit em{     display: block;
+
+    height: 3px;
+
+    background: #dc5d25;
+
+    width: 30px;}
+
+.zylft{  overflow:hidden; margin:0 auto; clear:both;float:left;}
+
+.side-Menu{float:left;}
+
+.side-Menu dd{ float:left;border-left: 1px solid #F1EFEF; position:relative;}
+
+.side-Menu h3{ height:60px; line-height:60px;cursor:pointer; font-size: 16px; font-weight: normal; padding-left:20px;}
+
+.side-Menu h3.on{ background:#f3f6fd; color:#000;}
+
+.side-Menu h3 span{ display:inline-block; width:21px; height: 21px; overflow: hidden; float: left; margin-top: 15px; margin-right: 6px;}
+
+.side-Menu h3 em{ float:right; display:block; width:40px; height:60px;   background:url(../images/hybox_11.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/hybox_11.png*/ no-repeat center; cursor:pointer;}
+
+.side-Menu h3.on em{ background:url(../images/hybox_08.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/hybox_08.png*/ no-repeat center;}
+
+.side-Menu ul{color:#999; display:none; margin: 0 auto; padding: 8px 0; position:absolute; background: #fff;
+
+    border-style: solid;
+
+    border-width: 1px 1px 6px 1px;
+
+    border-color: #e6e6e6; left:0; right:0; padding:5px 20px; z-index:999;}
+
+.side-Menu ul li{height: 38px; line-height: 38px; background:url(../images/jiantou.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/jiantou.jpg*/ no-repeat left center; padding-left:10px;}
+
+.side-Menu ul li a{ color: #545252; font-size: 13px;}
+
+.side-Menu ul li a:hover{ color:#000; text-decoration:underline;}
+
+.splist{ overflow:hidden; margin:40px 0;}
+
+.splist li{float:left; width:23%; margin:1%;}
+
+.splist li > div{ padding:10px; border:1px solid #ddd; position:relative;}
+
+.splist li .sp-action{display: block;
+
+    width: 60px;
+
+    height: 55px;
+
+    position: absolute;
+
+    background-image: url(../images/ka_sp_action.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/ka_sp_action.png*/;
+
+    background-position: center -55px;
+
+    left: 0;
+
+    right: 0;
+
+    margin: 0 auto;
+
+    top: 20%;}
+
+.splist li h3{ height:48px; line-height:24px; font-size:13px; font-weight:normal; overflow:hidden; background:#f9f9f9; padding:5px;}
+
+.ts-detail{ overflow:hidden; background:#f3f6fd; width:100%; padding:40px 0;}
+
+.ts-bfang{ background:#c7cad2; border-radius:6px; padding:40px 40px 20px;box-shadow:2px 2px 10px #8c8a8a;}
+
+.ts-bflft{ width:70%; overflow:hidden;}
+
+.ts-bflft h1{ font-size:17px; font-weight:normal; line-height:26px; margin-top:20px;}
+
+.ts-bflft img{ width:100%;}
+
+.ts-bfrit{ width:26%; overflow:hidden;}
+
+.ts-bfrit h3{ font-size:18px; font-weight:normal;font-family:"franklin"; margin-bottom:15px;}
+
+.ts-bfrit ul li{ overflow:hidden; border:1px solid #eee; padding:10px; margin-bottom:15px; background:#fff;}
+
+.ts-bfrit ul li a:hover{ color:#000; text-decoration:underline;}
+
+.ts-bfrit ul li img{ float:left; width:30%; margin-right:15px;}
+
+.ts-bfrit ul li h5{ font-weight:normal; font-size:13px; color:#333; height:40px; line-height:20px; overflow:hidden;}
+
+.tspinlun{background:#fff; padding:40px; margin:40px 0;}
+
+.form-list {
+
+    font-family: "Arial";
+
+    font-size: 12px;
+
+    font-weight: normal;
+
+    margin:20px 0;
+
+    text-transform: uppercase; 
+
+    /*padding:40px;*/
+
+    background: #fff;
+
+}
+
+.form-list h4{ text-align:center; font-size:15px;}
+
+.form-list li{ overflow:hidden; margin:18px 0;}
+
+.form-list li button{ width:150px; margin:0 auto;}
+
+.form-list label {
+
+    font-size: 13px;
+
+    font-weight:600; color:#333;
+
+    text-transform: capitalize; padding-left:15px; display:block;
+
+    line-height: 20px; text-align:left; 
+
+    /*float:left;*/
+
+}
+
+.form-list label em{ color:#f30;}
+
+.form-list div.input-box { /*width:100%;*/
+
+    padding-left: 10px; /*margin-top:10px;*/
+
+}
+
+.form-list div.input-box .input-text {
+
+    height: 40px;
+
+    line-height: 40px;
+
+    border: 1px solid #ddd;
+
+    padding: 0 8px;
+
+    border-radius: 3px;
+
+    background: #f6f6f6;
+
+}
+
+.form-list textarea {
+
+    border: 1px solid #ccc;
+
+    border-radius: 0; width:99%;
+
+    -webkit-appearance: none;
+
+    height: 80px!important; padding:5px;
+
+}
+
+.conmid{ overflow:hidden; line-height:24px;}
+
+.conmid p{ text-indent:24px;text-transform : capitalize}
+
+.reviewlist {
+
+    font-family: "Arial"; 
+
+    font-size: 12px;
+
+    overflow: hidden;
+
+    font-weight: normal;border-bottom:1px solid #efefef; margin-bottom:25px;
+
+}
+
+.reviewlist dt {width:100%; overflow:hidden;}
+
+
+
+.reviewlist dt .dj {
+
+    line-height: 22px;
+
+    color: #666;
+
+    margin-bottom: 10px;
+
+    float: left; display:none;
+
+}
+
+.reviewlist dt .dk {
+
+    width: 100%;
+
+}
+
+.reviewlist dt .dk .review{ position:relative; left:0;}
+
+.reviewlist dt .dj .tximg {
+
+    width: 60px;
+
+    height: 60px;
+
+    float: left;
+
+    margin: 8px 10px 0 0;
+
+}
+
+.reviewlist .reviewtop{ font-size:16px; color:#000;margin-top: 15px;}
+
+.reviewlist dt .dk .pl-name { font-weight:bold;}
+
+.reviewlist dt .dk .attest{ color:#333; font-size:12px; font-weight:normal;}
+
+.reviewlist dt .dk .attest i{font-size: 12px;margin-right: 5px; color: #333;}
+
+.review-meta{ color:#999; font-size:12px;}
+
+.reviewlist dd {font-size: 14px;overflow:hidden;width:100%;}
+
+.reviewlist dd .rating-box{ margin-right:10px;}
+
+.reviewlist .rev-size{ float:left;}
+
+.reviewlist .rev-fit{ float:left; margin:0 10px; font-weight:normal;}
+
+.reviewlist .rev-fit span{ font-weight:bold;}
+
+.reviewlist .rev-virtue {
+
+    display: block; float:left;
+
+    color: #333; font-size:13px; font-weight:bold; position:relative; line-height:26px; 
+
+}
+
+.reviewlist .rev-ans{ background:#f6f6f6; padding:10px; font-size:12px; line-height:22px; color:#666; margin-top:8px;}
+
+.reviewlist .rev-ans h3{ font-size:13px; font-weight:bold; margin:0; color:#333; line-height:30px;}
+
+.reviewlist .rev-virtue .rev-wap{ position:relative; display:inline-block;}
+
+.reviewlist .rev-virtue .has-hover{border-bottom: 1px dotted #222; margin:0 5px; text-transform:uppercase;}
+
+.reviewlist .rev-virtue .rev-size .rev-hover{ position: absolute;
+
+    top: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.175);
+
+    display: none;
+
+    border: 1px solid #ccc;
+
+    background-color: #fff;}
+
+.reviewlist .rev-virtue .rev-size .rev-hover ul{padding: 10px;
+
+    width: 160px;
+
+    border-radius: 2px;
+
+    background-color: #fff;}
+
+.reviewlist .rev-virtue .rev-size .rev-hover ul li{margin-bottom: 10px;}
+
+.reviewlist .rev-virtue .rev-size .rev-hover ul li span{float: left;
+
+    color: #666;
+
+    font-weight: 400;}
+
+.reviewlist .rev-virtue .rev-size .rev-hover ul li em{float: right;
+
+    color: #999;
+
+    font-style: normal;
+
+    font-weight: 400;}
+
+.reviewlist .rev-virtue .rev-size .rev-hover i{display: inline-block;
+
+    height: 10px;
+
+    width: 10px;
+
+    border: 1px solid transparent;
+
+    border-left-color: #ccc;
+
+    border-top-color: #ccc;
+
+    -webkit-transform: rotate(45deg) translateX(-70%);
+
+    -moz-transform: rotate(45deg) translateX(-70%);
+
+    -ms-transform: rotate(45deg) translateX(-70%);
+
+    transform: rotate(45deg) translateX(-70%);
+
+    background-color: #fff;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;}
+
+.reviewlist .rev-virtue .rev-size:hover .rev-hover{ display:block;}
+
+.reviewlist dd .rev-detail {
+
+    overflow: hidden;
+
+    clear: both; line-height:22px; color:#666; font-size:12px; margin-top:8px;
+
+}
+
+.reviewlist dd .review-images {
+
+    padding: 10px 0;
+
+    float: left;
+
+}
+
+
+
+.reviewlist dd .review-radiuo a, .reviewlist dd .review-images a {
+
+    display: block;
+
+    position: relative;
+
+    width:33.3%;
+
+    float: left;
+
+}
+
+.reviewlist dd .review-images img, .reviewlist dd .review-radiuo img {
+
+    display: inline-block;
+
+    max-width: 100%;
+
+    padding: 5px 10px 5px 0;
+
+    margin: 0 5px 0 0;
+
+    background-color: #fff;
+
+}
+
+
+
+/*维修店铺*/
+
+.join{height:36px;
+
+    line-height:40px !important; border-radius:3px;
+
+    text-align: center;
+
+    display: block;
+
+    margin: 10px auto; background:#ff5c0b;
+
+    color: #fff;
+
+    text-transform: uppercase;
+
+    overflow: hidden;
+
+    clear: both; width:120px;
+
+    padding: 0px 10px;
+
+}
+
+.join i{ font-size:22px; color:#fff; float:left; position:relative; left:20px;}
+
+.join:hover{ text-decoration:underline;  color:#dd442e;}
+
+.pro-list1{position:relative; overflow:hidden; width:100%; margin:40px 0;}
+
+.pro-list1 li{ float:left;width:31.3%;position:relative; margin:1%;}
+
+.pro-list1 li > div{ padding:10px; border:1px solid #eee; position:relative; height:380px;}
+
+.pro-list1 li h1{font-size:18px; height:40px; line-height:40px; font-weight:normal; margin:15px 0;}
+
+.pro-list1 li img{  overflow:hidden; width:100%;}
+
+.pro-list1 li p{ display:none; color:#fff; text-align:left;  margin-bottom:12px; line-height:24px; overflow:hidden;}
+
+.pro-list1 li .anlibox h3{ font-size:18px; height:auto; line-height:20px; font-weight:normal; margin:20px 0 10px;}
+
+.pro-list1 li .anlibox dl{ overflow:hidden;}
+
+.pro-list1 li .anlibox dl dd{ height:20px; line-height:20px;}
+
+.pro-list1 li .anlibox span{ border:1px solid #eee; height:32px; line-height:32px;border-radius:2px; display:block; width:100px; margin:0 auto; text-transform:capitalize;}
+
+.pro-list1 li .anlibox a:hover{ color:#2c81eb}
+
+.pro-list1 .pro-img{ display:block; width:100%; box-sizing:border-box;}
+
+.pro-list1 li a.a1{ display:block; background:#fff;font-weight:normal;height:100px; line-height:24px;text-align:center; overflow:hidden;border-top:none; padding-bottom:30px; position:absolute; bottom:0; left:10px; right:10px;}
+
+.pro-list1 li:hover a.a1{ background:#96abc7; height:130px; color:#fff;}
+
+.pro-list1 li:hover a.a1 p{ display:block;}
+
+.pro-list1 li:hover a.a1 h3{ text-align:left; margin-bottom:0; color:#fff;}
+
+.pro-list1 li:hover a.a1 span{ background:#364487;  float:left; border:1px solid #364487;}
+
+.pro-list1 li:hover a.a1 .anlibox{ border:none; padding:0 15px;}
+
+.pro-list1 li:hover a.a1 .anlibox dl{ text-align:left;}
+
+.telebox{ overflow:hidden; width:100%; padding:40px 0;}
+
+.telebox .query-lft{ width:30%;}
+
+.telebox .query-rit{ margin-left:35%;}
+
+.telebox .query-rit li{ width:48%;}
+
+.telebox .query-rit li.te{ width:100%;}
+
+.telebox .query-rit li.te img{ border:1px solid #ddd; width:97%;}
+
+/*地图*/ 
+
+#Main{height:800px;margin:60px auto 0px; position:relative; clear:both; overflow:hidden;}
+
+#Main .title{height:50px;color:#000; font-size:26px; text-align:center;font-family:"franklin"; line-height:50px;}
+
+#Main h5{ text-align:center; font-size:13px; font-weight:normal; color:#666;}
+
+#Main #Map{height:550px; margin-top:70px;}
+
+#Main .Search{width:1000px;background:#fff; position:absolute; top:140px;left:0; box-shadow:0px 0px 10px #999;right:0; margin:0 auto; padding:15px;} 
+
+#Main .Search input.txt{width:98%;height:36px; border:0px;float:left; text-indent:10px; border:1px solid #ddd; line-height:36px;}
+
+#Main .Search li{ width:30%; float:left;}
+
+#Main .Search li:last-child{width:10%;}
+
+#Main .Search li span{ display:block; text-transform:capitalize; padding-right:15px; color:#000; font-weight:bold;}
+
+#Main .Search li select{ border:1px solid #ddd; height:36px; line-height:36px; width:98%;}
+
+#Main .Search input.but{width:100%;height:36px; background:#374488; border:0px;float:left; color:#fff;font-size:14px; font-family:"franklin"; margin-top:20px; text-transform:uppercase;}
+
+#Main .Menu{width:110px;height:120px; background:#fff; box-shadow:0px 0px 10px #000;}
+
+#Main .Menu ul li{list-style-type:none; height:30px; font-size:12px; line-height:30px;text-align:Center; border-bottom:1px dotted #ccc;}
+
+#Main .Menu ul li:hover{background:#3397e4;color:#fff;}
+
+#myzone{background: #fff;
+
+    position: absolute;
+
+    top: 250px;
+
+    left:120px;
+
+    box-shadow: 0px 0px 10px #ddd;
+
+    margin: 0 auto;
+
+    padding:15px;
+
+    width: 400px;}
+
+#myzone h3{  font-size:16px; font-weight:normal;margin: 0 0 10px 0;}
+
+.joinbox{ overflow:hidden; margin:20px 0; margin-bottom: 40px;}
+
+.joinbox li{ float:left; width:29%; overflow:hidden;}
+
+.joinbox li span{ display:block; height:36px; line-height:36px; overflow:hidden; font-weight:bold; color:#333; text-transform:capitalize;}
+
+.joinbox li span em{ color:#f00; font-weight:normal;}
+
+.joinbox li select{ border:1px solid #ddd; height:36px; line-height:36px; width:98%; color:#999;}
+
+.joinbox li input{width:98%;height:36px; border:0px;float:left; text-indent:10px; border:1px solid #ddd; line-height:36px; color:#999;}
+
+.joinbox .bot1{width:100px; clear:both; margin:15px auto;}
+
+.joinbox li.te{width:66.6%;}
+
+.joinbox li.te input{width:99%;}
+
+.joinbox li.te1{ width:100%;}
+
+.joinbox li textarea{ border:1px solid #ddd; width:99%; height:80px; line-height:20px; text-indent:14px;color:#666;}
+
+.h1box{ color:#333; height:50px; line-height:50px; text-align:center; font-size:20px; font-weight:normal;font-family:"franklin";width: 100%; margin: 20px 0 0;} 
+
+.gaishu{ overflow:hidden; line-height:30px; text-align:center; padding:10px 0 20px;}
+
+/*分页*/
+
+DIV.black2 { padding:7px; text-align:right; margin:35px 0;}
+
+DIV.black2 A { border:1px solid #e8e8e8; padding:10px 15px; color:#000; text-decoration:none; margin:2px;}
+
+DIV.black2 A:hover { border:1px solid #364487; color:#fff; background-color:#364487;}
+
+DIV.black2 A:active { border:1px solid #364487; color:#fff;background-color:#364487;}
+
+DIV.black2 SPAN.current { border:1px solid #364487; font-weight:bold; padding:10px 15px; margin:2px; color:#fff; background-color:#364487;}
+
+DIV.black2 SPAN.disabled { border:#eee 1px solid; padding:10px 15px; color:#ddd; margin:2px;}
+
+
+
+/*登录*/
+
+#comlogin{ background:#f3f6fd; overflow:hidden; clear:both; background:url(../kailai_images/loginbg.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/kailai_images/loginbg.jpg*/ no-repeat center;}
+
+ #comlogin .container{padding:0;}
+
+.loginrit{ background:#fff; width:100%; float:right; margin:0 !important;}
+
+#comlogin .tab{ overflow: hidden; width:100%; margin:0 auto; border-radius:3px;}
+
+#comlogin .tab li{ height:56px; line-height:56px; width:50%; background:#fbfdfe; color:#333; text-align:center; float:left; font-size:16px;cursor:pointer; border-bottom:1px solid #eee; border-right:1px solid #eee;box-sizing: border-box;}
+
+#comlogin .tab li.curr{ background:#fff; border-bottom:1px solid #fff; font-weight:bold;}
+
+#comlogin .tabcon{ padding:10px 30px 20px;}
+
+.p-box {
+
+    overflow: hidden;
+
+    line-height: 26px;
+
+    text-align: left;
+
+    padding: 10px 0;
+
+    clear: both;
+
+}
+
+.dl-p {
+
+    margin: 10px auto;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    width: 100%;
+
+}
+
+.dl-p.te{ width:50%; float:left;}
+
+.dl-p.te input{ width:99%;}
+
+.dl-p span {
+
+    display: block;
+
+    padding-bottom: 10px;
+
+    font-size: 14px;
+
+}
+
+.dl-p span i{ color:#f00;}
+
+.dl-tex {
+
+    height: 38px;
+
+    line-height: 38px;
+
+    padding: 0 5px;
+
+    width: 100%;
+
+    border: none;
+
+    box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    -webkit-box-sizing: border-box;
+
+    color: #999;
+
+    border: 1px solid #d6d6d6;
+
+    border-radius: 3px;
+
+}
+
+.dl-p input[type="radio"]{ vertical-align:middle; margin:0 5px;}
+
+.dslist{ overflow:hidden; text-align:center; font-size:14px; padding:15px 0 0;}
+
+.dslist h3{ margin:0; text-align:center; font-size:13px; margin:10px 0; background:url(../images/dotedbg.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/dotedbg.png*/ repeat-x; font-weight:normal;}
+
+.dslist h3 span{ display:block; padding:0 10px; background:#fff; height:30px; line-height:30px; width:130px; margin:0 auto}
+
+.dslist a{ display:inline-block; width:60px; text-align:center; overflow:hidden;}
+
+.dslist a img{ width:50px;}
+
+.wjmb{ overflow:hidden; margin-bottom:10px;}
+
+.wjmb a{ margin-bottom:10px;}
+
+.wjmb .bot1{ width:100%;}
+
+.wjmb input[type="checkbox"]{ vertical-align:middle; margin-right:5px;}
+
+.regisbox{ width:990px; margin:0 auto;}
+
+.steps{border-bottom: 2px solid #e9eef5; height:46px; position:relative;}
+
+.steps ol {
+
+    width: 720px;
+
+    margin: 0 auto;
+
+}
+
+.steps ol li {
+
+    display: inline;
+
+    float: left;
+
+    width: 170px;
+
+    padding-left: 70px;
+
+    height: 46px;
+
+    line-height: 46px;
+
+    font-size: 16px;
+
+    color: #999;
+
+}
+
+.steps ol li.active {
+
+    border-bottom: 2px solid #ff7519; color:#3e3e3e;
+
+}
+
+.steps ol li i {
+
+    display: inline-block;
+
+    zoom: 1;
+
+    margin-right: 5px;
+
+    width: 24px;
+
+    height: 24px;
+
+    text-align: center;
+
+    font-style: normal;
+
+    line-height: 24px;
+
+    font-size: 14px;
+
+    font-weight: 700; border-radius:50%; line-height:24px; background:#dbdbdb;
+
+    color: #FFF;}
+
+.steps ol li.active i{ background:#ff7519;}
+
+.regisbox .form-list{ padding:30px 0; width:720px; margin:0 auto; font-family:"微软雅黑";}
+
+.regisbox .form-list h3{ font-size:13px; font-weight:normal; color:#666; height:50px; line-height:50px;}
+
+.regisbox .form-list h3 b{ color:#333; font-size:16px;width:160px; padding-right:15px; text-align:right; display:inline-block;}
+
+.regisbox .form-list .dl-p span{ float:left; display:inline-block; width:160px; text-align:right; padding-right:15px; height: 38px;line-height: 38px;padding-bottom: 0;}
+
+.regisbox .form-list .dl-p i{ font-style:normal;}
+
+.regisbox .form-list .dl-p .dl-tex{ width:360px; float:left;}
+
+.regisbox .form-list .dl-p select{ border:1px solid #d6d6d6; height:38px; line-height:38px;font-family:"微软雅黑"; width:114px; border-radius:3px;}
+
+.regisbox .form-list .dl-p textarea{ border:1px solid #d6d6d6; width:360px; border-radius:3px;margin-left: 174px; margin-top:15px;}
+
+.regisbox .wjmb{ padding-left:175px;}
+
+.regisbox .wjmb label{ float:none; display:inline-block; font-weight:normal; padding-left:5px;}
+
+.regisbox .wjmb .bot1{ width:150px;}
+
+.successbox{ width:500px; background:#e9f9e9; padding:20px 50px; margin:0 auto;}
+
+.successbox i{ font-size:32px; color:#39a440; display:inline-block; float:left; width:50px; height:50px; line-height:50px;}
+
+.successbox h1{ font-size:16px; font-weight:bold; color:#333; margin:10px 0;}
+
+/*产品详情*/
+
+.right-extra{ clear:both;}
+
+.promid{ width:452px; overflow:hidden;margin-top: 15px;}
+
+.right-extra .mt{height:28px;line-height:28px;padding:0 10px 8px;border-top:1px solid #EED97C;color:#c00;}
+
+.right-extra .tab{border-bottom:1px solid #ddd;margin:10px 0;}
+
+.right-extra .tab li{position:relative;height:29px;background:url(../images/pro_detail_btn.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/pro_detail_btn.jpg*/ no-repeat;overflow:hidden;line-height:29px;font-size:14px; width:124px; cursor:pointer; color:#888; font-weight:bold; margin-right:2px;}
+
+.right-extra .tab span{position:absolute;left:0;top:0;z-index:1;width:10px;height:27px;background:url(../images/icon_clubs.gif)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/icon_clubs.gif*/ no-repeat 0 -150px;}
+
+.right-extra .tab a{float:none;color:#c30;}
+
+.right-extra .tab .curr{ color:#333;}
+
+
+
+/*评论列表*/
+
+
+
+/*图片放大镜样式*/
+
+.jqzoom{float:left;border:none;position:relative;padding:0px;cursor:pointer;margin:0px;display:block;}
+
+.jqzoom img{ width:400px; height:400px;}
+
+.zoomdiv{z-index:100;position:absolute;top:0px;left:0px;width:400px;height:338px;background:#ffffff;border:1px solid #CCCCCC;display:none;text-align:center;overflow:hidden;}
+
+.zoomdiv img{ width:auto!important; max-width:inherit!important;}
+
+.jqZoomPup{z-index:10;visibility:hidden;position:absolute;top:0px;left:0px;width:20px;height:20px;border:1px solid #aaa;background:#ffffff /*url(../images/zoom.png) 50% center no-repeat*/;opacity: 0.5;-moz-opacity: 0.5;-khtml-opacity: 0.5;filter: alpha(Opacity=50);}
+
+
+
+/*图片小图预览列表*/ 
+
+.spec-preview{width:400px;height:400px;border:1px solid #DFDFDF;}
+
+.spec-scroll{clear:both;margin-top:5px;width:400px;}
+
+.spec-scroll .prev{float:left;margin-right:4px; background:url(../images/pre-no.gif)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/pre-no.gif*/ no-repeat;}
+
+.spec-scroll .next{float:right; background:url(../images/next-no.gif)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/next-no.gif*/ no-repeat;}
+
+.spec-scroll .prev,.spec-scroll .next{display:block;width:24px;height:38px; cursor:pointer; margin-top:8px;}
+
+.spec-scroll .items{float:left;position:relative;width:380px;height:56px;overflow:hidden;}
+
+.spec-scroll .items ul{position:absolute;width:999999px;height:56px;}
+
+.spec-scroll .items ul li{float:left;width:64px;text-align:center;}
+
+.spec-scroll .items ul li img{border:1px solid #CCC;padding:2px;width:50px;height:50px;}
+
+.spec-scroll .items ul li img:hover{border:2px solid #FF6600;padding:1px;}
+
+.prodetial{ overflow:hidden; margin-left:450px; margin-top:35px;}
+
+.prodetial h3{ font-size:16px; line-height:20px; padding-bottom:10px;}
+
+.prodetial .review{position:relative; top:0; left:0;}
+
+.prodetial li{ overflow:hidden;}
+
+.prodetial li h1{ line-height:20px; font-size:14px;}
+
+.prodetial li dl{ overflow:hidden;}
+
+.prodetial li dl dd { color:#333;}
+
+.prodetial li dl dd span{  float:left; display:inline-block; color:#888; padding-right:10px}
+
+.dllist{ overflow:hidden;border-bottom:1px solid #eee; border-top:1px solid #eee; margin-bottom:10px; background:#f9f9f9;}
+
+.dllist dd{ float:left; width:50%; overflow:hidden; height:40px; line-height:40px; color:#333; }
+
+.dllist dd span{ width:80px; display:block; text-align:right; float:left; padding-right:8px; color:#666;}
+
+.price-box{ overflow:hidden; margin:25px 0;}
+
+.price-box span.label{ font-size:13px; margin-right:10px; color:#333; font-weight:bold;}
+
+.price-box span.price {color: #f30;}
+
+.special-price{ display:inline-block; font-size:18px;}
+
+.old-price{ display:inline-block;padding: 0 8px;font-size: 15px;font-weight: normal;color: #999;text-decoration: line-through;}
+
+.old-price span.price{ color:#999;}
+
+.add-to-cart .qty-wrapper {line-height: 28px; overflow:hidden;}
+
+.add-to-cart .qty-wrapper label {float: left;height: 36px;line-height: 36px;padding-right: 8px;font-weight: bold;color:#333;}
+
+.add, .un {height: 34px; line-height: 34px;background: #f5f5f5;border: 1px solid #ddd;padding: 0 15px;text-align: center;display: inline-block;float: left;font-size: 16px; cursor: pointer;}
+
+.add-to-cart .qty-wrapper .qty { text-align: center; float: left;border-right: none;border-left: none;width: 4.0rem!important;height: 36px;line-height: 36px;border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;}
+
+.addcart-buttons{ overflow:hidden; clear:both; margin:25px 0;}
+
+.addcart-buttons button,.addcart-buttons a{ float:left; width:44%; display:inline-block; margin:0 3%; font-family:"Arial"; height:42px; line-height:42px; padding:0;}
+
+.addcart-buttons button i,.addcart-buttons a i{ margin-right:10px;}
+
+.pro-conbox{ background:#f3f6fd; overflow:hidden; clear:both; margin-top:60px;}
+
+.wishbox{ overflow:hidden;}
+
+.wishbox a{ font-size:16px; text-transform:capitalize; display:inline-block; margin:0 3%; width:44%; text-align:center; height:40px; line-height:40px; border-radius:3px;float:left;}
+
+.wishbox a.newpaypal{ background:#ffc438; text-align:center;}
+
+.wishbox a.newpaypal img{ height:100%;}
+
+.wishbox a i{ font-size:20px;  margin-right:10px;}
+
+.sharebox{ text-align:center;}
+
+.sharebox img{ width:140px; margin-top:15px;}
+
+.Business-info{ width:240px; overflow:hidden; border:1px solid #cbdfef; background:#f7fcff; margin-top:20px;}
+
+.Business-info .pagetit{ height:46px; line-height:46px; text-align:center; font-size:17px; text-transform:capitalize; font-family:"franklin"; color:#397bb1; background:#e9f6fd;}
+
+.Business-info ul{ padding:10px; background:#fff; margin:0 5px 5px;}
+
+.Business-info ul li{ padding:10px 0; font-size:12px; color:#222;}
+
+.Business-info ul li span{ color:#f60; text-align:right;}
+
+.Business-info ul li.li-first{ border-bottom:1px solid #eee; font-size:12px;}
+
+.Business-info ul li.li-first img{ position:relative; top:3px; margin-right:5px;}
+
+.Business-info ul li.li-first span{ display:block;}
+
+.Business-info ul li.li-two{ color:#666;}
+
+.Business-info ul li.li-two i{ font-style:normal; color:#999; padding-right:5px;}
+
+.Business-info ul li.li-three a{ display:inline-block; border-radius:3px; width:45%; margin:0 2%; text-align:center; text-transform:capitalize; border:1px solid #b6d1e6; height:26px; line-height:26px; color:#397bb1}
+
+.Business-info ul li.li-three a:first-child{ border:1px solid #ffc3a8; color:#f30;}
+
+.Business-info ul li.li-three a i{ font-size:14px;position: relative;top: 1px;margin-right: 4px;}
+
+.prodetial-lft{overflow:hidden;}
+
+#pro-detail{ overflow:hidden;}
+
+#pro-detail .tab{margin-top:40px; border-left:1px solid #ddd; border-bottom:3px solid #e4e8fb; height:47px; line-height:47px; margin-bottom:0;}
+
+#pro-detail .tab li{float: left;height:46px;line-height:46px;padding: 0 15px;text-align: center; margin: 0; background:#fff; border-width:1px 1px 2px 0; border-style:solid; border-color:#ddd #ddd #e4e8fb #ddd; font-size:17px; font-weight:normal; color:#000; text-transform:capitalize;font-family: franklin; font-weight:normal; letter-spacing:1px;}
+
+#pro-detail .tab li.curr{background:#364487; color:#fff; border-color:#364487;}
+
+#pro-detail .tabcon{ background:#fff; padding:0 40px 40px;}
+
+#pro-detail .tabcon .tit1{ margin:0 auto; padding:30px 0;}
+
+.prodtbg{ overflow:hidden; background:#fff; margin:20px 0;}
+
+/*产品评论*/
+
+.pinglun {margin: 20px 0;}
+
+.plunbox{ margin-bottom:25px;}
+
+.pinglun .reviewlist{ background:#fff; padding:0 30px;}
+
+.pblft{overflow: hidden;margin: 35px auto; padding: 0 30px 20px;border-bottom: 1px solid #efefef;}
+
+
+
+.starlist li {height: auto;}
+
+.ld-customer h3 {font-family: "Arial";font-size: 12px;font-weight: normal; text-transform:capitalize;}
+
+.starlist li h3 {font-size:18px!important;font-weight: normal; height:26px;line-height:26px; float:left; margin:0;}
+
+.starlist li .review{ float:left; width:100px; margin:0 15px; position:relative; top:5px; left:5px; padding:0;}
+
+.starlist li i b {background:url(../images/starsy.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/starsy.png*/ repeat-x;display: inline-block;width:85px;height: 16px;}
+
+.starlist li p {display: block; float:left; margin:0; font-size:18px; height:28px; line-height:28px;}
+
+.pbmid { overflow: hidden; width:50%; padding:0 5%;}
+
+.pbmid  p{margin: 35px 20px 0; float:left; font-size:18px;}
+
+.pbmid li {
+
+    margin-bottom: 2px;
+
+    height: 26px; overflow:hidden;
+
+}
+
+.pbmid li b{ float:left; width:80px; font-weight:normal;}
+
+.pbmid li .rating-box{ float:left;}
+
+.scroll-box {
+
+    float: left;
+
+    overflow: hidden;
+
+    height:6px;
+
+    width:98px;
+
+    margin-right: 4px; background:#eee;
+
+    position: relative;
+
+    margin:9px 12px;
+
+}
+
+.scroll-rating {
+
+    float: left;
+
+    max-width:98px;
+
+    height:6px;
+
+    background:#333;
+
+    position: absolute;
+
+    left: 1px;
+
+    top: 1px;
+
+}
+
+.rating-percent {
+
+    float: left;
+
+    height: 20px;
+
+    line-height: 20px;
+
+}
+
+.pbrit button {
+
+    height: 40px;
+
+    border-radius: 3px;
+
+    line-height: 40px;
+
+    padding: 0 30px;
+
+    margin: 5px 0;
+
+    color: #fff;
+
+    border: none;
+
+}
+
+
+
+.form-add {
+
+    padding:30px 70px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+}
+
+.form-add .fieldset .form-list{ padding:0;margin: 0 0 20px;}
+
+.form-add .fieldset .form-list li{ width:100%;}
+
+.form-add .fieldset .form-list h4{ text-align:center;line-height:60px; border-bottom:1px solid #ddd; margin:0 0 40px;}
+
+.form-add .fieldset .buttons-set{ text-align:center;}
+
+.starbox{ overflow:hidden; float:left;text-transform: capitalize;}
+
+.starbox .block {width:300px;padding-top: 10px;line-height: 18px; font-size: 10px; float:left;padding-left: 10px;}
+
+.starbox .block b {
+
+    padding-right: 10px;
+
+    font-size: 13px;
+
+    color: #333;
+
+    display: inline-block;
+
+}
+
+/*.star_score {width:100px; height:16px;  position:relative; float:left; margin-right:10px;}
+
+.star_score a{ height:16px; display:block; text-indent:-999em; position:relative;left:0; margin:0 2px; float:left;width:17px!important;}
+
+.star_score a{ background:url(../images/starky.png);}
+
+.star_score a.clibg{ background:url(../images/starsy.png);}*/
+
+/*相关产品*/
+
+.multipleColumn{ overflow:hidden; position:relative; width:96%; margin:30px auto;}
+
+.multipleColumn .hd{ overflow:hidden;}
+
+.multipleColumn .hd .prev,.multipleColumn .hd .next{ display:block;  width:30px; height:30px;  overflow:hidden; cursor:pointer; background:url(../images/icobot.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/icobot.jpg*/ no-repeat 0 0; position:absolute; top:140px; z-index:999;}
+
+.multipleColumn .hd .prev {left:0; }
+
+.multipleColumn .hd .prev:hover{background:url(../images/icobot.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/icobot.jpg*/ no-repeat 0 -30px;}
+
+.multipleColumn .hd .next{ background:url(../images/icobot.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/icobot.jpg*/ no-repeat 0 -60px; right:0;  }
+
+.multipleColumn .hd .next:hover{ background:url(../images/icobot.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/icobot.jpg*/ no-repeat 0 -90px;  }
+
+.multipleColumn .bd{overflow:hidden; box-sizing:border-box;
+
+-moz-box-sizing:border-box;
+
+-webkit-box-sizing:border-box;  }
+
+.multipleColumn .bd ul{ overflow:hidden; zoom:1; width:25%;  float:left; _display:inline;}
+
+.multipleColumn .bd ul li{_display:inline; overflow:hidden; text-align:center; padding:10px;    }
+
+.multipleColumn .bd ul li .pic{ text-align:center;border:1px solid #eee; }
+
+.multipleColumn .bd ul li .pic img{ width:100%;}
+
+.multipleColumn .bd ul li .pic a:hover img{}
+
+.multipleColumn .bd ul li .title{ line-height:24px;   }
+
+.multipleColumn .bd ul li .title h3{ font-size:14px; color:#333; text-transform:capitalize; font-weight:normal; text-align:center; height:36px; line-height:18px; padding-top:10px; overflow:hidden;}
+
+.multipleColumn .bd ul li .title h3 a{ color:#111;}
+
+.multipleColumn .bd ul li .title h3 a:hover{ text-decoration:underline;}
+
+.multipleColumn .bd ul li .title h4{ color:#a841b0; font-size:15px;font-weight:normal;text-align:center;height:22px; line-height:22px; font-weight:normal; padding-bottom:10px;}
+
+
+
+.cslist{ overflow:hidden;  margin:0 auto; background:#fff; border:1px solid #eee;}
+
+.cslist li{ overflow:hidden; font-size:14px; margin:2px; line-height:24px;}
+
+.cslist li span{ display:inline-block; width:185px; color:#333; padding:10px 0; background:#eee; text-align:center; margin-right:10px; text-transform:capitalize; font-size:13px; font-weight:bold;}
+
+.cslist li img{display:inline-block; margin-right:5px;vertical-align: middle;}
+
+.pro-conbox .form-list{ overflow:hidden; background:#fff; padding:40px 70px;}
+
+.pro-conbox .form-list h4{ text-align:left; padding-left:10px;}
+
+.pro-conbox .form-list p{ text-transform:capitalize; padding:10px;}
+
+.pro-conbox .form-list li{ width:33%; float:left; margin:0!important;}
+
+.pro-conbox .form-list li:last-child{width:100%; margin:25px 0 0!important;}
+
+.pro-conbox .form-list li input{ width:96%!important;}
+
+.pro-conbox .form-list li.te{ overflow:hidden; clear:both; width:99%;}
+
+.ctg-search{ background:#f3f6fd; overflow:hidden; clear:both; padding-bottom:20px;}
+
+.ctg-search .a-drop{ padding:0 0 20px;}
+
+
+
+/*企业库*/
+
+.suppbox{ overflow:hidden; width:100%; padding:30px 0;background: #f0f0f0;}
+
+.suplft{ overflow:hidden; background:#fff; margin-right:310px;}
+
+.suprit{ overflow:hidden; background:#fff; width:285px; float:right;}
+
+.sup-recommend{ overflow:hidden; padding:10px 20px 20px; border-bottom:15px solid #f0f0f0;}
+
+.sup-recommend h3{ text-align:left; margin:0;}
+
+.sup-recommend h3.h1box a{ font-size:12px; font-weight:normal; font-family:"Arial"; color:#778be8;}
+
+.sup-recommend h3.h1box a:hover{ text-decoration:underline;}
+
+.suplist{ overflow:hidden; margin:15px 0;}
+
+.suplist li{ float:left;  margin:0 1%; width:23%;}
+
+.suplist li > div{border:1px solid #eee; padding:5px;}
+
+.suplist li h3{ height:40px; line-height:20px; font-size:12px; overflow:hidden; margin:10px 0; text-align:center; text-transform:capitalize;}
+
+.subspan{ width:130px; color:#f60; float:right; text-align:center;}
+
+.subimg{ border:1px solid #ddd; margin-right:10px; width:80px; height:80px;}
+
+.all-subs{ padding:0 20px;}
+
+.all-subs li{ margin:20px 0 0; overflow:hidden;}
+
+.all-subs li a:hover h3{ color:#000;}
+
+.all-subs li a:hover span{ color:#333;text-decoration:underline;}
+
+.all-subs,.subrit{ overflow:hidden;}
+
+.subrit img{ width:80px; height:80px; border:1px solid #ddd; float:left; margin-right:15px;}
+
+.subrit h3{ font-size:12px;}
+
+.subtex{ overflow:hidden;}
+
+.subtex p{ margin-top:5px; overflow:hidden;}
+
+.subtex img{width: auto;height: auto;border: none; margin-right:5px; margin-top:3px; color:#666;}
+
+.supmidbox{ overflow:hidden;}
+
+.supmidbox .joinbox{  margin:0 20px;}
+
+.but-set{ text-align:center; clear:both; overflow:hidden;}
+
+.but-set button{ display:inline-block; margin:20px 10px 0; text-transform:capitalize; font-size:16px;}
+
+.supmidbox .joinbox li span{ font-size:12px;}
+
+#publish{ overflow:hidden; background:#fff;}
+
+#publish .tab{ overflow:hidden; height:40px; line-height:40px; background:#f9f9f9; color:#333;}
+
+#publish .tab li{ width:50%; float:left; text-align:center; cursor:pointer; font-size:16px; font-family:"franklin"}
+
+#publish .tab li.curr{ background:#fff;}
+
+.buybox{ overflow:hidden; padding:25px 15px;}
+
+.buybox a{ display:inline-block; border-radius:2px; height:30px; line-height:30px; margin:0 10px; width:40%; text-align:center; border:1px solid #438df3; font-size:14px; text-transform:capitalize; color:#438df3;}
+
+.buybox a.log{ background:#438df3; color:#fff;}
+
+.buycon{ text-align:center; color:#333; margin-bottom:15px; display:block;}
+
+.buycon i{    color: #000;
+
+    font-size: 22px;
+
+    position: relative;
+
+    top: 3px;
+
+    right: 10px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 3px;}
+
+.s-items{ padding:0 25px 15px; overflow:hidden;}
+
+.s-items li{ float:left; width:50%; font-size:12px; height:24px; line-height:24px;}
+
+.s-items li.vip a{ color:#f60;}
+
+.search-area{ overflow:hidden; padding:0 20px; border-top:15px solid #f0f0f0;}
+
+.search-area h4{ font-size:16px; color:#333; font-weight:normal; text-transform:capitalize; padding:15px 0;font-family:"franklin"}
+
+.areabox{ margin:5px 0; overflow:hidden; padding-bottom:15px;}
+
+.areabox a{ font-size:12px; width:50%; display:inline-block; height:26px; line-height:26px; float:left; color:#666;}
+
+.areabox a:hover{ color:#000; text-decoration:underline;}
+
+.ad-box{overflow:hidden; border-top:15px solid #f0f0f0;}
+
+/*刘丹利会员中心*/ 
+
+.block { display: block;}
+
+.yhbox{ margin:0 auto; overflow:hidden; background:#f6f6f6; clear:both;}
+
+.yhlft{  width:222px; background: #fff;}
+
+.yhMenu{background: #fff; padding:8px 0 30px;}
+
+.yhMenu h1{ height:60px; line-height:60px; font-size:20px; text-align:center; color:#333; font-family:"franklin"; font-weight:normal;}
+
+.yhMenu h3{ height:50px; line-height:50px;cursor:pointer; font-size: 14px; font-weight: normal; overflow:hidden; clear:both; color:#666;  position:relative; border-bottom:1px solid #eee;}
+
+.yhMenu h3 em{ display:block; width:52px; height:22px; float:left; position:relative; top:16px; margin-right:5px; text-align:center; border-left:3px solid #fff;}
+
+.yhMenu h3 em img{ width:18px; margin:0 auto; display:block;}
+
+.yhMenu h3 em .iconc{ display:none;}
+
+.yhMenu h3.on em{border-left:3px solid #0099f9;}
+
+.yhMenu h3.on em .iconc{ display:block;}
+
+.yhMenu h3.on em .iconh{ display:none;}
+
+.yhMenu h3.on a{ color:#0099f9;text-decoration:underline;}
+
+.yhMenu h3 a:hover{ color:#0099f9; text-decoration:underline;}
+
+.yhMenu h6{ height:2px; background:#eee;}
+
+.yhMenu ul{color:#999; display:none; width: 150px; margin: 0 auto; }
+
+.yhMenu ul li{ height: 38px; line-height: 38px; padding-left:60px;}
+
+.yhMenu ul li a{ color: #545252; font-size: 14px;}
+
+.yhMenu ul li a:hover{ color:#28BF03; text-decoration:underline;}
+
+.ksrk{ overflow:hidden; background:#fff; border:1px solid #fff;}
+
+.ksrk dt{ height:60px; line-height:60px; font-size:18px; text-align:center; color:#595757;}
+
+.ksrk dd{ height:50px; line-height:50px; cursor:pointer;font-size: 14px; font-weight: normal; text-align:left; overflow:hidden; clear:both; padding-left:28px; color:#666;}
+
+.ksrk span{ display:inline-block; width:28px; height: 28px; overflow: hidden; float: left; margin-top: 12px; margin-right: 6px;}
+
+.ksrk span img{ width:25px;}
+
+.yhrit{margin: 20px 0 50px 250px; padding:35px; background:#fff;}
+
+.yhrittop{ margin: 20px 0 10px 250px; background:#fff; overflow:hidden;}
+
+.yhrittop li{ width:33.3333333%; float:left; text-align:center; height:100px; line-height:40px; background:#fff; color:#666; padding-top:20px;}
+
+.yhrittop li b{ display:block; font-size:26px; font-weight:normal; color:#000;}
+
+.yh-tit{ overflow:hidden; line-height:26px; padding:20px 0 20px; text-align:center;}
+
+.h2box{ height: 30px; line-height: 30px; font-size:17px; color:#333; margin-top:20px; font-weight:normal; text-transform:capitalize; font-family:"franklin"}
+
+.accountbox{-webkit-box-shadow:1px 3px 4px 0px #E6E6E6;  -moz-box-shadow:1px 3px 4px 0px #E6E6E6;   box-shadow:1px 3px 4px 0px #E6E6E6; border:1px solid #e6eaf3; background:#fbfcff; overflow:hidden; padding:15px;}
+
+.accountbox .clear{ height:1px; background:#fff; width:100%;}
+
+.account{ overflow:hidden; margin:15px 0; width:45%;}
+
+.head-rit{ overflow:hidden;  padding-top:5px;}
+
+.dzlist{overflow:hidden;width:445px; margin:15px 0; padding:15px; -webkit-box-shadow:1px 3px 4px 0px #E6E6E6;  -moz-box-shadow:1px 3px 4px 0px #E6E6E6;   box-shadow:1px 3px 4px 0px #E6E6E6; border:1px solid #EFDFF1; background:#F6EDF7;}
+
+.dzlist address{ font-style:normal; padding:8px 0; color:#666; line-height:26px;}
+
+.dz-rit{ height:26px; line-height:26px; text-align:right;}
+
+.dz-rit i{ display:inline-block; padding:0 15px; color:#ddd; height:16px; overflow:hidden; width:1px;}
+
+.dzlist h3,.head-rit h3{ font-size:17px; font-weight:normal; color:#333; font-family:"franklin"}
+
+.head-rit h3 a{ font-family:"Arial"; font-size:13px;}
+
+.rzbox{margin-top:10px; line-height:28px;}
+
+.rzbox img{ float:left; width:87px; height:24px; margin-right:14px;}
+
+.rzbox a{ color:#e25d4a; font-size:12px;}
+
+.rzbox a:hover{ text-decoration:underline;}
+
+.account1{ overflow:hidden; width:45%; margin:15px 10px;}
+
+
+
+i.isbox{ overflow:hidden; font-size:8px; margin:0 10px; display:inline-block; width:1px; height:12px; background:#D4CFCF;}
+
+.bj{ display:inline-block;  height:26px; line-height:26px;}
+
+.delet{ display:inline-block; /*background:url(../images/delet.png) no-repeat left center;*/  height:26px; line-height:26px;}
+
+.delet1{ display:inline-block; height:30px; background:#6BB0DE no-repeat; color:#fff; font-size:16px; padding:0 15px; border-radius:3px; line-height:30px;}
+
+.delet1:hover{ color:#fff; text-decoration:underline;}
+
+.hf{ display:inline-block; height:26px; line-height:26px; color:#f30;}
+
+.yhtit{ height: 30px; line-height: 30px; border-bottom: 1px solid #f4f4f4;}
+
+.yhtit h3{ border-bottom: 1px solid #f00; font-size: 18px; font-weight: normal; float: left; font-size:20px;}
+
+.tzlist{ overflow:hidden;  border:1px solid #f4f4f4; border-top: none; padding:10px 25px 30px; }
+
+.tzlist li{ background:url(../images/hybox_79.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/hybox_79.jpg*/ no-repeat left center; padding-left: 15px; border-bottom: 1px dotted #DEDBDB; height: 40px; line-height: 40px;}
+
+.tzlist li a{ color: #3a3939; font-size:13px;}
+
+.tzlist li span{ float: right; color: #999;}
+
+/*table*/
+
+.tabbox1{ width:100%;border-collapse:collapse; background:#fff;border:1px solid #dedede; margin: 20px 0;}
+
+.tabbox1 th{border:1px solid #dedede; border-collapse:collapse; line-height:30px; padding:8px;background:#f1f1f1;  font-size: 15px;}
+
+.tabbox1 tr{border-bottom:1px solid #dedede; border-collapse:collapse;line-height:30px;background:#fff;}
+
+.tabbox1 td{ border-collapse:collapse;line-height:30px; padding:8px 5px; background:#fff;}
+
+.tabbox1 td select{ height:28px; line-height:28px; border:1px solid #d6d4d4; background:#fbfbfb; _width:auto; _display:inline-block; width:200px;}
+
+table.tabbox1 tr:hover{ background-color: #f8f8f8;   cursor:hand;  }
+
+table.tabbox1 tr:hover td{background:none;}
+
+.tabbox{ width:100%; border-style:solid;border-width:1px; border-color:#e8e8e8;border-collapse:collapse;margin:15px 0; background:#fff;}
+
+.tabbox th{ background:url(../images/yht_20.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/yht_20.jpg*/ repeat-x bottom #fff; height:46px;line-height:46px; font-size:14px; border-bottom: 1px solid #e8e8e8; color:#575757}
+
+.tabbox td{ padding:10px;border-style:solid;border-width:0 0 1px 0; border-color:#fff #fff #e8e8e8 #fff; line-height:28px; text-align:center; font-size:13px; color:#666;}
+
+.tabbox td .proimg{ width:100px; margin-right:10px;}
+
+.tabbox td .proimg img{ width:100px;}
+
+.protex{ text-align:left; width:280px;}
+
+.protex p{ line-height:24px; margin:8px 0;}
+
+.protex p span{ padding-right:8px; color:#999;}
+
+.tabbox td i{ font-size:10px; color:#ccc; margin:0 5px;}
+
+.yase{ display:inline-block; border:1px solid #dedede; background-color:#f2f2f2; width:30px; text-align:center; font-size:15px; color:#333; font-weight:700;height:30px; line-height:30px;}
+
+.intex{ display:inline-block; border:none; border-top:1px solid #dedede; border-bottom:1px solid #dedede; background-color:#fff; width:60px;height:32px; line-height:32px; text-align:center;}
+
+.yase:hover{ border:1px solid #ddd;}
+
+.trbg{ background:#FBE9EA; border-left:5px solid #ff7f7e; padding-left:1px;}
+
+.tabbox tr:hover{ background:#FBE9EA;}
+
+.cai{padding:8px 35px; background:#e25d4a; border-radius:3px;font-size:15px; text-align:center; color:#fff;display:inline-block;  border:none;}
+
+.hui{padding:8px 35px; background:#D6D8DA; border-radius:3px; font-size:15px;text-align:center; color:#333;  display:inline-block;border:none;}
+
+.cai:hover,.hui:hover{ color: #fff;}
+
+.het-x{ height:12px; display:inline-block; color:#ddd; width:1px;}
+
+.tshi{ border:1px solid #FBE9D6; background:#FBF7F3; padding:8px; color:#777; font-size:12px; margin:20px 0; line-height:24px;}
+
+.tshi span{ display:block; width:14px; height:20px; float:left; margin-right:8px;}
+
+.tshi dt{ height:30px; line-height:30px; font-size:16px; color:#f90}
+
+.tshi dd{ height:32px; line-height:32px; font-size:14px;}
+
+.ts-img{ background:url(../images/bulb.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/bulb.png*/ no-repeat;}
+
+.cont{ padding:20px 0; overflow:hidden;}
+
+.p-box1{line-height:32px; margin:30px 0 0; width:100%; overflow:hidden; clear:both}
+
+.p-box1 input[type="text"]{ width:96%;}
+
+.p-box1 input[type="checkbox"]{ margin-right:5px; vertical-align:middle;}
+
+.p-box1 b{display:block; padding-left:20px; margin-bottom: 8px; font-size: 14px;}
+
+.p-box2{ line-height:32px; margin:20px 0; overflow: hidden; }
+
+.p-box2 span i,.p-box1 span i{ height:32px; color:#F00; text-align:center;}
+
+.p-box2 span,.p-box1 span{ height:32px; line-height:32px; display:block; font-size:15px; color:#888; }
+
+.p-box2 i,.p-box1 i{ color:#f00;}
+
+.slct {border: 1px solid #E4E1E1;height: 34px; line-height: 34px;padding: 0 5px; color:#888; width:320px;}
+
+.p1tex{ border:1px solid #E4E1E1; border-radius:3px; height:34px; line-height:34px; width:300px; padding:0 5px; margin-right: 15px;float:left; color:#ccc;}
+
+.p1tex.Wdate{ padding:0 8px;}
+
+.zmt{ height:37px; width:116px; display:block; overflow:hidden; float:left; margin-right:15px;}
+
+.zmt img{ width:116px; height:37px;}
+
+.xmeit{ overflow:hidden; display:block;float:left;}
+
+.xmeit img{ width:154px; height:37px;}
+
+.tx-ar {border: 1px solid #d1d1d1;padding: 8px; overflow: hidden;line-height: 26px; font-family: "微软雅黑"; height: 70px; width:940px; margin-left: 20px;}
+
+.scbot{ background:url(../images/add_img.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/add_img.png*/ no-repeat center; width:120px; height:100px; overflow:hidden; display:block; margin:0 10px; border:1px dashed #D8D5D5;}
+
+.fmt-list{ overflow:hidden; clear:both;}
+
+.fmt-list li{ background:#f0f0f0; height:60px; padding:20px;}
+
+.fmt-list li a{ display:block; float:right; background:url(../images/close.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/close.png*/ no-repeat; width:23px; height:23px;}
+
+.fmt-list li img{ width:60px; height:60px;}
+
+.p-box1 span.bz{ overflow:hidden; padding:40px 10px; display:inline-block; float:left; font-size:13px; position:absolute; top:0px; left:260px; width:auto;}
+
+.sxtj{ overflow:hidden; padding:15px 0;}
+
+.sxtj a{ margin-right:15px; display:inline-block; font-size:13px; padding:0 14px; height:24px; line-height:24px; background:#f0f0f0; color:#888;}
+
+.sxtj a.on{ background:#e45384; color:#fff;}
+
+.sj{ display:inline-block; color:#888; padding-left:20px; font-size:13px; color:#888;}
+
+.sj input{ padding:5px; border:1px solid #e9e9e9; color:#999;}
+
+
+
+.fmlist{ overflow:hidden;}
+
+.fmlist li{ float:left; width:240px; height:160px; overflow:hidden; position:relative; border:1px solid #eee;}
+
+.fmlist li img{ width:240px; height:160px; position:absolute;}
+
+.fmlist li h3{height:30px; line-height:30px; z-index:99;-moz-opacity: 0.5; opacity: 0.5; /* FF 3.5及以上 */ filter: alpha(opacity=50); /* IE6及以上 */ background: #000; position:absolute; width:240px; bottom:0; padding:0 10px;} 
+
+.fmlist li h3 a{ color:#fff; font-weight:normal;}
+
+.zflist{ overflow:hidden; padding-top:15px;}
+
+.zflist dd{ float:left; display:block; margin-right:20px;}
+
+.zflist dd img{ width:100px; height:100px; overflow:hidden; display:inline-block;}
+
+.zflist dd p{ padding-top:8px;}
+
+.zflist dd p input{ height:26px; line-height:26px; text-align:center; width:18px; display:block; margin:0 auto;}
+
+.mid{ overflow:hidden; line-height:26px; padding:20px 0;}
+
+/*订单*/
+
+.ddlist{ overflow:hidden; background:#fff; padding:10px 15px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; width:100%; border-bottom:1px solid #eaeaea;}
+
+.ddlist dt{ height:40px; line-height:40px; border-bottom:1px solid #f8f8f8;}
+
+.ddlist dt span{float:right;}
+
+.ddlist dt b{ font-weight:normal; color:#777;}
+
+.ddlist dt em{ padding-left:10px; color:#999; font-style:normal;}
+
+.ddlist dd{ padding:10px 0 0; overflow:hidden; position:relative;}
+
+.ddlist dd .d-img{ border:1px solid #eee; padding:4px; width:20%; max-width:200px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+
+.ddlist dd .d-img img{ width:100%;}
+
+.ddlist dd .d-tex{ width:80%; padding-left:10px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+
+.ddlist dd .d-tex h3{ line-height:20px; color:#555; font-size:13px; margin:0; font-weight:normal;}
+
+.ddlist dd .d-tex h4{ line-height:20px; font-size:12px; color:#999; margin:0;}
+
+.ddlist dd .d-tex p{ height:24px; line-height:24px;}
+
+.ddlist dd .d-tex span{ font-size:1.0rem; color:#999; padding-right:5px; line-height:18px; display:block;}
+
+.ddlist dd .d-zt{ width:100%; height:40px; line-height:40px; text-align:left; margin-top:8px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; }
+
+.ddlist dd .d-zt p{ height:40px; overflow:hidden; clear:both; line-height:40px;}
+
+.ddlist dd .d-zt span{ display:inline-block; font-size:1.6rem; line-height:40px; color:#F00; width:48%;}
+
+a.delet{ display:inline-block; overflow:hidden;height:40px; line-height:40px; background:url(../images/delet_03.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/delet_03.png*/ no-repeat left center; background-size:18px; color:#888; padding-left:25px; position:absolute; right:0;}
+
+.ddlist dt.dtbox{ border:none; position:relative;}
+
+.ddlist dt.dtbox a.delet{ right:130px;}
+
+.total{ overflow:hidden; clear:both; padding:0 0 10px; text-align:right;}
+
+.total span{ padding-left:8px;}
+
+/*帮助中心*/
+
+.hpbg{ padding:0 0 30px; border-top:2px solid #eee; clear:both;}
+
+.hpbox{ width:1000px; margin:0 auto; overflow:hidden;}
+
+.hplft{ width:245px; overflow:hidden;}
+
+.hph3{ height:40px; line-height:40px; font-size:17px;color:#444; margin:1px 0; position:relative;cursor:pointer; text-align:center; text-transform:uppercase; font-family:"baskerville_old_faceregular"}
+
+.hph3 span{ display:block; height:2px; background:#eee; width:50%; margin:0 auto}
+
+.hph3 span i{ width:30%; background:#10939b; display:block; height:2px;}
+
+.hph4{ height:60px; line-height:60px; font-size:16px;color:#444;  cursor:pointer; font-weight:normal; text-transform:uppercase; margin:15px 0 5px;font-family:"franklin"; border-bottom:1px solid #ddd; text-align:center;}
+
+.sideMen{ width:215px;border-color: #e6e6e6; border-width: 1px 1px 3px;border-style: solid; padding-top:10px;}
+
+.sideMen h3{ height:40px; line-height:40px; font-size:15px;color:#444; margin:1px 0; position:relative; margin-bottom:1px; cursor:pointer; padding-left:20px;}
+
+.sideMen h3 em{ float:right; display:block; 
+
+border-style: solid dashed solid dashed;
+
+border-color: #999 transparent #999 transparent;
+
+border-width: 5px 5px 0; position:absolute; top:15px; right:15px;}
+
+.sideMen h3.on em{ border-width: 0 5px 5px;border-style: solid dashed solid dashed;
+
+border-color: #999 transparent #999 transparent;}
+
+.sideMen ul{ color:#222; background:#fff; margin-bottom:10px; padding-left:20px;}
+
+.sideMen ul li{ height:40px; line-height:40px; padding:0 10px;border-bottom:1px solid ##f0f0f0;}
+
+.sideMen ul li a{ background:url(../images/jiantou.jpg)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/images/jiantou.jpg*/ no-repeat left center; padding-left:10px;text-decoration: none;
+
+    -webkit-transition: all .2s ease-in-out;
+
+    -moz-transition: all .2s ease-in-out;
+
+    transition: all .2s ease-in-out;}
+
+.sideMen ul li.hp-te a,.sideMen ul li:hover a{ padding:0 15px; color:#249af1;}
+
+.hprit{ overflow:hidden; margin-left:260px; padding-bottom:40px;}
+
+.hp-tit{height:40px; line-height:40px; margin-bottom:10px;}
+
+.hp-tit h3{ height:40px; line-height:40px; font-size:26px; color:#333; font-weight:normal; text-transform:uppercase;font-family:"franklin";}
+
+.hp-mid{ overflow:hidden; line-height:30px;}
+
+.hp-mid h4{ font-size:17px; text-transform:uppercase; color:#333; font-weight:normal; margin:10px 0;}
+
+.prolist1 .pages ol {
+
+    margin-bottom: 40px;
+
+}
+
+.prolist1 .pages ol a{
+
+    line-height: 30px;font-size: 14px;
+
+}
+
+
+
+.buy-now-buttons{line-height: 30px !important;margin-top: 10px;}
+
+.part_title{font-weight:bold;font-size:18px;margin-top:20px;color:#666;}
+
+.part_title i{margin-right:6px;font-size:18px;}
+
+.field{margin-bottom:0!important;}
+
+/*.std ul{margin-top:8px !important;}*/
+
+/* .mapbox{margin-top:-20px;} */
+
+.navbar{height:45px;}
+
+.navbar-default .navbar-nav > li > a:hover{background:#364487 !important;color:#fff !important;border-radius:0;height:48px;}
+
+#search{
+
+    margin-top:1px;width: 494px;
+
+    border: 2px solid #e25d4a;
+
+    border-radius: 50px;
+
+}
+
+.field{height:73px !important;}
+
+
+
+
+
+
+
+
+
+/*改变滚动条样式*/
+
+
+
+ .first-screen .bran-tc.f-left.sidebar::-webkit-scrollbar {/*滚动条整体样式*/
+
+            width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+
+            height: 4px;
+
+        }
+
+        .first-screen .bran-tc.f-left.sidebar::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+
+            border-radius: 5px;
+
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+            background: rgba(0,0,0,0.2);
+
+        }
+
+        .first-screen .bran-tc.f-left.sidebar::-webkit-scrollbar-track {/*滚动条里面轨道*/
+
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+            border-radius: 0;
+
+            background: rgba(0,0,0,0.1);
+
+        }
+
+
+
+
+
+/*改变滚动条样式结束*/
+
+.std ul li{
+
+    margin-right: 2px;
+
+}
+
+.home-hotpro .adout-title{
+
+    display: none;
+
+}
+
+/*.zy-bg-img-list改变滚动条样式*/
+
+    .zy-bg-img-list::-webkit-scrollbar {/*滚动条整体样式*/
+
+            width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+
+            height: 4px;
+
+        }
+
+        .zy-bg-img-list::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+
+            border-radius: 5px;
+
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+            background: rgba(0,0,0,0.2);
+
+        }
+
+        .zy-bg-img-list::-webkit-scrollbar-track {/*滚动条里面轨道*/
+
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+            border-radius: 0;
+
+            background: rgba(0,0,0,0.1);
+
+        }
+
+
+
+/*改变滚动条样式结束*/
+
+
+
+
+
+.zy-sidebar_item-bg{
+
+
+
+    /*background: url(../kailai_images/logo2.5.png) no-repeat center;*/
+
+}
+
+.zy-sidebar_item-bg2{
+
+    position: absolute;
+
+    width: 88%;
+
+    height: 500px;
+
+    background: url(../kailai_images/logo2.5.png)/*tpa=https://www.chinatruckparts.com/skin/frontend/rwd/kailai/kailai_images/logo2.5.png*/ no-repeat center;
+
+    left: 18%;
+
+   
+
+    background-size: 60%;
+
+    top: 0;
+
+}
+
+.std{
+
+    line-height: 30px;
+
+    /*text-indent: 2em;*/
+
+}
+
+
+
+
+
+.category-products{
+
+    text-align: center;
+
+}
+
+
+
+.sz-prolist dd .szprotext h3:hover{background:none !important}
+
+/*****************HZ*******************/
+.joinbox li input[type="button"] {
+    background: #f1723a !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    border: none !important;
+}
+
+/* by ccheng */
+.catalogsearch-result-index .products-list li.item {
+     float: left;
+     margin-top: 5px;
+     margin-left: 5px;
+ }
+
+.catalogsearch-result-index .products-list li.item img {
+     width: 150px;
+     height: 150px;
+ }
+
+.catalogsearch-result-index .products-list li.item .content {
+     width: 150px;
+ }
+
+.catalogsearch-result-index .products-list li.item .content .product-name {
+     text-overflow: ellipsis;
+     overflow: hidden;
+     white-space: nowrap;
+ }
+
+.catalogsearch-result-index .note-msg {
+    font-weight: bold;
+    margin-left: 35%;
+    font-size: 2em;
+}
+
+ .hdright.f-right ul li:first-of-type a:first-of-type {
+     color: white;
+ }
+ .hdright.f-right ul li:first-of-type a:first-of-type::after {
+     content: "Login In";
+     color: black;
+     margin-left: -41px;
+ }
