@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="robots" content="INDEX,FOLLOW"/>
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+
+    <link type="text/css" rel="stylesheet" href="/chinatruck/static/css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="/chinatruck/static/css/kailai/style.css"/>
+    <link type="text/css" rel="stylesheet" href="/chinatruck/static/css/kailai/kailai_webfont/iconfont.css"/>
+
+    <link type="text/css" rel="stylesheet" href="/chinatruck/static/plugin/bootstrap/bootstrap.css"/>
+
+    <script type="text/javascript" src="/chinatruck/static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/chinatruck/static/plugin/bootstrap/bootstrap.js"></script>
+</head>
+
+<div class="header-top-hz">
+    <div class="header-top">
+        <header>
+            <style type="text/css">
+                .wsn ul {
+                    display: none;
+                    width: 160px;
+                    height: 60px;
+                    position: absolute;
+                    background-color: white;
+                    text-align: center;
+                    line-height: 26px;
+                    border: 1px solid #ccc;
+                    border-top: none;
+                }
+
+                .top_sns a:hover {
+                    color: #ea6c35 !important;
+                }
+            </style>
+
+            <div id="J_m_nav">
+                <div class="hdtop">
+                    <div class="container" style="text-align:left;padding: 0;margin: 0;">
+
+                        <b class="tel wsn">
+                            <i class="iconfont">WhatAPP: </i>+8619902463814
+                        </b>
+                        <a href="mailto:sales16@chinatruck.cc">
+                            <b class="email wsn" style="line-height: 38px;">
+                                <i class="iconfont">Email: </i>chinametruckparts@163.com
+                            </b>
+                        </a>
+                    </div>
+                </div>
+                <div class="top container" style="width: 1280px;padding: 0;">
+                    <div style="min-height: 56px;" class="logo f-left">
+                        <a style="padding: 0;text-align: left; float: left;" href="index.html">
+                            <img src="/chinatruck/static/images/logo.png" height="50" width="50">
+                            <span style="font-size: 20px; color: black;">China Me Truckparts</span>
+                        </a>
+                    </div>
+
+
+                    <form id="search_mini_form" action="/chinatruck/search"
+                          method="get">
+                        <div class="top-lft f-left" style="top: 0;">
+                            <label for="search">Search:</label>
+                            <input style="width:494px;height: 36px;box-sizing: content-box;" id="search"
+                                   class="search" type="search" name="q" value=""
+                                   class="input-text required-entry" maxlength="128" placeholder="Enter model/brand/classification"/>
+                            <button style="height: 36px;width: 44px;" type="submit" title="Search"
+                                    kailai_webfont iconfont.css="Search" class="search-button">
+                                <span>
+                                    <span>Search
+                                        <i class="iconfont icon-sousuo">
+                                        </i>
+                                    </span>
+                                </span>
+                            </button>
+
+                        </div>
+
+
+                        <script type="text/javascript">
+                          /*//<![CDATA[
+                          var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
+                          // searchForm.initAutocomplete('https://www.chinatruckparts.com/catalogsearch/ajax/suggest/', 'search_autocomplete');
+                          //]]>*/
+                        </script>
+                    </form>
+
+
+                    <div class="top-right f-right" style="width: auto;">
+                        <a href="#" style="line-height: 40px;">
+                            <img style="margin-top:-8px;" src="/chinatruck/static/images/zy-wen.png">
+                        </a>
+                    </div>
+                    <div style="display:none;margin-top:0 !important;" class="hdright f-right zy-hdright">
+
+                        <div class="top_sns"
+                             style="padding-top: 7px;display: inline-block;float:left;margin:0;">
+                            <a style="color:#666;" href="#" class="iconfont iconface">&#xe620;</a>
+                            <a style="color:#666;" href="#" class="iconfont icontwt">&#xe600;</a>
+                            <a style="color:#666;" href="#" class="iconfont icongl">&#xe601;</a>
+                        </div>
+
+
+                        <ul>
+                            <!--<li>
+                                <i class="iconfont">&#xe679;</i><a href="customer/account/login/index.htm">Sign In</a>
+                                |<a rel="nofollow" href="customer/account/create/index.htm">Register</a>
+                            </li>-->
+                        </ul>
+                        <div class="hd-rit" style="float: right; height: 30px;margin-top: 5px;">
+                            <a style="color: #666; padding-top: 8px;" href="checkout/cart/index.htm" class="cat">
+                                <i class="iconfont">&#xe657;</i>
+                                <em style="top:0;">0</em>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type='text/javascript'>
+
+              var nt = !1;
+              jQuery(window).bind("scroll",
+                function () {
+                  var st = jQuery(document).scrollTop();//往下滚的高度111
+                  nt = nt ? nt : jQuery("#J_m_nav").offset().top;
+                  // document.title=st;
+                  var sel = jQuery("#J_m_nav");
+                  if (st > 250) {
+                    sel.addClass("nav_fixed");
+                    jQuery(".hdtop").css("display", "none");
+                    jQuery(".top-right.f-right").css("display", "none");
+                    jQuery(".hdright.f-right.zy-hdright").css("display", "block");
+                  } else if (st < 250) {
+                    sel.removeClass("nav_fixed");
+                    jQuery(".hdright.f-right.zy-hdright").css("display", "none");
+                    jQuery(".hdtop").css("display", "block");
+                    jQuery(".top-right.f-right").css("display", "block");
+                  }
+                });
+            </script>
+            <!--Navigation -->
+            <nav class="navbar navbar-default" style="background-color: #f5f5f5;border:none;">
+                <div class="navBar1" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right" style="float: left !important;">
+                        <li>
+                            <a onfocus="this.blur();"
+                               style="font-size: 17px;font-weight: 600;background-color: #364487;color: #fff;"
+                               href="index.htm">brand search</a>
+                            <span class="iconfont icon-angle-down"></span>
+                        </li>
+                        <li class="m" id="m2">
+                            <a onfocus="this.blur();" style="font-size: 17px;font-weight: 600;"
+                               href="numbersearch.html">parts number search</a>
+                            <span class="iconfont icon-angle-down"></span>
+                        </li>
+                        <li class="m" id="m3">
+                            <a onfocus="this.blur();" style="font-size: 17px;font-weight: 600;"
+                               href="categories.htm">parts categories search</a>
+                            <span class="iconfont icon-angle-down"></span>
+                        </li>
+                    </ul>
+                </div>
+                <script type="text/javascript">jQuery(".nav").slide({
+                  type: "menu",
+                  titCell: ".m",
+                  targetCell: ".sub",
+                  effect: "slideDown",
+                  delayTime: 300,
+                  triggerTime: 0,
+                  returnDefault: true
+                });</script>
+                <!-- /.navbar-collapse -->
+                <!-- /.container-fluid -->
+            </nav>
+            <!-- Navigation -->
+        </header>
+        </head>
+    </div>
+</div>
