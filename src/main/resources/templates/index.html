@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:include="include/header.html">
     <meta charset="utf-8">
     <meta name="renderer" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,6 +9,220 @@
     <title>China Me Truck Parts</title>
 </head>
 <body>
+<div class="main">
+    <div class="col-main name1" style="width: 1280px;margin: 0 auto;">
+        <div class="std">
+            <div class="widget widget-static-block">
+                <div class="first-screen">
+                    <div class="container pos-retive"
+                         style="position: relative;max-width: 1280px;width: 1280px;padding: 0;">
+                        <div class="bran-tc f-left sidebar zy-sidebar_item-bg"
+                             style="height: 635px;overflow: auto;width: 100%; ">
+                        </div>
+                        <div class="banner f-left" style="z-index: 3 !important;padding-right: 20px;">
+                            <div class="banner-cont" style=" box-shadow: 10px 10px 5px #888888;">
+                                <div class="swiper-container banner-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/images/banner.jpg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="f-lanmu f-right" style="position: absolute;right: 33px;">
+                            <div class="tit">
+                                Bulletin Board：
+                            </div>
+                            <div class="boxmid">
+                                We care about customers’ concerns,
+                                we are strong in assisting and cooperating with truck dealers,
+                                construction companies, transportation logistics companies,
+                                and road and bridge building companies,
+                                as you don’t have to spend a lot of time and effort on finding out the part numbers,
+                                we can do it for you with the VIN numbers of your equipments.
+                                We do this as well to reduce the possibility of wrong parts delivery
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="part-query" style="margin:0;margin-bottom: 9px;">
+                <div class="part_title" style="margin-top: 18px;margin-bottom: -6px;">
+                    Request For Quotation
+                    <span class="line"
+                          style="width: 80%;height: 4px; background-color: #efefef;float: right;top: 12px; position: relative; border: 1px solid #efefef; border-radius: 2px;">
+                    </span>
+                </div>
+                <div style="width: 35.2%;float: left;max-height: 368px;overflow: hidden;padding-top:20px;">
+                    <img src="/images/media/wysiwyg/logo3f.jpg"/>
+                </div>
+                <form style="width: 64.8%;float: right;" enctype="multipart/form-data"
+                      action="#" id="productcontactForm"
+                      method="post">
+                    <input type="hidden" name="pages" value="home">
+                    <div class="inquiry_form_">
+                        <ul class="form-list" style="overflow: hidden;margin-bottom: 0;">
+                            <li style="width: 33%;float: left;margin: 0;" class="fields">
+                                <div class="field">
+                                    <label for="address" class="required"><em>*</em>Brand:</label>
+                                    <div class="input-box">
+                                        <input name="address" id="address" title="Your Name"
+                                               placeholder="e.g Sinotruk" value="" class="input-text required-entry"
+                                               type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;" class="fields">
+                                <div class="field">
+                                    <label for="city" class="required">Part No:</label>
+                                    <div class="input-box">
+                                        <input name="city" id="city" title="Business Name"
+                                               placeholder="e.g VG9719720001" value="" class="input-text"
+                                               type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;" class="fields">
+                                <div class="field">
+                                    <label for="fax" class="required">VIN (Optional)</label>
+                                    <div class="input-box">
+                                        <input name="fax" id="fax" value="" placeholder="e.g LZZ5CLSB9GD142427"
+                                               class="input-text" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;" class="fields">
+                                <div class="field">
+                                    <label for="detail" class="required"><em>*</em>Part Description</label>
+                                    <div class="input-box">
+                                        <textarea
+                                                style="height: 40px !important;overflow: hidden; padding: 0 !important;"
+                                                name="detail" id="detail" title="Type of Business"
+                                                class="required-entry input-text" cols="10" rows="5"
+                                                placeholder="Briefly explain what type of business you operate and what specific type of products you are interested in."></textarea>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label for="product_id" class="required">Telephone</label>
+                                    <div class="input-box">
+                                        <input name="product_id" id="product_id" value="" placeholder="e.g 10"
+                                               class="input-text required-entry fixwidth" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label for="PhotoOptional" class="required"><!--<em>*</em>-->Part Photo
+                                        (Optional)</label>
+                                    <div class="input-box"
+                                         style="position: relative;height: 38px;overflow: hidden;">
+                                        <input type="text" id="txt" name="txt"
+                                               class="input-text required-entry fixwidth"
+                                               value="Upload your Part photo" disabled="disabled">
+                                        <input type="button"
+                                               style="position: absolute;top: 1px;right: 0;width: 45px;height: 36px;font-size: 44px;line-height: 33px;border: 1px solid #ddd;"
+                                               onmousemove="f.style.pixelLeft=event.x-60;f.style.pixelTop=this.offsetTop;"
+                                               value="+" size="30" onclick="f.click()" class="liulan">
+                                        <input type="file" id="f" onchange="txt.value=this.value" name="f"
+                                               style="height:26px;" class="files" size="1" hidefocus="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label for="customer_email" class="required"><em>*</em>Email</label>
+                                    <div class="input-box">
+                                        <input name="customer_email" id="customer_email" value=""
+                                               placeholder="email" class="input-text required-entry fixwidth"
+                                               type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label for="Email" class="required"><em> </em></label>
+                                    <div class="input-box">
+                                        <button style="display: inline-block;" name="" value="" class="bot1">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
 
+        <!--产品-->
+        <div class="proground">
+            <div class="container" style="padding: 0;">
+                <div class="part_title" style="margin-top: 20px;margin-bottom: 20px;">
+                    Featured Products
+                    <span class="line"
+                          style="width: 84%;height: 4px; background-color: #efefef;float: right;top: 12px; position: relative; border: 1px solid #efefef; border-radius: 2px;">
+                    </span>
+                </div>
+                <div id="protab" class="probox" style="border-bottom: none !important;">
+                    <ul class="tab">
+                        <li onclick="tabs('#protab',0)" class="curr">
+                            <p>
+                                <img src="/images/media/category/CAB.jpg"/>
+                            </p>
+                            <h3>CAB</h3>
+                        </li>
+                        <li onclick="tabs('#protab',1)">
+                            <p>
+                                <img src="/images/media/category/CHASSIS.png"/>
+                            </p>
+                            <h3>CHASSIS</h3>
+                            <i></i>
+                        </li>
+                        <li onclick="tabs('#protab',2)">
+                            <p>
+                                <img src="/images/media/category/ENGINE.jpg"/>
+                            </p>
+                            <h3>ENGINE</h3>
+                            <i></i>
+                        </li>
+                        <li onclick="tabs('#protab',3)" style="border-width: 1px 1px 1px 1px;">
+                            <p>
+                                <img src="/images/media/category/ELECTRICAL.jpg">
+                            </p>
+                            <h3>ELECTRICAL</h3>
+                            <i></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+          jQuery(".nav").slide({
+            type: "menu",
+            titCell: ".m",
+            targetCell: ".sub",
+            effect: "slideDown",
+            delayTime: 300,
+            triggerTime: 0,
+            returnDefault: true
+          });
+        </script>
+        <script>
+          var swiper = new Swiper('.banner-swiper', {
+            pagination: '.banner-swiper .swiper-pagination',
+            paginationClickable: '.banner-swiper .swiper-pagination',
+          });
+        </script>
+    </div>
+</div>
+<div th:include="include/footer.html"></div>
 </body>
 </html>

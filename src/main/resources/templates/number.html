@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html lang="en" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" id="top" class="no-js ie9"> <![endif]-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="no-js">
+<head th:include="include/header.html">
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title>Number Search</title>
+    <link type="text/css" rel="stylesheet" href="/css/uzy_page.css"/>
+
+    <script type="text/javascript" src="/js/uzy_page.js"></script>
+    <script type="text/javascript" src="/js/demo.js"></script>
+</head>
+<body>
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="zy-banner" style="width: 100% !important;margin: 0 !important">
+            <img src="/images/parts_search.jpg">
+        </div>
+        <div class="container" style="margin-left:-9px">
+            <div class="joinbox">
+                <p class="gaishu" style=" text-align:left;">
+                    Click
+                    <a href="#" class="col">here</a>
+                    to learn how to search by part number.
+                </p>
+                <ul id="myinput-1">
+                    <li>
+                        <span>Part Number<em>*</em></span><!-- 零件号是sku -->
+                        <input name="cityName1" id="cityName1" placeholder="" type="text" class="txt">
+                    </li>
+                    <li>
+                        <span>Manufacturer<em>*</em></span><!-- 品牌是描述 -->
+                        <input name="cityName2" id="cityName2" placeholder="" type="text" class="txt">
+                    </li>
+                    <li>
+                        <span>few keywords</span><!-- 产品名是name -->
+                        <input name="cityName3" id="cityName3" placeholder="" type="text" class="txt">
+                    </li>
+                    <li style="width: 9%;">
+                        <span> </span><!-- 产品名是name -->
+                        <input type="button" name="button" value="Acquire" onclick="print()"/>
+                    </li>
+                </ul>
+                <script language="javascript">
+                  function print() {
+                    var a1 = document.getElementById("cityName1").value;
+                    var b2 = document.getElementById("cityName2").value;
+                    var c3 = document.getElementById("cityName3").value;
+                    location.replace(
+                      "https://www.chinatruckparts.com/catalogsearch/advanced/result/?name=" + c3 + "&short_description=&description=" + b2 + "&sku=" + a1 + "&price%5Bfrom%5D=&price%5Bto%5D=&group_price%5Bfrom%5D=&group_price%5Bto%5D=&characteristics=&hairname=&texture= ")
+                  }
+                </script>
+                <div class="clear"></div>
+            </div>
+            <div class="prolist1">
+                <input type="hidden" name="current" th:value="1"/>
+                <input type="hidden" name="pageCount" th:value="20"/>
+                <dl class="sz-prolist" th:for="()">
+                    <dd>
+                        <div class="szproimg" style="width:200px ;height:200px;">
+                            <a href="">
+                                <img src="media/catalog/product/1/-/1-wg1642230103_rear_fender_l__1.jpg" >
+                            </a>
+                        </div>
+                        <div class="szprotext" style="white-space: inherit;">
+                            <h3>
+                                <a style="display: inline;word-wrap: break-word;word-break: normal;padding: 0;" href="">
+                                    1. Sinotruk Howo Cab Parts Rear Fender (L) WG1642230103
+                                </a>
+                            </h3>
+                            <p>
+                                <em>Brand:</em>WG1642230103
+                            </p>
+                            <p>
+                                <em>Part NO.:</em>
+                            </p>
+                            <div class="addcart">
+                                <a href="" class="iconfont">&#xe657;
+                                </a>
+                                <!-- <span class="separator">|</span> -->
+                                <a rel="nofollow" href="" class="link-wishlist" title=" Add to Wishlist">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="javascript:void(0)" class="zy-input-regin-class">info</a>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <div class="uzy_page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:include="include/footer.html"></div>
+</body>
+</html>

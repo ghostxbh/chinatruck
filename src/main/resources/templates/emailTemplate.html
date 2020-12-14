@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul>
+        <li th:if="${contact.cust_name != null}">名   称：<span th:text="${contact.cust_name}"></span></li>
+        <li th:if="${contact.cust_email != null}">邮   箱：<span th:text="${contact.cust_email}"></span></li>
+        <li th:if="${contact.cust_phone != null}">电   话：<span th:text="${contact.cust_phone}"></span></li>
+        <li th:if="${contact.business != null}">咨询业务：<span th:text="${contact.business}"></span></li>
+
+        <li th:if="${contact.brand != null}">品   牌：<span th:text="${contact.brand}"></span></li>
+        <li th:if="${contact.part_no != null}">零件型号：<span th:text="${contact.part_no}"></span></li>
+        <li th:if="${contact.part_desc != null}">零件描述：<span th:text="${contact.part_desc}"></span></li>
+        <li th:if="${contact.part_photo != null}">零件图片：<span th:text="${contact.part_photo}"></span></li>
+        <li th:if="${contact.optional != null}">零件属性：<span th:text="${contact.optional}"></span></li>
+    </ul>
+</div>
+</body>
+</html>
