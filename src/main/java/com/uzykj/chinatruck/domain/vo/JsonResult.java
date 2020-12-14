@@ -40,7 +40,7 @@ public class JsonResult<T> {
         return new JsonResult(FAIL, message);
     }
 
-    public JsonResult<?> error(RuntimeException e) {
+    public JsonResult<?> error(Exception e) {
         return new JsonResult(FAIL, e.getMessage());
     }
 }
