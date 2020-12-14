@@ -14,22 +14,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("parts_info")
-public class PartsInfo {
+@Document(value = "contact")
+public class Contact {
     @Id
     private String _id;
 
-    private String title;
+    private String cust_name;
 
-    private String url;
+    private String cust_email;
 
-    private String image;
+    private String cust_phone;
 
-    private String brand;
+    private String business;
 
-    private String part;
+    /**
+     * 邮件发送状态
+     * 0、未发送 1、已发送 2、发送失败
+     */
+    private Integer send_status;
 
-    private String brand_id;
+    private String send_time;
 
-    private String category_id;
+    private String create_time;
 }

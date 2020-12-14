@@ -21,6 +21,8 @@ public class Category {
 
     private String name;
 
+    private String cn_name;
+
     private Integer total;
 
     private String createTime;
