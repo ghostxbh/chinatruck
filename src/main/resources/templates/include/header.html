@@ -5,19 +5,20 @@
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <meta name="robots" content="INDEX,FOLLOW"/>
-    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 
-    <link type="text/css" rel="stylesheet" href="/chinatruck/static/css/styles.css"/>
-    <link type="text/css" rel="stylesheet" href="/chinatruck/static/css/kailai/style.css"/>
-    <link type="text/css" rel="stylesheet" href="/chinatruck/static/css/kailai/kailai_webfont/iconfont.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/kailai/style.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/kailai/kailai_webfont/iconfont.css"/>
 
-    <link type="text/css" rel="stylesheet" href="/chinatruck/static/plugin/bootstrap/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap/bootstrap.css"/>
 
-    <script type="text/javascript" src="/chinatruck/static/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/chinatruck/static/plugin/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap/bootstrap.js"></script>
 </head>
-
 <div class="header-top-hz">
     <div class="header-top">
         <header>
@@ -42,7 +43,6 @@
             <div id="J_m_nav">
                 <div class="hdtop">
                     <div class="container" style="text-align:left;padding: 0;margin: 0;">
-
                         <b class="tel wsn">
                             <i class="iconfont">WhatAPP: </i>+8619902463814
                         </b>
@@ -55,22 +55,20 @@
                 </div>
                 <div class="top container" style="width: 1280px;padding: 0;">
                     <div style="min-height: 56px;" class="logo f-left">
-                        <a style="padding: 0;text-align: left; float: left;" href="index.html">
-                            <img src="/chinatruck/static/images/logo.png" height="50" width="50">
+                        <a style="padding: 0;text-align: left; float: left;" href="/">
+                            <img src="/images/logo.png" height="50" width="50">
                             <span style="font-size: 20px; color: black;">China Me Truckparts</span>
                         </a>
                     </div>
-
-
-                    <form id="search_mini_form" action="/chinatruck/search"
+                    <form id="search_mini_form" action="/search"
                           method="get">
                         <div class="top-lft f-left" style="top: 0;">
                             <label for="search">Search:</label>
-                            <input style="width:494px;height: 36px;box-sizing: content-box;" id="search"
-                                   class="search" type="search" name="q" value=""
-                                   class="input-text required-entry" maxlength="128" placeholder="Enter model/brand/classification"/>
-                            <button style="height: 36px;width: 44px;" type="submit" title="Search"
-                                    kailai_webfont iconfont.css="Search" class="search-button">
+                            <input style="width:536px;height: 36px;" id="search" type="search"
+                                   name="q" value="" class="search input-text required-entry" maxlength="128"
+                                   placeholder="Enter model/brand/classification"/>
+                            <button style="height: 36px;width: 44px;" type="submit" title="Search" kailai_webfont
+                                    iconfont.css="Search" class="search-button">
                                 <span>
                                     <span>Search
                                         <i class="iconfont icon-sousuo">
@@ -78,10 +76,7 @@
                                     </span>
                                 </span>
                             </button>
-
                         </div>
-
-
                         <script type="text/javascript">
                           /*//<![CDATA[
                           var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
@@ -93,7 +88,7 @@
 
                     <div class="top-right f-right" style="width: auto;">
                         <a href="#" style="line-height: 40px;">
-                            <img style="margin-top:-8px;" src="/chinatruck/static/images/zy-wen.png">
+                            <img style="margin-top:-8px;" src="/images/zy-wen.png">
                         </a>
                     </div>
                     <div style="display:none;margin-top:0 !important;" class="hdright f-right zy-hdright">
@@ -113,7 +108,7 @@
                             </li>-->
                         </ul>
                         <div class="hd-rit" style="float: right; height: 30px;margin-top: 5px;">
-                            <a style="color: #666; padding-top: 8px;" href="checkout/cart/index.htm" class="cat">
+                            <a style="color: #666; padding-top: 8px;" href="#" class="cat">
                                 <i class="iconfont">&#xe657;</i>
                                 <em style="top:0;">0</em>
                             </a>
@@ -149,31 +144,32 @@
                     <ul class="nav navbar-nav navbar-right" style="float: left !important;">
                         <li>
                             <a onfocus="this.blur();"
-                               style="font-size: 17px;font-weight: 600;background-color: #364487;color: #fff;"
-                               href="index.htm">brand search</a>
+                               style="font-size: 17px;font-weight: 600;"
+                               href="/">brand search</a>
                             <span class="iconfont icon-angle-down"></span>
                         </li>
                         <li class="m" id="m2">
                             <a onfocus="this.blur();" style="font-size: 17px;font-weight: 600;"
-                               href="numbersearch.html">parts number search</a>
+                               href="/number.html">parts number search</a>
                             <span class="iconfont icon-angle-down"></span>
                         </li>
                         <li class="m" id="m3">
                             <a onfocus="this.blur();" style="font-size: 17px;font-weight: 600;"
-                               href="categories.htm">parts categories search</a>
+                               href="/categories.html">parts categories search</a>
                             <span class="iconfont icon-angle-down"></span>
                         </li>
                     </ul>
                 </div>
-                <script type="text/javascript">jQuery(".nav").slide({
-                  type: "menu",
-                  titCell: ".m",
-                  targetCell: ".sub",
-                  effect: "slideDown",
-                  delayTime: 300,
-                  triggerTime: 0,
-                  returnDefault: true
-                });</script>
+                <script type="text/javascript">
+                  jQuery(".nav").slide({
+                    type: "menu",
+                    titCell: ".m",
+                    targetCell: ".sub",
+                    effect: "slideDown",
+                    delayTime: 300,
+                    triggerTime: 0,
+                    returnDefault: true
+                  });</script>
                 <!-- /.navbar-collapse -->
                 <!-- /.container-fluid -->
             </nav>
