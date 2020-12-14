@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("queue")
 @Api("数据队列")
-public class DataQueueApi {
+public class DataQueueController {
     @Autowired
     private QueueQueryService queueQueryService;
     @Autowired
