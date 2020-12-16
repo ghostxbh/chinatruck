@@ -20,7 +20,7 @@ import java.util.List;
 public class Node implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String id;
+    private String _id;
     private String name;
     private String type;
     private List<Node> children;

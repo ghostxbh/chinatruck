@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PartQueryDTO {
+    private String q;
     private String no;
     private String brand;
     private String category;

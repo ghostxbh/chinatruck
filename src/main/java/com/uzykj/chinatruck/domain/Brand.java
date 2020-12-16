@@ -17,7 +17,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(value = "brand")
+@Document(value = "brands")
 public class Brand {
     @Id
     private String _id;
