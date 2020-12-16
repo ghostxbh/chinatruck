@@ -15,52 +15,52 @@
                 obj.empty();
 
                 //上一页
-                if (parseInt(args.current) > 1) {
-                    let lastPage = args.current - 1;
+                if (parseInt(args.page_no) > 1) {
+                    let lastPage = args.page_no - 1;
                     obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + lastPage + '\')" class="prevPage"><p class="previous">上一页</p></a>');
                 } else {
                     obj.remove('.prevPage');
                     obj.append('<span class="disabled"><p class="previous">上一页</p></span>');
                 }
                 //中间页码
-                if (parseInt(args.current) != 1 && parseInt(args.current) >= 4 && parseInt(args.pageCount) != 4) {
+                if (parseInt(args.page_no) != 1 && parseInt(args.page_no) >= 4 && parseInt(args.pages) != 4) {
                     obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + 1 + '\')" class="tcdNumber"><p>' + 1 + '</p></a>');
                 }
-                if (parseInt(args.current - 2) > 2 && parseInt(args.current) <= parseInt(args.pageCount) && parseInt(args.pageCount) > 5) {
+                if (parseInt(args.page_no - 2) > 2 && parseInt(args.page_no) <= parseInt(args.pages) && parseInt(args.pages) > 5) {
                     obj.append('<span><p>...</p></span>');
                 }
-                var start = parseInt(args.current) - 2;
-                var end = parseInt(args.current) + 2;
-                if ((start > 1 && parseInt(args.current) < 4) || parseInt(args.current) == 1) {
+                var start = parseInt(args.page_no) - 2;
+                var end = parseInt(args.page_no) + 2;
+                if ((start > 1 && parseInt(args.page_no) < 4) || parseInt(args.page_no) == 1) {
                     end++;
                 }
-                if (parseInt(args.current) > parseInt(args.pageCount) - 4 && parseInt(args.current) >= parseInt(args.pageCount)) {
+                if (parseInt(args.page_no) > parseInt(args.pages) - 4 && parseInt(args.page_no) >= parseInt(args.pages)) {
                     start--;
                 }
                 for (; start <= end; start++) {
-                    if (start <= parseInt(args.pageCount) && start >= 1) {
-                        if (start != parseInt(args.current)) {
+                    if (start <= parseInt(args.pages) && start >= 1) {
+                        if (start != parseInt(args.page_no)) {
                             obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + start + '\')" class="tcdNumber"><p>' + start + '</p></a>');
                         } else {
-                            obj.append('<span class="current"><p class="current">' + start + '</p></span>');
+                            obj.append('<span class="page_no"><p class="page_no" style="background-color:#ccc;">' + start + '</p></span>');
                         }
                     }
                 }
-                if (parseInt(args.current) + 2 < parseInt(args.pageCount) - 1 && parseInt(args.current) >= 1 && parseInt(args.pageCount) > 5) {
+                if (parseInt(args.page_no) + 2 < parseInt(args.pages) - 1 && parseInt(args.page_no) >= 1 && parseInt(args.pages) > 5) {
                     obj.append('<span><p>...</p></span>');
                 }
-                if (parseInt(args.current) != parseInt(args.pageCount) && parseInt(args.current) < parseInt(args.pageCount) - 2 && parseInt(args.pageCount) != 4) {
-                    obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + args.pageCount + '\')" class="tcdNumber"><p>' + args.pageCount + '</p></a>');
+                if (parseInt(args.page_no) != parseInt(args.pages) && parseInt(args.page_no) < parseInt(args.pages) - 2 && parseInt(args.pages) != 4) {
+                    obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + args.pages + '\')" class="tcdNumber"><p>' + args.pages + '</p></a>');
                 }
                 //下一页
-                if (parseInt(args.current) < parseInt(args.pageCount)) {
-                    let nextPage = args.current * 1 + 1;
+                if (parseInt(args.page_no) < parseInt(args.pages)) {
+                    let nextPage = args.page_no * 1 + 1;
                     obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + nextPage + '\')" class="nextPage"><p class="next">下一页</p></a>');
                 } else {
                     obj.remove('.nextPage');
                     obj.append('<span class="disabled"><p class="next">下一页</p></span>');
                 }
-                obj.append('<span><p style="border:none;">跳转<input type="text" id="pageIndex" onkeyup="var current = $(this).val();if (isNaN(current)) {$(this).val(\'\');}if (current.indexOf(\'.\') != -1) {$(this).val(\'\');}">页</p><a href="javascript:void(0);" class="btn" onclick="goPage(\'' + args.url + '\')">确定</a></span>');
+                obj.append('<span><p style="border:none;">跳转<input type="text" id="pageIndex" onkeyup="var page_no = $(this).val();if (isNaN(page_no)) {$(this).val(\'\');}if (page_no.indexOf(\'.\') != -1) {$(this).val(\'\');}">页</p><a href="javascript:void(0);" class="btn" onclick="goPage(\'' + args.url + '\')">确定</a></span>');
             })();
         },
         //绑定事件
@@ -68,40 +68,40 @@
             return (function () {
                 obj.off("click", "a.tcdNumber");
                 obj.on("click", "a.tcdNumber", function () {
-                    var current = parseInt($(this).text());
-                    ms.fillHtml(obj, {"current": current, "pageCount": args.pageCount});
+                    var page_no = parseInt($(this).text());
+                    ms.fillHtml(obj, {"page_no": page_no, "pages": args.pages});
                     if (typeof (args.backFn) == "function") {
-                        args.backFn(current);
+                        args.backFn(page_no);
                     }
                 });
                 //上一页
                 obj.off("click", "a.prevPage");
                 obj.on("click", "a.prevPage", function () {
-                    var current = parseInt(obj.children("span.current").text());
-                    ms.fillHtml(obj, {"current": current - 1, "pageCount": args.pageCount});
+                    var page_no = parseInt(obj.children("span.page_no").text());
+                    ms.fillHtml(obj, {"page_no": page_no - 1, "pages": args.pages});
                     if (typeof (args.backFn) == "function") {
-                        args.backFn(current - 1);
+                        args.backFn(page_no - 1);
                     }
                 });
                 //下一页
                 obj.off("click", "a.nextPage");
                 obj.on("click", "a.nextPage", function () {
-                    var current = parseInt(obj.children("span.current").text());
-                    ms.fillHtml(obj, {"current": current + 1, "pageCount": args.pageCount});
+                    var page_no = parseInt(obj.children("span.page_no").text());
+                    ms.fillHtml(obj, {"page_no": page_no + 1, "pages": args.pages});
                     if (typeof (args.backFn) == "function") {
-                        args.backFn(current + 1);
+                        args.backFn(page_no + 1);
                     }
                 });
                 obj.off("click", "a.btn");
                 obj.on("click", "a.btn", function () {
-                    var current = $("#pageIndex").val();
+                    var page_no = $("#pageIndex").val();
 
-                    if (parseInt(current) > 0 && parseInt(current) <= parseInt(args.pageCount) && current != "") {
-                        ms.fillHtml(obj, {"current": current, "pageCount": args.pageCount});
+                    if (parseInt(page_no) > 0 && parseInt(page_no) <= parseInt(args.pages) && page_no != "") {
+                        ms.fillHtml(obj, {"page_no": page_no, "pages": args.pages});
                         if (typeof (args.backFn) == "function") {
-                            args.backFn(current);
+                            args.backFn(page_no);
                         }
-                        $("#pageIndex").val(current);
+                        $("#pageIndex").val(page_no);
                     } else {
                         $("#pageIndex").val("");
                     }
@@ -119,12 +119,12 @@
     };
 
     $.fn.createPage = function (options) {
-        var current = options.current;
-        var pageCount = options.pageCount;
+        var page_no = options.page_no;
+        var pages = options.pages;
         var url = options.url;
         var args = $.extend({
-            pageCount: pageCount,
-            current: current,
+            pages: pages,
+            page_no: page_no,
             url: url,
             backFn: function () {
 
@@ -136,6 +136,7 @@
 })(jQuery, window, document);
 
 function goToPage(url) {
+    window.location.href=url;
 }
 
 function goPage(url) {
