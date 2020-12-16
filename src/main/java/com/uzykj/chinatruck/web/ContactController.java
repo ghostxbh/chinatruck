@@ -30,8 +30,8 @@ public class ContactController {
     @ApiOperation("提交")
     public JsonResult<?> submit(@RequestBody Contact contact) {
         try {
-            Preconditions.checkArgument(contact.getCust_name() != null, ResponseContants.cust_name);
-            Preconditions.checkArgument(contact.getCust_email() != null, ResponseContants.cust_email);
+            Preconditions.checkArgument(contact.getCust_name() != null, ResponseContants.NOT_CUST_NAME);
+            Preconditions.checkArgument(contact.getCust_email() != null, ResponseContants.NOT_CUST_EMAIL);
             contactService.save(contact);
             return new JsonResult().success();
         } catch (Exception e) {
@@ -44,9 +44,9 @@ public class ContactController {
     @ApiOperation("报价单")
     public JsonResult<?> quotation(@RequestBody Contact contact) {
         try {
-            Preconditions.checkArgument(contact.getBrand() != null, ResponseContants.brand);
-            Preconditions.checkArgument(contact.getPart_desc() != null, ResponseContants.part_desc);
-            Preconditions.checkArgument(contact.getCust_email() != null, ResponseContants.cust_email);
+            Preconditions.checkArgument(contact.getBrand() != null, ResponseContants.NOT_BRAND);
+            Preconditions.checkArgument(contact.getPart_desc() != null, ResponseContants.NOT_PART_DESC);
+            Preconditions.checkArgument(contact.getCust_email() != null, ResponseContants.NOT_CUST_EMAIL);
             contactService.save(contact);
             return new JsonResult().success();
         } catch (Exception e) {

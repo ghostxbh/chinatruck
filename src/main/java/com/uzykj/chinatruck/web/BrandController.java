@@ -1,7 +1,6 @@
 package com.uzykj.chinatruck.web;
 
 import com.uzykj.chinatruck.domain.Brand;
-import com.uzykj.chinatruck.domain.PartsInfo;
 import com.uzykj.chinatruck.domain.vo.JsonResult;
 import com.uzykj.chinatruck.service.BrandService;
 import io.swagger.annotations.Api;

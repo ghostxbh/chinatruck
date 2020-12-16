@@ -1,11 +1,10 @@
 package com.uzykj.chinatruck.web;
 
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
-import com.uzykj.chinatruck.domain.PartsInfo;
+import com.uzykj.chinatruck.domain.PartInfo;
 import com.uzykj.chinatruck.domain.dto.DataQueueDTO;
 import com.uzykj.chinatruck.domain.vo.JsonResult;
-import com.uzykj.chinatruck.service.PartsImagesService;
+import com.uzykj.chinatruck.service.PartInfoService;
 import com.uzykj.chinatruck.service.QueueQueryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author ghostxbh
@@ -28,7 +26,7 @@ public class DataQueueController {
     @Autowired
     private QueueQueryService queueQueryService;
     @Autowired
-    private PartsImagesService partsImagesService;
+    private PartInfoService partsImagesService;
 
     @PostMapping("start")
     @ApiOperation("队列开始")
@@ -40,7 +38,7 @@ public class DataQueueController {
 
     @PostMapping("parse")
     @ApiOperation("解析")
-    public JsonResult<?> parse(@RequestBody List<PartsInfo> imagesList) {
+    public JsonResult<?> parse(@RequestBody List<PartInfo> imagesList) {
         partsImagesService.batchSave(imagesList);
         return new JsonResult().success();
     }
