@@ -19,6 +19,9 @@ public class Contact {
     @Id
     private String _id;
 
+    /**
+     * 联系
+     */
     private String cust_name;
 
     private String cust_email;
@@ -26,6 +29,19 @@ public class Contact {
     private String cust_phone;
 
     private String business;
+
+    /**
+     * 提问
+     */
+    private String brand;
+
+    private String part_no;
+
+    private String part_desc;
+
+    private String part_photo;
+
+    private String optional;
 
     /**
      * 邮件发送状态

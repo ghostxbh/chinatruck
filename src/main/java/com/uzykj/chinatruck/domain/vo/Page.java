@@ -20,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Page<T> {
     // 页码
-    private Integer page_num;
+    private Integer page_no;
     // 条数
     private Integer page_size;
     // 总条数
@@ -31,13 +31,19 @@ public class Page<T> {
     private List<T> records;
 
     public Page(Integer page_num, Integer page_size) {
-        this.page_num = page_num;
+        this.page_no = page_num;
         this.page_size = page_size;
     }
 
-    public Page<?> get(HttpServletRequest request, HttpServletResponse response) {
-        Integer page_num = (Integer) request.getAttribute("page_num");
+    public Page<T> get(HttpServletRequest request, HttpServletResponse response) {
+        Integer page_no = (Integer) request.getAttribute("page_no");
         Integer page_size = (Integer) request.getAttribute("page_size");
-        return new Page(page_num, page_size);
+        return new Page<T>(page_no, page_size);
+    }
+
+    public void formatTotal(Long total, List<T> records) {
+        this.total = total;
+        this.records = records;
+        this.pages = Math.toIntExact((total % this.page_size > 0) ? total / this.page_size + 1 : total / this.page_size);
     }
 }

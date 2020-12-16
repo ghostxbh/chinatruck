@@ -14,8 +14,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("parts_info")
-public class PartsInfo {
+@Document("part_info")
+public class PartInfo {
     @Id
     private String _id;
 
