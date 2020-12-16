@@ -14,10 +14,83 @@
         <div class="std">
             <div class="widget widget-static-block">
                 <div class="first-screen">
-                    <div class="container pos-retive"
-                         style="position: relative;max-width: 1280px;width: 1280px;padding: 0;">
+                    <div class="container pos-retive" style="position: relative;max-width: 1280px;width: 1280px;padding: 0;">
                         <div class="bran-tc f-left sidebar zy-sidebar_item-bg"
                              style="height: 635px;overflow: auto;width: 100%; ">
+                            <ul class="sidebar_item" th:if="${brands!=null && brands.size()>0}" th:each="item, stat:${brands}">
+                                <li>
+                                    <h1 style="margin: 0;width: 128px;">
+                                        <a href="#"
+                                           style="margin: 0;padding:0;text-align: center;display:inline-block;width:100px;">
+                                            <img th:src="${item.image}">
+                                            <h3 style="height: auto;">
+                                                <span style="color:#e67562;">+</span>
+                                                <span th:text="${item.name}"></span>
+                                            </h3>
+                                        </a>
+                                        <s></s>
+                                    </h1>
+                                    <div class="sidebar_popup" style="position: initial;height: auto;">
+                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
+
+                                            <ul id="119" style="mdrgin-bottom:0px !important; " class="treeview" th:if="${item.children!=null && item.children.size()>0}" th:each="one:${item.children}">
+                                                <li class="expandable lastExpandable" th:if="${one.type!=null}">
+                                                    <div class="hitarea expandable-hitarea lastExpandable-hitarea"></div>
+                                                    <span style="position:relative;top: -7px;" th:text="${one.name}"></span>
+
+                                                    <ul style="margin-top:-2px; " th:if="${one.children!=null && one.children.size()>0}" th:each="two:${one.children}">
+                                                        <li class=" zy-requry1111 zy-requry222" data-id="1334" style="line-height:20px !important" th:if="${two.type!=null}">
+                                                            <div class="hitarea zy-requry1111-hitarea zy-requry222-hitarea expandable-hitarea lastExpandable-hitarea"></div>
+                                                            <span style="position:relative;top: -2px;height: 19px;" th:text="${two.name}"></span>
+
+                                                            <ul th:if="${two.children!=null && two.children.size()>0}" th:each="three:${two.children}">
+                                                                <li class="zy-requry1 zy-requry11" data-id="1333" style="  height: auto;line-height:20px !important ;" th:if="${three.type!=null}">
+                                                                    <span style="position:relative;top: -2px;height:10px;" th:text="${three.name}"></span>
+                                                                    <!--
+                                                                    <ul th:if="${three.children!=null && three.children.size()>0}" th:each="four:${three.children}">
+                                                                        <div style="overflow: hidden;position: relative; background: #fff;  ">
+                                                                            <div style="float:left;width: 57%;"
+                                                                                 class="zy-out11">
+                                                                            </div>
+                                                                            <div style="position: relative;height: auto;overflow: hidden;">
+                                                                                <img class="zy-bg-img-list-img1"
+                                                                                     style="display: none;position: absolute;top: 0px;z-index: 1;width: 138px;margin-left: 62px;"
+                                                                                     src="skin/frontend/rwd/kailai/kailai_images/zy-up_arrow .png"
+                                                                                     tppabs="https://www.chinatruckparts.com/skin/frontend/rwd/kailai/kailai_images/zy-up_arrow .png">
+                                                                                <div class="zy-bg-img-list"
+                                                                                     style="width:91%;float:right;height: 600px;overflow: auto;position: relative;">
+                                                                                    <dl class="sz-prolist zy-out1 "
+                                                                                        style="float: none;width:100%!important;background-color: #f5f5f5;">
+                                                                                    </dl>
+                                                                                </div>
+
+                                                                                <img class="zy-bg-img-list-img2"
+                                                                                     style="display: none; position: absolute;bottom: 0px;z-index: 1;width: 138px;margin-left: 62px;"
+                                                                                     src="skin/frontend/rwd/kailai/kailai_images/zy-doem_arrow.png"
+                                                                                     tppabs="https://www.chinatruckparts.com/skin/frontend/rwd/kailai/kailai_images/zy-doem_arrow.png">
+
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </ul> -->
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <script type="text/javascript">
+                                              jQuery("#119").treeview({
+                                                persist: "location",
+                                                collapsed: true,
+                                                unique: true
+                                              });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                         <div class="banner f-left" style="z-index: 3 !important;padding-right: 20px;">
                             <div class="banner-cont" style=" box-shadow: 10px 10px 5px #888888;">
@@ -58,71 +131,62 @@
                 <div style="width: 35.2%;float: left;max-height: 368px;overflow: hidden;padding-top:20px;">
                     <img src="/images/media/wysiwyg/logo3f.jpg"/>
                 </div>
-                <form style="width: 64.8%;float: right;" enctype="multipart/form-data"
-                      action="#" id="productcontactForm"
-                      method="post">
+                <form style="width: 64.8%;float: right;" enctype="multipart/form-data" action="/contact/quotation" id="productcontactForm" method="post">
                     <input type="hidden" name="pages" value="home">
                     <div class="inquiry_form_">
                         <ul class="form-list" style="overflow: hidden;margin-bottom: 0;">
                             <li style="width: 33%;float: left;margin: 0;" class="fields">
                                 <div class="field">
-                                    <label for="address" class="required"><em>*</em>Brand:</label>
+                                    <label for="brand" class="required"><em>*</em>Brand:</label>
                                     <div class="input-box">
-                                        <input name="address" id="address" title="Your Name"
-                                               placeholder="e.g Sinotruk" value="" class="input-text required-entry"
-                                               type="text"/>
+                                        <input name="brand" id="brand" title="brand" placeholder="e.g Sinotruk" class="input-text required-entry" type="text"/>
                                     </div>
                                 </div>
                             </li>
                             <li style="width: 33%;float: left;margin: 0;" class="fields">
                                 <div class="field">
-                                    <label for="city" class="required">Part No:</label>
+                                    <label for="part_no" class="required">Part No:</label>
                                     <div class="input-box">
-                                        <input name="city" id="city" title="Business Name"
-                                               placeholder="e.g VG9719720001" value="" class="input-text"
-                                               type="text"/>
+                                        <input name="part_no" id="part_no" title="part no" placeholder="e.g VG9719720001" class="input-text" type="text"/>
                                     </div>
                                 </div>
                             </li>
                             <li style="width: 33%;float: left;margin: 0;" class="fields">
                                 <div class="field">
-                                    <label for="fax" class="required">VIN (Optional)</label>
+                                    <label for="optional" class="required">VIN (Optional)</label>
                                     <div class="input-box">
-                                        <input name="fax" id="fax" value="" placeholder="e.g LZZ5CLSB9GD142427"
-                                               class="input-text" type="text"/>
+                                        <input name="optional" id="optional" placeholder="e.g LZZ5CLSB9GD142427" class="input-text" type="text"/>
                                     </div>
                                 </div>
                             </li>
                             <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;" class="fields">
                                 <div class="field">
-                                    <label for="detail" class="required"><em>*</em>Part Description</label>
+                                    <label for="part_desc" class="required"><em>*</em>Part Description</label>
                                     <div class="input-box">
-                                        <textarea
-                                                style="height: 40px !important;overflow: hidden; padding: 0 !important;"
-                                                name="detail" id="detail" title="Type of Business"
+                                        <textarea style="height: 40px !important;overflow: hidden; padding: 0 !important;" name="part_desc" id="part_desc" title="part desc"
                                                 class="required-entry input-text" cols="10" rows="5"
-                                                placeholder="Briefly explain what type of business you operate and what specific type of products you are interested in."></textarea>
+                                                placeholder="Briefly explain what type of business you operate and what specific type of products you are interested in.">
+                                        </textarea>
                                     </div>
                                 </div>
                             </li>
                             <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
                                 class="wide fax">
                                 <div class="field">
-                                    <label for="product_id" class="required">Telephone</label>
+                                    <label for="cust_phone" class="required">Telephone</label>
                                     <div class="input-box">
-                                        <input name="product_id" id="product_id" value="" placeholder="e.g 10"
-                                               class="input-text required-entry fixwidth" type="text"/>
+                                        <input name="cust_phone" id="cust_phone" placeholder="e.g +8613001321818" class="input-text required-entry fixwidth" type="text"/>
                                     </div>
                                 </div>
                             </li>
                             <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
                                 class="wide fax">
                                 <div class="field">
-                                    <label for="PhotoOptional" class="required"><!--<em>*</em>-->Part Photo
+                                    <label for="part_photo" class="required"><!--<em>*</em>-->Part Photo
                                         (Optional)</label>
                                     <div class="input-box"
                                          style="position: relative;height: 38px;overflow: hidden;">
-                                        <input type="text" id="txt" name="txt"
+                                        <input type="text" id="part_photo" name="part_photo"
                                                class="input-text required-entry fixwidth"
                                                value="Upload your Part photo" disabled="disabled">
                                         <input type="button"
@@ -137,18 +201,16 @@
                             <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
                                 class="wide fax">
                                 <div class="field">
-                                    <label for="customer_email" class="required"><em>*</em>Email</label>
+                                    <label for="cust_email" class="required"><em>*</em>Email</label>
                                     <div class="input-box">
-                                        <input name="customer_email" id="customer_email" value=""
-                                               placeholder="email" class="input-text required-entry fixwidth"
-                                               type="text"/>
+                                        <input name="cust_email" id="cust_email" placeholder="email" class="input-text required-entry fixwidth" type="text"/>
                                     </div>
                                 </div>
                             </li>
                             <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
                                 class="wide fax">
                                 <div class="field">
-                                    <label for="Email" class="required"><em> </em></label>
+                                    <label class="required"><em> </em></label>
                                     <div class="input-box">
                                         <button style="display: inline-block;" name="" value="" class="bot1">
                                             Submit

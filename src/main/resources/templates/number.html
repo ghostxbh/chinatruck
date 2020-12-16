@@ -8,13 +8,15 @@
 <!--[if IE 9 ]>
 <html lang="en" id="top" class="no-js ie9"> <![endif]-->
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="no-js">
-<head th:include="include/header.html">
+<head th:include="include/header.html"></head>
+<head>
     <meta charset="utf-8">
     <meta name="renderer" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="keywords" content="China Me Truck Parts">
     <meta name="description" content="China Me Truck Parts">
     <title>Number Search</title>
+
     <link type="text/css" rel="stylesheet" href="/css/uzy_page.css"/>
 
     <script type="text/javascript" src="/js/uzy_page.js"></script>
@@ -24,7 +26,7 @@
 <div class="main-container col2-left-layout">
     <div class="main">
         <div class="zy-banner" style="width: 100% !important;margin: 0 !important">
-            <img src="/images/parts_search.jpg">
+            <img src="/images/parts number search.jpg">
         </div>
         <div class="container" style="margin-left:-9px">
             <div class="joinbox">
@@ -36,7 +38,7 @@
                 <ul id="myinput-1">
                     <li>
                         <span>Part Number<em>*</em></span><!-- 零件号是sku -->
-                        <input name="cityName1" id="cityName1" placeholder="" type="text" class="txt">
+                        <input name="cityName1" id="cityName1" placeholder="" type="text" class="txt" th:value="${no!=null?no:''}">
                     </li>
                     <li>
                         <span>Manufacturer<em>*</em></span><!-- 品牌是描述 -->
@@ -44,7 +46,7 @@
                     </li>
                     <li>
                         <span>few keywords</span><!-- 产品名是name -->
-                        <input name="cityName3" id="cityName3" placeholder="" type="text" class="txt">
+                        <input name="cityName3" id="cityName3" placeholder="" type="text" class="txt" th:value="${keywords!=null?keywords:''}">
                     </li>
                     <li style="width: 9%;">
                         <span> </span><!-- 产品名是name -->
@@ -54,43 +56,47 @@
                 <script language="javascript">
                   function print() {
                     var a1 = document.getElementById("cityName1").value;
-                    var b2 = document.getElementById("cityName2").value;
                     var c3 = document.getElementById("cityName3").value;
-                    location.replace(
-                      "https://www.chinatruckparts.com/catalogsearch/advanced/result/?name=" + c3 + "&short_description=&description=" + b2 + "&sku=" + a1 + "&price%5Bfrom%5D=&price%5Bto%5D=&group_price%5Bfrom%5D=&group_price%5Bto%5D=&characteristics=&hairname=&texture= ")
+                    location.replace("/number.html?no=" + a1 + "&keywords=" + c3)
                   }
                 </script>
                 <div class="clear"></div>
             </div>
+            <div class="uzy_page"></div>
             <div class="prolist1">
-                <input type="hidden" name="current" th:value="1"/>
-                <input type="hidden" name="pageCount" th:value="20"/>
-                <dl class="sz-prolist" th:for="()">
-                    <dd>
+                <input type="hidden" name="page_no" th:value="${result.page_no}"/>
+                <input type="hidden" name="pages" th:value="${result.pages}"/>
+                <input type="hidden" name="q" th:value="${q}"/>
+                <input type="hidden" name="no" th:value="${no}"/>
+                <input type="hidden" name="brand" th:value="${brand}"/>
+                <input type="hidden" name="category" th:value="${category}"/>
+                <input type="hidden" name="keywords" th:value="${keywords}"/>
+                <dl class="sz-prolist">
+                    <dd th:if="${result.records!=null && result.records.size()>0}" th:each="item:${result.records}">
                         <div class="szproimg" style="width:200px ;height:200px;">
-                            <a href="">
-                                <img src="media/catalog/product/1/-/1-wg1642230103_rear_fender_l__1.jpg" >
+                            <a th:href="@{'part.html/' + ${item._id}}">
+                                <img th:src="${item.image}">
                             </a>
                         </div>
                         <div class="szprotext" style="white-space: inherit;">
                             <h3>
-                                <a style="display: inline;word-wrap: break-word;word-break: normal;padding: 0;" href="">
-                                    1. Sinotruk Howo Cab Parts Rear Fender (L) WG1642230103
+                                <a style="display: inline;word-wrap: break-word;word-break: normal;padding: 0;"
+                                   th:href="@{'part.html/' + ${item._id}}" th:text="${item.title}">
                                 </a>
                             </h3>
                             <p>
-                                <em>Brand:</em>WG1642230103
+                                <em th:text="${item.brand}"></em>
                             </p>
                             <p>
-                                <em>Part NO.:</em>
+                                <em th:text="${item.part}"></em>
                             </p>
                             <div class="addcart">
-                                <a href="" class="iconfont">&#xe657;
+                                <!--<a href="" class="iconfont">&#xe657;
                                 </a>
-                                <!-- <span class="separator">|</span> -->
+                                <span class="separator">|</span>
                                 <a rel="nofollow" href="" class="link-wishlist" title=" Add to Wishlist">
                                     <i class="fa fa-heart-o"></i>
-                                </a>
+                                </a>-->
                                 <a href="javascript:void(0)" class="zy-input-regin-class">info</a>
                             </div>
                         </div>
@@ -99,6 +105,117 @@
                 <div class="uzy_page"></div>
             </div>
         </div>
+
+        <style type="text/css">
+            #zy-input-regin {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 99999;
+                background: #3b4345d6;
+            }
+        </style>
+
+        <div id="zy-input-regin">
+            <div class="whyus-inquiry">
+                <form style="background: #fff;margin-top: 5%;"
+                      action="https://www.chinatruckparts.com/productcontact/index/submit/"
+                      id="productcontactForm" method="post">
+                    <a id="zy-xx-regin" style="
+    float: right;
+    margin-top: -40px;
+    margin-right: -44px;
+">
+                        <img src="skin/frontend/rwd/kailai/https-/www.chinatruckparts.com/skin/frontend/rwd/kailai/kailai_images/zy-popup-5.png"></a>
+                    <input type="hidden" name="pages" value="">
+                    <div class="inquiry_form_">
+                        <ul class="form-list">
+                            <li style="height: 68px;margin-bottom: 0;" class="fields">
+                                <div class="field">
+                                    <label for="personal_name" class="required"><em>*</em>Your Name:</label>
+                                    <div class="input-box">
+                                        <input name="personal_name" id="personal_name" title="Your Name"
+                                               value="" class="input-text required-entry" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="height: 68px;margin-bottom: 0;" class="fields">
+                                <div class="field">
+                                    <label for="company_name" class="required">Business Name:</label>
+                                    <div class="input-box">
+                                        <input name="company_name" id="company_name" title="Business Name"
+                                               value="" class="input-text" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="height: 68px;margin-bottom: 0;" class="fields">
+                                <div class="field">
+                                    <label for="phone" class="required">Phone Number：</label>
+                                    <div class="input-box">
+                                        <input name="phone" id="phone" title="Phone Number" value=""
+                                               class="input-text" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="height: 68px;margin-bottom: 0;" class="fields">
+                                <div class="field">
+                                    <label style="width: 172px;" for="customer_email"
+                                           class="required"><em>*</em>Email Address:</label>
+                                    <div class="input-box">
+                                        <input name="customer_email" id="customer_email" title="Email Address"
+                                               value="" class="input-text required-entry validate-email"
+                                               type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="wide fax"
+                                style="width: 62%;margin: 0;padding-left: 0;height: 68px;display: inline-block;">
+                                <div class="field">
+                                    <label for="fax" class="required"><em>*</em>Whatsapp/FaceTime ID or Mobile
+                                        Phone No.:</label>
+                                    <div class="input-box" style="width: 100%;">
+                                        <input style="width: 100%;" name="fax" id="fax"
+                                               title="Whatsapp/FaceTime ID or Mobile Phone No." value=""
+                                               class="input-text required-entry fixwidth" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <div class="des">We can reach you in a timely manner</div>
+
+                            <li class="wide">
+                                <label for="detail" class="required"><em>*</em>Type of Business:</label>
+                                <div class="input-box">
+                                            <textarea name="detail" id="detail" title="Type of Business"
+                                                      class="required-entry input-text" cols="10" rows="5"
+                                                      placeholder="Briefly explain what type of business you operate and what specific type of products you are interested in."></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buttonsset">
+                        <input type="text" name="hideit" id="hideit" value="" style="display:none !important;"/>
+                        <button type="submit" title="Submit" class="button"><span><span>Submit</span></span>
+                        </button>
+                        <p class="required">* indicated required</p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <script>
+          jQuery(document).ready(function () {
+            jQuery('a.zy-input-regin-class').click(function () {
+              jQuery('#zy-input-regin').show();
+            });
+            jQuery('#zy-xx-regin').click(function () {
+              jQuery('#zy-input-regin').hide();
+            });
+          });
+          var contactForm = new VarienForm('productcontactForm');
+        </script>
     </div>
 </div>
 
