@@ -4,11 +4,11 @@ package com.uzykj.chinatruck.common;
  * @author ghostxbh
  */
 public interface Constants {
-    String brand = "brand";
+    String BRAND = "brand";
 
-    String category = "category";
+    String CATEGORY = "category";
 
-    String contact = "contact";
+    String CONTACT = "contact";
 
-    String parts_info = "parts_info";
+    String PART_INFO = "part_info";
 }

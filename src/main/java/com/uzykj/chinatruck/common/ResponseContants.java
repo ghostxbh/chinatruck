@@ -5,13 +5,13 @@ package com.uzykj.chinatruck.common;
  */
 public interface ResponseContants {
 
-    String cust_name = "缺少客户名称";
+    String NOT_CUST_NAME = "缺少客户名称";
 
-    String cust_phone = "缺少客户电话";
+    String NOT_CUST_PHONE = "缺少客户电话";
 
-    String cust_email = "缺少客户邮箱";
+    String NOT_CUST_EMAIL = "缺少客户邮箱";
 
-    String brand = "缺少零件品牌";
+    String NOT_BRAND = "缺少零件品牌";
 
-    String part_desc = "缺少零件描述";
+    String NOT_PART_DESC = "缺少零件描述";
 }
