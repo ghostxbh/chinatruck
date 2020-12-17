@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="include/header.html">
+<head th:include="include/header.html"></head>
+<head>
     <meta charset="utf-8">
     <meta name="renderer" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="keywords" content="China Me Truck Parts">
     <meta name="description" content="China Me Truck Parts">
     <title th:text="${partInfo.title}"></title>
+
+    <link type="text/css" rel="stylesheet" href="/css/jquery.fancybox.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery.fancybox-buttons.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery.fancybox-thumbs.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/product_view.css"/>
+
+    <script type="text/javascript" src="/js/jquery.fancybox.js"></script>
 </head>
 <body>
 <div class="main">
@@ -298,7 +306,7 @@
 
             </div>
             <a id="popwindow"></a>
-            <div class="product-collateral toggle-content tabs">
+            <!--<div class="product-collateral toggle-content tabs">
                 <dl id="collateral-tabs" class="collateral-tabs">
                     <dt class="tab"><span>Description</span></dt>
                     <dd class="tab-container">
@@ -348,7 +356,7 @@
                                                     <h4>Tell us what you think about item <em class="required">*</em></h4>
                                                     <label for="nickname_field" class="required">Overall Rating<em>*</em></label>
                                                     <div class="input-box">
-                                                        <script>
+                                                        &lt;!&ndash;<script>
                                                           function scoreFun(object, opts) {
                                                             var defaults = {
                                                               fen_d: 16,
@@ -427,7 +435,7 @@
                                                               inputScore.val(parseInt(inputScore.data('id'))-5+scor);
                                                               atti.text(atu)
                                                             }
-                                                          };</script>
+                                                          };</script>&ndash;&gt;
                                                         <div class="ratingcode">Quality:</div>
                                                         <div id="start1" class="clearfix ratingscore">
                                                             <div class="star_score"></div>
@@ -511,7 +519,7 @@
                                                 Add image                </a>
                                         </div>
                                     </form>
-                                    <script type="text/javascript">
+                                    &lt;!&ndash;<script type="text/javascript">
                                       //<![CDATA[
                                       var dataForm = new VarienForm('review-form');
 
@@ -530,7 +538,7 @@
                                         });
                                       });
                                       //]]>
-                                    </script>
+                                    </script>&ndash;&gt;
                                 </div>
 
                                 <p class="no-rating"><a href="#review-form">Be the first to review this product</a></p>
@@ -539,7 +547,7 @@
                             <script src="https://www.chinatruckparts.com/skin/frontend/rwd/kailai/js/lightbox.js"></script></div>
                     </dd>
                 </dl>
-            </div>
+            </div>-->
             <div class="product-inquiry" name="2F"  id="2F">
                 <h2>Contact Supplier:</h2>
                 <form action="/message/index/savemessage" id="productcontactForm" method="post">
@@ -631,13 +639,13 @@
             }
         </style>
 
-        <script type="text/javascript">
+       <!-- <script type="text/javascript">
           document.observe('dom:loaded', function() {
             jQuery('#product-options-wrapper dl dd').each(function(e){
               jQuery('#product-options-wrapper dl dd').find('.swatches-container').find('a:first').click();
             });
           });
-        </script>
+        </script>-->
 
         <script>
           jQuery(document).ready(function(){

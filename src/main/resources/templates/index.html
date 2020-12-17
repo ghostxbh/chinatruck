@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="include/header.html">
+<head th:include="include/header.html"></head>
+<head>
     <meta charset="utf-8">
     <meta name="renderer" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -266,6 +267,66 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+          jQuery(document).ready(function ($) {
+            $(".e_map_tags li").mouseover(function () {
+              $(this).find(".m_content").show();
+            }).mouseout(function () {
+              $(this).find(".m_content").hide();
+            });
+          });
+        </script>
+        <script>
+          var sdelay = 0;
+          function returnTop() {
+            window.scrollBy(0, -100);//Only for y vertical-axis
+            if (document.body.scrollTop > 0) {
+              sdelay = setTimeout('returnTop()', 10);
+            }
+          }
+        </script>
+        <script>
+          jQuery('#protab .tab li').click(function () {
+            new Swiper('.pro-swiper2', {
+              nextButton: '.pro-swiper2 .swiper-button-next',
+              prevButton: '.pro-swiper2 .swiper-button-prev',
+              slidesPerView: 4,
+              slidesPerColumn: 2,
+            });
+            new Swiper('.pro-swiper3', {
+              nextButton: '.pro-swiper3 .swiper-button-next',
+              prevButton: '.pro-swiper3 .swiper-button-prev',
+              slidesPerView: 4,
+              slidesPerColumn: 2,
+            });
+            new Swiper('.pro-swiper4', {
+              nextButton: '.pro-swiper4 .swiper-button-next',
+              prevButton: '.pro-swiper4 .swiper-button-prev',
+              slidesPerView: 4,
+              slidesPerColumn: 2,
+            });
+            jQuery(this).addClass('lz').children('p').css('transform', 'scale(1.5,1.5)').siblings('h3').css({
+              fontSize: 20,
+              color: '#374488'
+            }).parent().siblings('li').removeClass('lz').children('p').css('transform', 'scale(1,1)').siblings('h3').css({
+              fontSize: 18,
+              color: '#000'
+            });
+          });
+          jQuery('#protab .tab li').hover(function () {
+            jQuery(this).children('p').css('transform', 'scale(1.5,1.5)').siblings('h3').css({
+              fontSize: 20,
+              color: '#374488'
+            })
+          }, function () {
+            if (!jQuery(this).is('.lz')) {
+              jQuery(this).children('p').css('transform', 'scale(1,1)').siblings('h3').css({
+                fontSize: 18,
+                color: '#000'
+              })
+            }
+          })
+        </script>
         <script type="text/javascript">
           jQuery(".nav").slide({
             type: "menu",

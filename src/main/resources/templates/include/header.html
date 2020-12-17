@@ -13,13 +13,19 @@
     <link type="text/css" rel="stylesheet" href="/css/kailai/kailai_webfont/iconfont.css"/>
 
     <link type="text/css" rel="stylesheet" href="/css/bootstrap/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/tree_css/jquery.treeview.css"/>
 
     <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
     <script type="text/javascript" src="/js/jquery.treeview.js"></script>
     <script type="text/javascript" src="/js/swiper.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/varien/form.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+
+    <!--<script type="text/javascript" src="/js/prototype/prototype.js"></script>
+    <script type="text/javascript" src="/js/prototype/validation.js"></script>
+    <script type="text/javascript" src="/js/varien/js.js"></script>
+    <script type="text/javascript" src="/js/varien/form.js"></script>-->
 </head>
 <div class="header-top-hz">
     <div class="header-top">
@@ -39,6 +45,13 @@
 
                 .top_sns a:hover {
                     color: #ea6c35 !important;
+                }
+
+                #q {
+                    margin-top: 1px;
+                    width: 494px;
+                    border: 2px solid #e25d4a;
+                    border-radius: 50px;
                 }
             </style>
 
@@ -62,13 +75,13 @@
                             <span style="font-size: 20px; color: black;">China Me Truckparts</span>
                         </a>
                     </div>
-                    <form id="search_mini_form" action="/number.html"
-                          method="get">
+                    <form id="search_mini_form" action="/number.html" method="get">
                         <div class="top-lft f-left" style="top: 0;">
                             <label for="q">Search:</label>
-                            <input style="width:536px;height: 36px;" id="q" type="q"
-                                   name="q" value="" class="search input-text required-entry" maxlength="128"
+                            <input style="width:536px;height: 36px;" id="q" type="text"
+                                   name="keywords" class="search input-text required-entry" maxlength="128"
                                    placeholder="Enter model/brand/classification"/>
+                            <input type="hidden" name="type" value="4"/>
                             <button style="height: 36px;width: 44px;" type="submit" title="Search" kailai_webfont
                                     iconfont.css="Search" class="search-button">
                                 <span>

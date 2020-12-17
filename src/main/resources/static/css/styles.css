@@ -13,7 +13,6 @@ summary {
   display: block;
 }
 
-
 /* hidden price */
 .price-info, p.special-price, p.old-price {
     display: none!important;

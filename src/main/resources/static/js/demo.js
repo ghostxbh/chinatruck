@@ -5,12 +5,20 @@
 $(function () {
   var page_no = $("input[name='page_no']").val();
   var pages = $("input[name='pages']").val();
-  var q = $("input[name='q']").val();
-  var no = $("input[name='no']").val();
-  var brand = $("input[name='brand']").val();
-  var category = $("input[name='category']").val();
+  var type = $("input[name='type']").val();
   var keywords = $("input[name='keywords']").val();
-  var url = '/number.html?q=' + q + '&no=' + no + '&brand=' + brand + "&category=" + category + "&keywords=" + keywords + "&page_no=";
+  var brand = $("input[name='brand']").val();
+  var platfrom = $("input[name='platfrom']").val();
+  var category = $("input[name='category']").val();
+  var no = $("input[name='no']").val();
+  var url = '/number.html?1=1';
+  if (type) {url += '&type=' + type;}
+  if (no) {url += '&no=' + no;}
+  if (brand) {url += '&brand=' + brand;}
+  if (platfrom) {url += '&platfrom=' + platfrom;}
+  if (category) {url += '&category=' + category;}
+  if (keywords) {url += '&keywords=' + keywords;}
+  url += '&page_no=';
   //初始化加载分页
   getPage(page_no, pages, url);
 });

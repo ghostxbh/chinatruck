@@ -57,20 +57,23 @@
                   function print() {
                     var a1 = document.getElementById("cityName1").value;
                     var c3 = document.getElementById("cityName3").value;
-                    location.replace("/number.html?no=" + a1 + "&keywords=" + c3)
+                    location.replace("/number.html?type=2&no=" + a1 + "&keywords=" + c3)
                   }
                 </script>
                 <div class="clear"></div>
             </div>
+
             <div class="uzy_page"></div>
+
             <div class="prolist1">
                 <input type="hidden" name="page_no" th:value="${result.page_no}"/>
                 <input type="hidden" name="pages" th:value="${result.pages}"/>
-                <input type="hidden" name="q" th:value="${q}"/>
-                <input type="hidden" name="no" th:value="${no}"/>
-                <input type="hidden" name="brand" th:value="${brand}"/>
-                <input type="hidden" name="category" th:value="${category}"/>
+                <input type="hidden" name="type" th:value="${type}"/>
                 <input type="hidden" name="keywords" th:value="${keywords}"/>
+                <input type="hidden" name="brand" th:value="${brand}"/>
+                <input type="hidden" name="platfrom" th:value="${platfrom}"/>
+                <input type="hidden" name="category" th:value="${category}"/>
+                <input type="hidden" name="no" th:value="${no}"/>
                 <dl class="sz-prolist">
                     <dd th:if="${result.records!=null && result.records.size()>0}" th:each="item:${result.records}">
                         <div class="szproimg" style="width:200px ;height:200px;">
@@ -96,8 +99,8 @@
                                 <span class="separator">|</span>
                                 <a rel="nofollow" href="" class="link-wishlist" title=" Add to Wishlist">
                                     <i class="fa fa-heart-o"></i>
-                                </a>-->
-                                <a href="javascript:void(0)" class="zy-input-regin-class">info</a>
+                                </a>
+                                <a href="javascript:void(0)" class="zy-input-regin-class">info</a>-->
                             </div>
                         </div>
                     </dd>
@@ -106,7 +109,7 @@
             </div>
         </div>
 
-        <style type="text/css">
+        <!--<style type="text/css">
             #zy-input-regin {
                 display: none;
                 position: fixed;
@@ -215,7 +218,7 @@
             });
           });
           var contactForm = new VarienForm('productcontactForm');
-        </script>
+        </script>-->
     </div>
 </div>
 
