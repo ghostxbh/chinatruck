@@ -3,14 +3,14 @@
  * @date 2020/04/01
  */
 $(function () {
-  var page_no = $("input[name='page_no']").val();
-  var pages = $("input[name='pages']").val();
-  var type = $("input[name='type']").val();
-  var keywords = $("input[name='keywords']").val();
-  var brand = $("input[name='brand']").val();
-  var platfrom = $("input[name='platfrom']").val();
-  var category = $("input[name='category']").val();
-  var no = $("input[name='no']").val();
+  var page_no = $('#param_page_no').val();
+  var pages = $('#param_pages').val();
+  var type = $('#param_type').val();
+  var keywords = $('#param_keywords').val();
+  var brand = $('#param_brand').val();
+  var platfrom = $('#param_platfrom').val();
+  var category = $('#param_category').val();
+  var no = $('#param_no').val();
   var url = '/number.html?1=1';
   if (type) {url += '&type=' + type;}
   if (no) {url += '&no=' + no;}

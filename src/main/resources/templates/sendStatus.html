@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/header.html"></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title>About Us</title>
+</head>
+<body>
+<div class="wrapper" style="margin-top: 50px;">
+    <div class="wrap wrap-about">
+        <div class="main main-about">
+            <div class="about1">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <img class="lazy" src="/images/about-2.png" alt="">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="note" style="line-height: 10px">
+                                    <h2>
+                                        Contact Status:
+                                        <h5 th:text="${message}"></h5>
+                                    </h2>
+
+                                    <h6 th:if="${success}">
+                                        We will get in touch with you as soon as possible
+                                    </h6>
+                                    <h6 th:if="${!success}">
+                                        We have received your request and a commissioner will contact you
+                                    </h6>
+                                </div>
+                                <div style="line-height: 10px">
+                                    <h4>Return to Homepage Now</h4>
+                                    <a href="/" style="font-size: 20px">click</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include/footer.html"></div>
+</body>
+</html>

@@ -66,14 +66,16 @@
             <div class="uzy_page"></div>
 
             <div class="prolist1">
-                <input type="hidden" name="page_no" th:value="${result.page_no}"/>
-                <input type="hidden" name="pages" th:value="${result.pages}"/>
-                <input type="hidden" name="type" th:value="${type}"/>
-                <input type="hidden" name="keywords" th:value="${keywords}"/>
-                <input type="hidden" name="brand" th:value="${brand}"/>
-                <input type="hidden" name="platfrom" th:value="${platfrom}"/>
-                <input type="hidden" name="category" th:value="${category}"/>
-                <input type="hidden" name="no" th:value="${no}"/>
+
+                <input type="hidden" id="param_page_no" th:value="${result.page_no}"/>
+                <input type="hidden" id="param_pages" th:value="${result.pages}"/>
+                <input type="hidden" id="param_type" th:value="${type}"/>
+                <input type="hidden" id="param_keywords" th:value="${keywords}"/>
+                <input type="hidden" id="param_brand" th:value="${brand}"/>
+                <input type="hidden" id="param_platfrom" th:value="${platfrom}"/>
+                <input type="hidden" id="param_category" th:value="${category}"/>
+                <input type="hidden" id="param_no" th:value="${no}"/>
+
                 <dl class="sz-prolist">
                     <dd th:if="${result.records!=null && result.records.size()>0}" th:each="item:${result.records}">
                         <div class="szproimg" style="width:200px ;height:200px;">

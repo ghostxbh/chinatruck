@@ -46,10 +46,14 @@
                         </div>
                         <div class="breadcrumbs">
                             <ul>
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.chinatruckparts.com/" title="Go to Home Page" itemprop="url">
-                                    <span itemprop="title">Home</span></a>
-                                    <span>>> </span></li>
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">DAYUN</span>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                    <a href="/" title="Go to Home Page" itemprop="url">
+                                        <span itemprop="title">Home</span>
+                                    </a>
+                                    <span>>> </span>
+                                </li>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                    <span itemprop="title">DAYUN</span>
                                     <span>>> </span></li>
                                 <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Dump Truck＆Tractor Head</span>
                                     <span>>> </span></li>
@@ -244,7 +248,7 @@
                             <span class="or">OR</span>
                         </div>
                     </div>
-                    <div style="display:none">
+                    <!--<div style="display:none">
                         <meta itemprop="name" content="DAYUN Truck Parts Lamp(H4)-24V70W " />
                         <meta itemprop="url" content="https://www.chinatruckparts.com/dayun-truck-parts-lamp-h4-24v70w.html" />
                         <meta itemprop="image" content="https://www.chinatruckparts.com/media/catalog/product/cache/1/small_image/300x/4569cd1d21e8f21cd15f6256af8853b8/l/a/lamp_h4_-24v70w_.png" />
@@ -255,7 +259,7 @@
                             <meta itemprop="availability" itemtype="http://schema.org/ItemAvailability" content="in Stock" />
                         </div>
                     </div>
-                    <div class="clearer"></div>
+                    <div class="clearer"></div>-->
                 </form>
                 <script type="text/javascript">
                   var productAddToCartForm = new VarienForm('product_addtocart_form');
@@ -550,16 +554,15 @@
             </div>-->
             <div class="product-inquiry" name="2F"  id="2F">
                 <h2>Contact Supplier:</h2>
-                <form action="/message/index/savemessage" id="productcontactForm" method="post">
-                    <input type="hidden" name="product_id" value="11246"/>
-                    <input type="hidden" name="pages" value="0"/>
+                <form action="/submit.html" id="productcontactForm" method="post">
+                    <input type="hidden" name="part_no" th:value="partInfo.title"/>
                     <div class="">
                         <ul class="form-list">
                             <li class="fields">
                                 <div class="field">
                                     <label for="customer_email" class="required lebelright"><em>*</em>Your Email:</label>
                                     <div class="input-box">
-                                        <input name="Email" id="customer_email" title="Your Email" value="" class="input-text required-entry validate-email" type="text" />
+                                        <input name="cust_email" id="customer_email" title="Your Email" value="" class="input-text required-entry validate-email" type="text" />
                                     </div>
                                 </div>
                             </li>
@@ -567,7 +570,7 @@
                                 <div class="field">
                                     <label for="personal_name" class="required lebelright"><em>*</em>Your Name:</label>
                                     <div class="input-box">
-                                        <input name="name" id="personal_name" title="Your Name" value="" style="width:185px !important;" class="required-entry input-text" type="text" />
+                                        <input name="cust_name" id="personal_name" title="Your Name" value="" style="width:185px !important;" class="required-entry input-text" type="text" />
                                     </div>
                                 </div>
                             </li>
@@ -575,7 +578,7 @@
                                 <div class="field">
                                     <label for="phone" class="required lebelright">Tel Number:</label>
                                     <div class="input-box">
-                                        <input name="number" id="phone" title="Tel Number" value="" class="input-text" type="text" />
+                                        <input name="cust_phone" id="phone" title="Tel Number" value="" class="input-text" type="text" />
                                     </div>
                                 </div>
                             </li>
@@ -583,7 +586,7 @@
                             <li class="wide">
                                 <label for="detail" class="required"><em>*</em>Type of Business:</label>
                                 <div class="input-box" style="display:block">
-                                    <textarea name="message" id="detail" title="Type of Business" class="required-entry input-text" cols="7" rows="5" placeholder="Briefly explain what type of business you operate and what specific type of products you are interested in."></textarea>
+                                    <textarea name="business" id="detail" title="Type of Business" class="required-entry input-text" cols="7" rows="5" placeholder="Briefly explain what type of business you operate and what specific type of products you are interested in."></textarea>
                                 </div>
                             </li>
                         </ul>
