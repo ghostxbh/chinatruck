@@ -38,6 +38,6 @@ public class ContactService {
         Query query = Query.query(Criteria.where("_id").is(contact_id));
         Update update = Update.update("send_status", status);
         update.set("send_time", DateUtils.getCurrentTime());
-        mongoTemplate.upsert(query, update, Constants.contact);
+        mongoTemplate.upsert(query, update, Constants.CONTACT);
     }
 }

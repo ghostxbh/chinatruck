@@ -15,10 +15,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PartQueryDTO {
-    private String q;
-    private String no;
+    /**
+     * 页面
+     * -1、默认
+     * 1、首页
+     * 2、型号页面
+     * 3、分类页面
+     * 4、搜索框
+     */
+    private Integer type;
     private String brand;
+    private String platfrom;
     private String category;
+    private String no;
     private String keywords;
     private Page<PartInfo> page;
 }
