@@ -148,7 +148,7 @@ jQuery(".sidebar").hoverDelay(function() {
 
        jQuery(".banner.f-left").css("display","none");
 
-       jQuery('.zy-sidebar_item-bg').css('background','url(http://www.chinatruckparts.com/skin/frontend/rwd/kailai/kailai_images/logo2.5.png) no-repeat center center');
+       // jQuery('.zy-sidebar_item-bg').css('background','url(http://www.chinatruckparts.com/skin/frontend/rwd/kailai/kailai_images/logo2.5.png) no-repeat center center');
 
     });
 
