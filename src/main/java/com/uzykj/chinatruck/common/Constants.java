@@ -10,5 +10,5 @@ public interface Constants {
 
     String CONTACT = "contact";
 
-    String PART_INFO = "part_info";
+    String PART_INFO = "parts_info";
 }
