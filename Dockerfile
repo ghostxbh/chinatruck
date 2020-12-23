@@ -12,4 +12,4 @@ COPY target/chinatruck.jar $PROJECT_HOME/chinatruck.jar
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java", "-Dspring.data.mongodb.uri=mongodb://chinatruck:zxcASDqwe@127.0.0.1:27017","-jar","./chinatruck.jar"]
+CMD ["java", "-Dspring.data.mongodb.uri=mongodb://chinatruck:zxcASDqwe@203.189.232.59:27017","-jar","./chinatruck.jar"]
