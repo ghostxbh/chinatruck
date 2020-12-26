@@ -122,7 +122,6 @@ public class PartInfoService {
                 criteria.and("title").regex(condition2, "i");
                 break;
         }
-        criteria.and("featured").exists(true);
         query.addCriteria(criteria);
 
         long count = mongoTemplate.count(query, Constants.PART_INFO);
