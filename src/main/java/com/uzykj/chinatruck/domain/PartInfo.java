@@ -29,6 +29,10 @@ public class PartInfo {
 
     private String part;
 
+    private Integer featured;
+
+    private String category;
+
     private String brand_id;
 
     private String category_id;

@@ -122,6 +122,7 @@ public class PartInfoService {
                 criteria.and("title").regex(condition2, "i");
                 break;
         }
+        criteria.and("featured").exists(true);
         query.addCriteria(criteria);
 
         long count = mongoTemplate.count(query, Constants.PART_INFO);
@@ -143,11 +144,13 @@ public class PartInfoService {
         try {
             Query query = new Query();
             query.limit(size);
-            Criteria criteria = Criteria.where("title").regex("^.*" + category + ".*$", "i");
+            Criteria criteria = Criteria.where("category").is(category);
+            criteria.and("featured").is(1);
+
             query.addCriteria(criteria);
             List<PartInfo> partInfos = mongoTemplate.find(query, PartInfo.class, Constants.PART_INFO);
 
-            partInfos.forEach(partInfo -> partInfo.setImage(getImage(partInfo.getImage())));
+//            partInfos.forEach(partInfo -> partInfo.setImage(getImage(partInfo.getImage())));
 
             return partInfos;
         } catch (Exception e) {

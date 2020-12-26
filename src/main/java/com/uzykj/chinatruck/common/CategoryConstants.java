@@ -4,7 +4,7 @@ package com.uzykj.chinatruck.common;
  * @author ghostxbh
  */
 public interface CategoryConstants {
-    Integer SIZE = 6;
+    Integer SIZE = 12;
 
     String CAB = "cab";
 
