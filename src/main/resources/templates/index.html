@@ -984,50 +984,80 @@
                         </li>
                     </ul>
                     <div class="tabcon" style="display:block;border: none;overflow: hidden;">
-                        <div class="swiper-container pro1 pro-swiper1">
-                            <div class="swiper-wrapper">
+                        <div class="swiper-container pro1 pro-swiper1" th:each="item:${cabList}">
+                            <div class="swiper-wrapper" style="float: left">
                                 <div class="swiper-slide li-item">
                                     <div class="img">
                                         <div class="Discount"><b>160%</b><br>OFF</div>
-                                        <a href="javascript:if(confirm(%27https://www.chinatruckparts.com/beiben-ng80a-bumper-assembly-2803010-436-for-sale.html  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://www.chinatruckparts.com/beiben-ng80a-bumper-assembly-2803010-436-for-sale.html%27">
-                                            <img src="media/catalog/product/b/e/beiben_ng80a-_bumper_assembly-2803010-436.jpg" >
+                                        <a th:href="@{'part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}" >
                                         </a>
                                     </div>
                                     <h3>
-                                        <a href="javascript:if(confirm(%27https://www.chinatruckparts.com/beiben-ng80a-bumper-assembly-2803010-436-for-sale.html  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://www.chinatruckparts.com/beiben-ng80a-bumper-assembly-2803010-436-for-sale.html%27">
-                                            BEIBEN NG80A- Bumper Assembly-2803010-436 For Sale
+                                        <a th:href="@{'part.html/' + ${item._id}}" th:text="${item.title}">
                                         </a>
                                     </h3>
-                                    <h4>
-                                        <div class="infomore">
-                                            <a href="javascript:void(0)"
-                                               class="iconfont icon1 zy-input-regin-class">&#xe660;</a>
-                                            <!-- <span class="separator">|</span> -->
-                                            <a rel="nofollow" href="" class="link-wishlist"
-                                               title=" Add to Wishlist">
-                                                <i class="fa fa-heart-o"></i>
-                                            </a>
-                                            <a href="javascript:if(confirm(%27https://www.chinatruckparts.com/beiben-ng80a-bumper-assembly-2803010-436-for-sale.html  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://www.chinatruckparts.com/beiben-ng80a-bumper-assembly-2803010-436-for-sale.html%27"
-                                               class="iconfont icon3">
-                                                &#xe657;
-                                            </a>
-                                        </div>
-                                        <p class="special-price">
-                                            <span class="price">
-                     						 $
-                                            </span>
-                                        </p>
-                                        <p class="old-price">
-                                            <span class="price">
-                                                $
-                                            </span>
-                                        </p>
-                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="tabcon" style="display:block;border: none;overflow: hidden;">
+                        <div class="swiper-container pro1 pro-swiper2" th:each="item:${chassisList}">
+                            <div class="swiper-wrapper" style="float: left">
+                                <div class="swiper-slide li-item">
+                                    <div class="img">
+                                        <div class="Discount"><b>160%</b><br>OFF</div>
+                                        <a th:href="@{'part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}" >
+                                        </a>
+                                    </div>
+                                    <h3>
+                                        <a th:href="@{'part.html/' + ${item._id}}" th:text="${item.title}">
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabcon" style="display:block;border: none;overflow: hidden;">
+                        <div class="swiper-container pro1 pro-swiper3" th:each="item:${engineList}">
+                            <div class="swiper-wrapper" style="float: left">
+                                <div class="swiper-slide li-item">
+                                    <div class="img">
+                                        <div class="Discount"><b>160%</b><br>OFF</div>
+                                        <a th:href="@{'part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}" >
+                                        </a>
+                                    </div>
+                                    <h3>
+                                        <a th:href="@{'part.html/' + ${item._id}}" th:text="${item.title}">
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabcon" style="display:block;border: none;overflow: hidden;">
+                        <div class="swiper-container pro1 pro-swiper4" th:each="item:${electricalList}">
+                            <div class="swiper-wrapper" style="float: left">
+                                <div class="swiper-slide li-item">
+                                    <div class="img">
+                                        <div class="Discount"><b>160%</b><br>OFF</div>
+                                        <a th:href="@{'part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}" >
+                                        </a>
+                                    </div>
+                                    <h3>
+                                        <a th:href="@{'part.html/' + ${item._id}}" th:text="${item.title}">
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
