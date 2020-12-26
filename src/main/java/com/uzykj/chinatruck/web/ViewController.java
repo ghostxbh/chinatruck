@@ -1,26 +1,25 @@
 package com.uzykj.chinatruck.web;
 
-import com.google.common.base.Preconditions;
+import com.uzykj.chinatruck.common.CategoryConstants;
 import com.uzykj.chinatruck.common.ResponseContants;
 import com.uzykj.chinatruck.domain.Brand;
 import com.uzykj.chinatruck.domain.Contact;
 import com.uzykj.chinatruck.domain.PartInfo;
 import com.uzykj.chinatruck.domain.dto.PartQueryDTO;
-import com.uzykj.chinatruck.domain.vo.JsonResult;
 import com.uzykj.chinatruck.domain.vo.Page;
 import com.uzykj.chinatruck.service.BrandService;
-import com.uzykj.chinatruck.service.CategoryService;
 import com.uzykj.chinatruck.service.ContactService;
 import com.uzykj.chinatruck.service.PartInfoService;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -40,7 +39,16 @@ public class ViewController {
     @GetMapping("/")
     public String index(Model model) {
         List<Brand> brands = brandService.list();
+
+        List<PartInfo> cabList = partInfoService.getPartsList(CategoryConstants.CAB, CategoryConstants.SIZE);
+        List<PartInfo> chassisList = partInfoService.getPartsList(CategoryConstants.CHASSIS, CategoryConstants.SIZE);
+        List<PartInfo> engineList = partInfoService.getPartsList(CategoryConstants.ENGINE, CategoryConstants.SIZE);
+        List<PartInfo> electricalList = partInfoService.getPartsList(CategoryConstants.ELECTRICAL, CategoryConstants.SIZE);
         model.addAttribute("brands", brands);
+        model.addAttribute("cabList", cabList);
+        model.addAttribute("chassisList", chassisList);
+        model.addAttribute("engineList", engineList);
+        model.addAttribute("electricalList", electricalList);
         return "index";
     }
 
@@ -94,15 +102,15 @@ public class ViewController {
     @PostMapping("/quotation.html")
     public String quotation(Contact contact, Model model) {
         boolean success = true;
-        if (!StringUtils.isEmpty(contact.getBrand())) {
+        if (StringUtils.isEmpty(contact.getBrand())) {
             success = false;
             model.addAttribute("message", ResponseContants.NOT_BRAND);
         }
-        if (!StringUtils.isEmpty(contact.getPart_desc())) {
+        if (StringUtils.isEmpty(contact.getPart_desc())) {
             success = false;
             model.addAttribute("message", ResponseContants.NOT_PART_DESC);
         }
-        if (!StringUtils.isEmpty(contact.getCust_email())) {
+        if (StringUtils.isEmpty(contact.getCust_email())) {
             success = false;
             model.addAttribute("message", ResponseContants.NOT_CUST_EMAIL);
         }
@@ -125,11 +133,11 @@ public class ViewController {
     @PostMapping("/submit.html")
     public String submit(Contact contact, Model model) {
         boolean success = true;
-        if (!StringUtils.isEmpty(contact.getCust_name())) {
+        if (StringUtils.isEmpty(contact.getCust_name())) {
             success = false;
             model.addAttribute("message", ResponseContants.NOT_CUST_NAME);
         }
-        if (!StringUtils.isEmpty(contact.getCust_email())) {
+        if (StringUtils.isEmpty(contact.getCust_email())) {
             success = false;
             model.addAttribute("message", ResponseContants.NOT_CUST_EMAIL);
         }
@@ -147,5 +155,10 @@ public class ViewController {
             model.addAttribute("message", ResponseContants.ADVISORY_ERROR);
         }
         return "sendStatus";
+    }
+
+    @GetMapping("/temp.html")
+    public String temp() {
+        return "temp";
     }
 }

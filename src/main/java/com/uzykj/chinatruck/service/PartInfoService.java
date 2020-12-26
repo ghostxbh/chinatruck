@@ -1,5 +1,7 @@
 package com.uzykj.chinatruck.service;
 
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpUtil;
 import com.uzykj.chinatruck.common.Constants;
 import com.uzykj.chinatruck.domain.PartInfo;
 import com.uzykj.chinatruck.domain.dto.PartQueryDTO;
@@ -14,7 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * @author ghostxbh
@@ -36,7 +40,10 @@ public class PartInfoService {
     }
 
     public PartInfo get(String id) {
-        return mongoTemplate.findById(id, PartInfo.class);
+        PartInfo partInfo = mongoTemplate.findById(id, PartInfo.class);
+        assert partInfo != null;
+        partInfo.setImage(getImage(partInfo.getImage()));
+        return partInfo;
     }
 
     public Page<PartInfo> numberSearch(PartQueryDTO queryDTO) {
@@ -124,9 +131,40 @@ public class PartInfoService {
         query.skip((page.getPage_no() - 1) * page.getPage_size());
         List<PartInfo> list = mongoTemplate.find(query, PartInfo.class, Constants.PART_INFO);
 
+        list.forEach(partInfo -> partInfo.setImage(getImage(partInfo.getImage())));
+
         page.formatTotal(count, list);
 
         model.addAttribute("type", queryDTO.getType());
         model.addAttribute("result", page);
+    }
+
+    public List<PartInfo> getPartsList(String category, int size) {
+        try {
+            Query query = new Query();
+            query.limit(size);
+            Criteria criteria = Criteria.where("title").regex("^.*" + category + ".*$", "i");
+            query.addCriteria(criteria);
+            List<PartInfo> partInfos = mongoTemplate.find(query, PartInfo.class, Constants.PART_INFO);
+
+            partInfos.forEach(partInfo -> partInfo.setImage(getImage(partInfo.getImage())));
+
+            return partInfos;
+        } catch (Exception e) {
+            log.error("getPartsList error", e);
+            return new ArrayList<PartInfo>(0);
+        }
+    }
+
+    public String getImage(String url) {
+        String imageUrl = null;
+        String image = HttpUtil.get(url);
+        if (image.contains("404 Not Found")) {
+            String type = url.substring(url.length() - 3, url.length());
+            String url1 = url.substring(0, url.length() - 3);
+            if ("png".equals(type)) imageUrl = url1 + "jpg";
+            if ("jpg".equals(type)) imageUrl = url1 + "png";
+        } else imageUrl = url;
+        return imageUrl;
     }
 }
