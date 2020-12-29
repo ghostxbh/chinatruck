@@ -21,13 +21,13 @@ public class CategoryService {
     private MongoTemplate mongoTemplate;
 
     public void save(Category category) {
-        category.setCreateTime(DateUtils.getCurrentTime());
+        category.setCreate_time(DateUtils.getCurrentTime());
         mongoTemplate.save(category);
     }
 
     public void batchSave(List<Category> categories) {
         log.info("add list total: {}", categories.size());
-        categories.forEach(category -> category.setCreateTime(DateUtils.getCurrentTime()));
+        categories.forEach(category -> category.setCreate_time(DateUtils.getCurrentTime()));
         mongoTemplate.insertAll(categories);
     }
 

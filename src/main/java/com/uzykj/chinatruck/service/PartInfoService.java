@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -44,6 +45,29 @@ public class PartInfoService {
         assert partInfo != null;
         partInfo.setImage(getImage(partInfo.getImage()));
         return partInfo;
+    }
+
+    public PartInfo getByTitle(String title) {
+        try {
+            Query query = new Query();
+            Criteria criteria = new Criteria();
+            criteria.and("title").regex(title, "i");
+            query.addCriteria(criteria);
+
+            List<PartInfo> list = mongoTemplate.find(query, PartInfo.class, Constants.PART_INFO);
+            if (!CollectionUtils.isEmpty(list)) {
+                if (list.size() < 2) {
+                    return list.get(0);
+                } else {
+                    log.warn("getByTitle size many, title: {}", title);
+                    return list.get(0);
+                }
+            }
+        } catch (Exception e) {
+            log.error("getByTitle error", e);
+            return null;
+        }
+        return null;
     }
 
     public Page<PartInfo> numberSearch(PartQueryDTO queryDTO) {

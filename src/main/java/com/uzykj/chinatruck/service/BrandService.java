@@ -1,10 +1,14 @@
 package com.uzykj.chinatruck.service;
 
 import com.uzykj.chinatruck.domain.Brand;
+import com.uzykj.chinatruck.domain.Component;
+import com.uzykj.chinatruck.domain.vo.Node;
 import com.uzykj.chinatruck.utils.DateUtils;
+import com.uzykj.chinatruck.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,14 +24,42 @@ public class BrandService {
     private MongoTemplate mongoTemplate;
 
     public void save(Brand brand) {
-        brand.setCreateTime(DateUtils.getCurrentTime());
+        brand.setCreate_time(DateUtils.getCurrentTime());
         mongoTemplate.save(brand);
     }
 
     public void batchSave(List<Brand> brands) {
         log.info("add list total: {}", brands.size());
-        brands.forEach(brand -> brand.setCreateTime(DateUtils.getCurrentTime()));
+        brands.forEach(brand -> brand.setCreate_time(DateUtils.getCurrentTime()));
         mongoTemplate.insertAll(brands);
+    }
+
+    @Async
+    public void nodeSave(List<Brand> brands) {
+        log.info("add list total: {}", brands.size());
+        brands.forEach(brand -> {
+            getNode(brand.getChildren());
+            brand.setCreate_time(DateUtils.getCurrentTime());
+        });
+        mongoTemplate.insertAll(brands);
+    }
+
+    private void getNode(List<Node> list){
+        list.forEach(item -> {
+            if (item.getChildren() != null) {
+                getNode(item.getChildren());
+            } else {
+                Component component = Component.builder()
+                        .name(item.getName())
+                        .data_id(item.getData_id()[0])
+                        .type(item.getType())
+                        .create_time(DateUtils.getCurrentTime())
+                        .build();
+                Component save = mongoTemplate.save(component);
+
+                item.setId(save.get_id());
+            }
+        });
     }
 
     public Brand get(String id) {
