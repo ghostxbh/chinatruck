@@ -42,4 +42,11 @@ public class DataQueueController {
         partsImagesService.batchSave(imagesList);
         return new JsonResult().success();
     }
+
+    @PostMapping("formatData")
+    @ApiOperation("整理数据")
+    public JsonResult<?> formatData() {
+        queueQueryService.formatCateData();
+        return new JsonResult().success();
+    }
 }

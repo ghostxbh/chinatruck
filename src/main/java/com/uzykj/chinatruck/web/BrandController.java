@@ -31,6 +31,13 @@ public class BrandController {
         return new JsonResult().success();
     }
 
+    @PostMapping("insert")
+    @ApiOperation("新增")
+    public JsonResult<?> insert(@RequestBody List<Brand> brandList) {
+        brandService.nodeSave(brandList);
+        return new JsonResult().success();
+    }
+
     @GetMapping("/{id}")
     @ApiOperation("查看")
     public JsonResult<Brand> create(@PathVariable String id) {
