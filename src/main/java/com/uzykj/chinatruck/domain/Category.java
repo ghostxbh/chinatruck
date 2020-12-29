@@ -28,7 +28,7 @@ public class Category {
 
     private Integer total;
 
-    private String createTime;
+    private String create_time;
 
     private String type;
 

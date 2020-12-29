@@ -1,5 +1,6 @@
 package com.uzykj.chinatruck.domain.vo;
 
+import com.uzykj.chinatruck.utils.ToolUtils;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,9 +10,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author xbh
- * @date 2020/12/8
- * @description
+ * @author ghostxbh
  */
 @Data
 @Builder
@@ -20,8 +19,9 @@ import java.util.List;
 public class Node implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String _id;
+    private String id;
     private String name;
     private String type;
+    private String[] data_id;
     private List<Node> children;
 }

@@ -1,6 +1,5 @@
 package com.uzykj.chinatruck.domain;
 
-import com.uzykj.chinatruck.domain.vo.Node;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,31 +7,27 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 /**
- * @author ghostxbh 品牌
+ * @author ghostxbh
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(value = "brand")
-public class Brand {
+@Document(value = "component")
+public class Component {
     @Id
     private String _id;
 
     private String name;
 
-    private String cn_name;
-
     private String image;
+
+    private String type;
+
+    private String data_id;
 
     private Integer total;
 
     private String create_time;
-
-    private String type;
-
-    private List<Node> children;
 }

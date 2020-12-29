@@ -36,4 +36,6 @@ public class PartInfo {
     private String brand_id;
 
     private String category_id;
+
+    private String component_id;
 }
