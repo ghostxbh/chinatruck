@@ -20,7 +20,7 @@
                     obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + lastPage + '\')" class="prevPage"><p class="previous">上一页</p></a>');
                 } else {
                     obj.remove('.prevPage');
-                    obj.append('<span class="disabled"><p class="previous">上一页</p></span>');
+                    obj.append('<span class="disabled"><p class="previous">previous</p></span>');
                 }
                 //中间页码
                 if (parseInt(args.page_no) != 1 && parseInt(args.page_no) >= 4 && parseInt(args.pages) != 4) {
@@ -55,12 +55,12 @@
                 //下一页
                 if (parseInt(args.page_no) < parseInt(args.pages)) {
                     let nextPage = args.page_no * 1 + 1;
-                    obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + nextPage + '\')" class="nextPage"><p class="next">下一页</p></a>');
+                    obj.append('<a href="javascript:void(0)" onclick="goToPage(\'' + args.url + nextPage + '\')" class="nextPage"><p class="next">next</p></a>');
                 } else {
                     obj.remove('.nextPage');
-                    obj.append('<span class="disabled"><p class="next">下一页</p></span>');
+                    obj.append('<span class="disabled"><p class="next">next</p></span>');
                 }
-                obj.append('<span><p style="border:none;">跳转<input type="text" id="pageIndex" onkeyup="var page_no = $(this).val();if (isNaN(page_no)) {$(this).val(\'\');}if (page_no.indexOf(\'.\') != -1) {$(this).val(\'\');}">页</p><a href="javascript:void(0);" class="btn" onclick="goPage(\'' + args.url + '\')">确定</a></span>');
+                obj.append('<span><p style="border:none;">jump<input type="text" id="pageIndex" onkeyup="var page_no = $(this).val();if (isNaN(page_no)) {$(this).val(\'\');}if (page_no.indexOf(\'.\') != -1) {$(this).val(\'\');}">page</p><a href="javascript:void(0);" class="btn" onclick="goPage(\'' + args.url + '\')">fix</a></span>');
             })();
         },
         //绑定事件
