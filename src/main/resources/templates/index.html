@@ -19,38 +19,59 @@
                          style="position: relative;max-width: 1280px;width: 1280px;padding: 0;">
                         <div class="bran-tc f-left sidebar zy-sidebar_item-bg"
                              style="height: 635px;overflow: auto;width: 100%; ">
-                            <ul class="sidebar_item">
+                            <ul class="sidebar_item" th:each="brand:${brands}">
                                 <li>
                                     <h1 style="margin: 0;width: 128px;">
                                         <a href="#"
                                            style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/faw_logo.jpg">
+                                            <img th:src="${brand.image}">
                                             <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                FAW
+                                                <span style="color:#0b090a;">
+                                                    +
+                                                    <span th:text="${brand.name}"></span>
+                                                </span>
                                             </h3>
                                         </a>
                                         <s></s>
                                     </h1>
                                     <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
                                         <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="119" style="mdrgin-bottom:0px !important">
+                                            <ul class="tree_brand_list" style="mdrgin-bottom:0px !important" th:if="${brand.children != null}" th:each="platform:${brand.children}">
                                                 <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        J5P
+                                                    <span style="position:relative;top: -7px;" th:text="${platform.name}">
                                                     </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="1334"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                <a href="/number.html?type=1&brand=FAW&platfrom=J5P">Cab</a>
+                                                    <ul style="margin-top:-2px;" th:if="${platform.children != null}" th:each="category:${platform.children}">
+                                                        <li class=" zy-requry1111 zy-requry222" style="line-height:20px !important">
+                                                            <span style="position:relative;top: -2px;height: 19px;" th:if="${category.children != null}" th:text="${category.name}">
+                                                            </span>
+                                                            <ul th:if="${category.children != null}" th:each="type:${category.children}">
+                                                                <li class="zy-requry1 zy-requry11" style="height: auto;line-height:20px !important ;">
+                                                                    <span style="position:relative;top: -2px;height:10px;" th:if="${type.children != null}" th:text="${type.name}">
+                                                                    </span>
+
+                                                                    <ul style="margin-top:0" th:if="${type.children != null}" th:each="component:${type.children}">
+                                                                        <li class="zy-requry4 zy-requry44" style="height: auto;line-height:20px !important ;">
+                                                                            <span style="position:relative;top: -2px;">
+                                                                                <a href="#" th:text="${component.name}"></a>
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                    <span style="position:relative;top: -2px;height:10px;" th:if="${type.children == null}">
+                                                                        <a href="#" th:text="${type.name}"></a>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+
+                                                            <span style="position:relative;top: -2px;height:10px;" th:if="${category.children == null}">
+                                                                <a href="#" th:text="${category.name}"></a>
                                                             </span>
                                                         </li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                             <script type="text/javascript">
-                                              jQuery("#119").treeview({
+                                              jQuery(".tree_brand_list").treeview({
                                                 persist: "location",
                                                 collapsed: true,
                                                 unique: true
@@ -60,7 +81,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <!--<li>
                                     <h1 style="margin: 0;width: 128px;">
                                         <a href="#"
                                            style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
@@ -842,7 +863,8 @@
                                             </script>
                                         </div>
                                     </div>
-                                </li>
+                                </li>-->
+
                             </ul>
                         </div>
                         <div class="banner f-left" style="z-index: 3 !important;padding-right: 20px;">
