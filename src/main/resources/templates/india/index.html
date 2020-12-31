@@ -52,19 +52,19 @@
                                                                     <ul style="margin-top:0" th:if="${type.children != null}" th:each="component:${type.children}">
                                                                         <li class="zy-requry4 zy-requry44" style="height: auto;line-height:20px !important ;">
                                                                             <span style="position:relative;top: -2px;">
-                                                                                <a href="#" th:text="${component.name}"></a>
+                                                                                <a th:href="@{'/IDN/component.html/' + ${component.id}}" th:text="${component.name}"></a>
                                                                             </span>
                                                                         </li>
                                                                     </ul>
 
                                                                     <span style="position:relative;top: -2px;height:10px;" th:if="${type.children == null}">
-                                                                        <a href="#" th:text="${type.name}"></a>
+                                                                        <a th:href="@{'/IDN/component.html/' + ${type.id}}" th:text="${type.name}"></a>
                                                                     </span>
                                                                 </li>
                                                             </ul>
 
                                                             <span style="position:relative;top: -2px;height:10px;" th:if="${category.children == null}">
-                                                                <a href="#" th:text="${category.name}"></a>
+                                                                <a th:href="@{'/IDN/component.html/' + ${category.id}}" th:text="${category.name}"></a>
                                                             </span>
                                                         </li>
                                                     </ul>

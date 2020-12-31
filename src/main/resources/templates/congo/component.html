@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html lang="en" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" id="top" class="no-js ie9"> <![endif]-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="no-js">
+<head th:include="congo/include/header.html"></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title>solola</title>
+</head>
+<body>
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="zy-banner" style="width: 100% !important;margin: 0 !important">
+            <img th:if="${image != null}" th:src="${image}">
+        </div>
+        <div class="container" style="margin-left:-9px; overflow:auto">
+            <div class="prolist1">
+                <dl class="sz-prolist">
+                    <dd th:if="${partInfoList!=null && partInfoList.size()>0}" th:each="item:${partInfoList}">
+                        <div class="szproimg" style="width:200px ;height:200px;">
+                            <a th:href="@{'/COD/part.html/' + ${item._id}}">
+                                <img th:src="${item.image}">
+                            </a>
+                        </div>
+                        <div class="szprotext" style="white-space: inherit;">
+                            <h3>
+                                <a style="display: inline;word-wrap: break-word;word-break: normal;padding: 0;"
+                                   th:href="@{'/COD/part.html/' + ${item._id}}" th:text="${item.title}">
+                                </a>
+                            </h3>
+                            <p>
+                                <em th:text="${item.brand}"></em>
+                            </p>
+                            <p>
+                                <em th:text="${item.part}"></em>
+                            </p>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:include="congo/include/footer.html"></div>
+</body>
+</html>
