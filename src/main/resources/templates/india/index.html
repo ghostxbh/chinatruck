@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="india/include/header.html"></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title>चीन मुझे ट्रक पार्ट्स</title>
+</head>
+<body>
+<div class="main">
+    <div class="col-main name1" style="width: 1280px;margin: 0 auto;">
+        <div class="std">
+            <div class="widget widget-static-block">
+                <div class="first-screen">
+                    <div class="container pos-retive"
+                         style="position: relative;max-width: 1280px;width: 1280px;padding: 0;">
+                        <div class="bran-tc f-left sidebar zy-sidebar_item-bg"
+                             style="height: 635px;overflow: auto;width: 100%; ">
+                            <ul class="sidebar_item" th:each="brand:${brands}">
+                                <li>
+                                    <h1 style="margin: 0;width: 128px;">
+                                        <a href="#"
+                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
+                                            <img th:src="${brand.image}">
+                                            <h3 style="height: auto;">
+                                                <span style="color:#0b090a;">
+                                                    +
+                                                    <span th:text="${brand.name}"></span>
+                                                </span>
+                                            </h3>
+                                        </a>
+                                        <s></s>
+                                    </h1>
+                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
+                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
+                                            <ul class="tree_brand_list" style="mdrgin-bottom:0px !important" th:if="${brand.children != null}" th:each="platform:${brand.children}">
+                                                <li>
+                                                    <span style="position:relative;top: -7px;" th:text="${platform.name}">
+                                                    </span>
+                                                    <ul style="margin-top:-2px;" th:if="${platform.children != null}" th:each="category:${platform.children}">
+                                                        <li class=" zy-requry1111 zy-requry222" style="line-height:20px !important">
+                                                            <span style="position:relative;top: -2px;height: 19px;" th:if="${category.children != null}" th:text="${category.name}">
+                                                            </span>
+                                                            <ul th:if="${category.children != null}" th:each="type:${category.children}">
+                                                                <li class="zy-requry1 zy-requry11" style="height: auto;line-height:20px !important ;">
+                                                                    <span style="position:relative;top: -2px;height:10px;" th:if="${type.children != null}" th:text="${type.name}">
+                                                                    </span>
+
+                                                                    <ul style="margin-top:0" th:if="${type.children != null}" th:each="component:${type.children}">
+                                                                        <li class="zy-requry4 zy-requry44" style="height: auto;line-height:20px !important ;">
+                                                                            <span style="position:relative;top: -2px;">
+                                                                                <a href="#" th:text="${component.name}"></a>
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                    <span style="position:relative;top: -2px;height:10px;" th:if="${type.children == null}">
+                                                                        <a href="#" th:text="${type.name}"></a>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+
+                                                            <span style="position:relative;top: -2px;height:10px;" th:if="${category.children == null}">
+                                                                <a href="#" th:text="${category.name}"></a>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <script type="text/javascript">
+                                              jQuery(".tree_brand_list").treeview({
+                                                persist: "location",
+                                                collapsed: true,
+                                                unique: true
+                                              });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="banner f-left" style="z-index: 3 !important;padding-right: 20px;">
+                            <div class="banner-cont" style=" box-shadow: 10px 10px 5px #888888;">
+                                <div class="swiper-container banner-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/images/banner.jpg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="f-lanmu f-right" style="position: absolute;right: 33px;">
+                            <div class="tit">
+                                बुलेटिन बोर्ड：
+                            </div>
+                            <div class="boxmid">
+                                हम ग्राहकों की चिंताओं के बारे में परवाह करते हैं, हम ट्रक डीलरों, निर्माण कंपनियों,
+                                परिवहन लॉजिस्टिक्स कंपनियों और सड़क और पुल निर्माण कंपनियों के साथ सहायता और सहयोग करने में मजबूत हैं,
+                                क्योंकि आपको यह पता लगाने में बहुत समय और प्रयास खर्च नहीं करना पड़ता है। भाग संख्या,
+                                हम इसे आपके उपकरणों के VIN संख्याओं के साथ कर सकते हैं। हम गलत भागों के वितरण की संभावना
+                                को कम करने के लिए भी ऐसा करते हैं
+                            </div>
+                            <div class="tit">
+                                संपर्क विवरण:
+                            </div>
+                            <div class="boxmid">
+                                <h5>WhatsApp: (चीन)</h5>
+                                <a href="https://api.whatsapp.com/send?phone=+8619902463814&text=Hello">
+                                    +8619902463814
+                                </a>
+                                <h5>ईमेल:</h5>
+                                <a href="mailto:chinametruckparts@163.com">
+                                    chinametruckparts@163.com
+                                </a>
+                                <h5>फेसबुक:</h5>
+                                <a href="https://www.facebook.com/ChinaMeTruckParts">
+                                    https://www.facebook.com/ChinaMeTruckParts
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="part-query" style="margin:0;margin-bottom: 9px;">
+                <div class="part_title" style="margin-top: 18px;margin-bottom: -6px;">
+                    उद्धरण के लिए अनुरोध
+                    <span class="line"
+                          style="width: 80%;height: 4px; background-color: #efefef;float: right;top: 12px; position: relative; border: 1px solid #efefef; border-radius: 2px;">
+                    </span>
+                </div>
+                <div style="width: 35.2%;float: left;max-height: 368px;overflow: hidden;padding-top:20px;">
+                    <img src="/images/media/wysiwyg/logo3f.jpg"/>
+                </div>
+                <form style="width: 64.8%;float: right;" enctype="application/x-www-form-urlencoded"
+                      action="/quotation.html"
+                      id="productcontactForm" method="post">
+                    <input type="hidden" name="pages" value="home">
+                    <div class="inquiry_form_">
+                        <ul class="form-list" style="overflow: hidden;margin-bottom: 0;">
+                            <li style="width: 33%;float: left;margin: 0;" class="fields">
+                                <div class="field">
+                                    <label for="brand" class="required"><em>*</em>ब्रांड:</label>
+                                    <div class="input-box">
+                                        <input name="brand" id="brand" title="brand" placeholder="जैसे सिनोट्रुक"
+                                               class="input-text required-entry" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;" class="fields">
+                                <div class="field">
+                                    <label for="part_no" class="required">भाग संख्या:</label>
+                                    <div class="input-box">
+                                        <input name="part_no" id="part_no" title="part no"
+                                               placeholder="जैसे VG9719720001" class="input-text" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;" class="fields">
+                                <div class="field">
+                                    <label for="optional" class="required">VIN (वैकल्पिक)</label>
+                                    <div class="input-box">
+                                        <input name="optional" id="optional" placeholder="जैसे LZZ5CLSB9GD142427"
+                                               class="input-text" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;" class="fields">
+                                <div class="field">
+                                    <label for="part_desc" class="required"><em>*</em>भाग विवरण:</label>
+                                    <div class="input-box">
+                                        <textarea
+                                                style="height: 40px !important;overflow: hidden; padding: 0 !important;"
+                                                name="part_desc" id="part_desc" title="part desc"
+                                                class="required-entry input-text" cols="10" rows="5"
+                                                placeholder="संक्षेप में बताएं कि आप किस प्रकार का व्यवसाय संचालित करते हैं और आप किस विशिष्ट प्रकार के उत्पादों में रुचि रखते हैं।">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label for="cust_phone" class="required">Telephone</label>
+                                    <div class="input-box">
+                                        <input name="cust_phone" id="cust_phone" placeholder="जैसे +8613001321818"
+                                               class="input-text required-entry fixwidth" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label for="part_photo" class="required">भाग फोटो (वैकल्पिक):</label>
+                                    <div class="input-box"
+                                         style="position: relative;height: 38px;overflow: hidden;">
+                                        <input type="text" id="part_photo" name="part_photo"
+                                               class="input-text required-entry fixwidth"
+                                               value="Upload your Part photo" disabled="disabled">
+                                        <input type="button"
+                                               style="position: absolute;top: 1px;right: 0;width: 45px;height: 36px;font-size: 44px;line-height: 33px;border: 1px solid #ddd;"
+                                               onmousemove="f.style.pixelLeft=event.x-60;f.style.pixelTop=this.offsetTop;"
+                                               value="+" size="30" onclick="f.click()" class="liulan">
+                                        <input type="file" id="f" onchange="txt.value=this.value" name="f"
+                                               style="height:26px;" class="files" size="1" hidefocus="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label for="cust_email" class="required"><em>*</em>ईमेल करें:</label>
+                                    <div class="input-box">
+                                        <input name="cust_email" id="cust_email" placeholder="ईमेल"
+                                               class="input-text required-entry fixwidth" type="text"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="width: 33%;float: left;margin: 0;margin-top:20px !important;"
+                                class="wide fax">
+                                <div class="field">
+                                    <label class="required"><em> </em></label>
+                                    <div class="input-box">
+                                        <button style="display: inline-block;" name="" value="" class="bot1">
+                                            प्रस्तुत
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--产品-->
+        <div class="proground">
+            <div class="container" style="padding: 0;">
+                <div class="part_title" style="margin-top: 20px;margin-bottom: 20px;">
+                    विशेष रुप से प्रदर्शित प्रोडक्टस
+                    <span class="line"
+                          style="width: 84%;height: 4px; background-color: #efefef;float: right;top: 12px; position: relative; border: 1px solid #efefef; border-radius: 2px;">
+                    </span>
+                </div>
+                <div id="protab" class="probox" style="border-bottom: none !important;">
+                    <ul class="tab">
+                        <li onclick="tabs('#protab',0)" class="curr">
+                            <p>
+                                <img src="/images/media/category/CAB.jpg"/>
+                            </p>
+                            <h3>टैक्सी</h3>
+                        </li>
+                        <li onclick="tabs('#protab',1)">
+                            <p>
+                                <img src="/images/media/category/CHASSIS.png"/>
+                            </p>
+                            <h3>न्याधार</h3>
+                            <i></i>
+                        </li>
+                        <li onclick="tabs('#protab',2)">
+                            <p>
+                                <img src="/images/media/category/ENGINE.jpg"/>
+                            </p>
+                            <h3>यन्त्र</h3>
+                            <i></i>
+                        </li>
+                        <li onclick="tabs('#protab',3)" style="border-width: 1px 1px 1px 1px;">
+                            <p>
+                                <img src="/images/media/category/ELECTRICAL.jpg">
+                            </p>
+                            <h3>विद्युतीय</h3>
+                            <i></i>
+                        </li>
+                    </ul>
+                    <div class="tabcon" style="display:block;border: none;overflow: hidden;">
+                        <div class="swiper-container pro1 pro-swiper1" style="width: 1620px; overflow: auto;">
+                            <div class="swiper-wrapper" th:each="item:${cabList}">
+                                <div class="swiper-slide li-item" style="float: left;">
+                                    <div class="img">
+                                        <div class="Discount"><b>160%</b><br>OFF</div>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}">
+                                        </a>
+                                    </div>
+                                    <h3>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}" th:text="${item.title}">
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabcon" style="display:block;border: none;overflow: hidden;">
+                        <div class="swiper-container pro1 pro-swiper2" style="width: 1620px; overflow: auto;">
+                            <div class="swiper-wrapper" th:each="item:${chassisList}">
+                                <div class="swiper-slide li-item" style="float: left;">
+                                    <div class="img">
+                                        <div class="Discount"><b>160%</b><br>OFF</div>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}">
+                                        </a>
+                                    </div>
+                                    <h3>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}" th:text="${item.title}">
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabcon" style="display:block;border: none;overflow: hidden;">
+                        <div class="swiper-container pro1 pro-swiper3" style="width: 1620px; overflow: auto;">
+                            <div class="swiper-wrapper" th:each="item:${engineList}">
+                                <div class="swiper-slide li-item" style="float: left;">
+                                    <div class="img">
+                                        <div class="Discount"><b>160%</b><br>OFF</div>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}">
+                                        </a>
+                                    </div>
+                                    <h3>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}" th:text="${item.title}">
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabcon" style="display:block;border: none;overflow: hidden;">
+                        <div class="swiper-container pro1 pro-swiper4" style="width: 1620px; overflow: auto;">
+                            <div class="swiper-wrapper" th:each="item:${electricalList}">
+                                <div class="swiper-slide li-item" style="float: left;">
+                                    <div class="img">
+                                        <div class="Discount"><b>160%</b><br>OFF</div>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}">
+                                            <img th:src="${item.image}">
+                                        </a>
+                                    </div>
+                                    <h3>
+                                        <a th:href="@{'/IDN/part.html/' + ${item._id}}" th:text="${item.title}">
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <a onclick="returnTop()" class="backtop"></a>
+        <script type="text/javascript">
+          function tabs(tabId, tabNum) {
+            //设置点击后的切换样式
+            jQuery(tabId + " .tab li").removeClass("curr");
+            jQuery(tabId + " .tab li").eq(tabNum).addClass("curr");
+            //根据参数决定显示内容
+            jQuery(tabId + " .tabcon").hide();
+            jQuery(tabId + " .tabcon").eq(tabNum).show();
+          }
+        </script>
+        <script type="text/javascript">
+          jQuery(document).ready(function ($) {
+            $(".e_map_tags li").mouseover(function () {
+              $(this).find(".m_content").show();
+            }).mouseout(function () {
+              $(this).find(".m_content").hide();
+            });
+          });
+        </script>
+        <script>
+          var sdelay = 0;
+
+          function returnTop() {
+            window.scrollBy(0, -100);//Only for y vertical-axis
+            if (document.body.scrollTop > 0) {
+              sdelay = setTimeout('returnTop()', 10);
+            }
+          }
+        </script>
+        <script>
+          jQuery('#protab .tab li').click(function () {
+            new Swiper('.pro-swiper2', {
+              nextButton: '.pro-swiper2 .swiper-button-next',
+              prevButton: '.pro-swiper2 .swiper-button-prev',
+              slidesPerView: 4,
+              slidesPerColumn: 2,
+            });
+            new Swiper('.pro-swiper3', {
+              nextButton: '.pro-swiper3 .swiper-button-next',
+              prevButton: '.pro-swiper3 .swiper-button-prev',
+              slidesPerView: 4,
+              slidesPerColumn: 2,
+            });
+            new Swiper('.pro-swiper4', {
+              nextButton: '.pro-swiper4 .swiper-button-next',
+              prevButton: '.pro-swiper4 .swiper-button-prev',
+              slidesPerView: 4,
+              slidesPerColumn: 2,
+            });
+            jQuery(this).addClass('lz').children('p').css('transform', 'scale(1.5,1.5)').siblings('h3').css({
+              fontSize: 20,
+              color: '#374488'
+            }).parent().siblings('li').removeClass('lz').children('p').css('transform', 'scale(1,1)').siblings('h3').css({
+              fontSize: 18,
+              color: '#000'
+            });
+          });
+          jQuery('#protab .tab li').hover(function () {
+            jQuery(this).children('p').css('transform', 'scale(1.5,1.5)').siblings('h3').css({
+              fontSize: 20,
+              color: '#374488'
+            })
+          }, function () {
+            if (!jQuery(this).is('.lz')) {
+              jQuery(this).children('p').css('transform', 'scale(1,1)').siblings('h3').css({
+                fontSize: 18,
+                color: '#000'
+              })
+            }
+          })
+        </script>
+        <script type="text/javascript">
+          jQuery(".nav").slide({
+            type: "menu",
+            titCell: ".m",
+            targetCell: ".sub",
+            effect: "slideDown",
+            delayTime: 300,
+            triggerTime: 0,
+            returnDefault: true
+          });
+        </script>
+        <script>
+          var swiper = new Swiper('.banner-swiper', {
+            pagination: '.banner-swiper .swiper-pagination',
+            paginationClickable: '.banner-swiper .swiper-pagination',
+          });
+        </script>
+    </div>
+</div>
+<div id="back-top"><i class="fa fa-arrow-up"></i></div>
+<div th:include="india/include/footer.html"></div>
+</body>
+</html>
