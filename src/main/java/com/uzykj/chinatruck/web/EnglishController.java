@@ -2,16 +2,10 @@ package com.uzykj.chinatruck.web;
 
 import com.uzykj.chinatruck.common.CategoryConstants;
 import com.uzykj.chinatruck.common.ResponseContants;
-import com.uzykj.chinatruck.domain.Brand;
-import com.uzykj.chinatruck.domain.Category;
-import com.uzykj.chinatruck.domain.Contact;
-import com.uzykj.chinatruck.domain.PartInfo;
+import com.uzykj.chinatruck.domain.*;
 import com.uzykj.chinatruck.domain.dto.PartQueryDTO;
 import com.uzykj.chinatruck.domain.vo.Page;
-import com.uzykj.chinatruck.service.BrandService;
-import com.uzykj.chinatruck.service.CategoryService;
-import com.uzykj.chinatruck.service.ContactService;
-import com.uzykj.chinatruck.service.PartInfoService;
+import com.uzykj.chinatruck.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +29,8 @@ public class EnglishController {
     private BrandService brandService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private ComponentService componentService;
     @Autowired
     private ContactService contactService;
     @Autowired
@@ -93,6 +89,15 @@ public class EnglishController {
         PartInfo partInfo = partInfoService.get(id);
         model.addAttribute("partInfo", partInfo);
         return "part";
+    }
+
+    @GetMapping("/component.html/{id}")
+    public String component(Model model, @PathVariable String id) {
+        Component component = componentService.get(id);
+        List<PartInfo> partInfoList = partInfoService.getByComponent(id);
+        model.addAttribute("image", component.getImage());
+        model.addAttribute("partInfoList", partInfoList);
+        return "component";
     }
 
     @GetMapping("/about.html")

@@ -193,4 +193,20 @@ public class PartInfoService {
         } else imageUrl = url;
         return imageUrl;
     }
+
+    public List<PartInfo> getByComponent(String component) {
+        try {
+            Query query = new Query();
+            Criteria criteria = Criteria.where("component_id").is(component);
+            query.addCriteria(criteria);
+            List<PartInfo> partInfoList = mongoTemplate.find(query, PartInfo.class, Constants.PART_INFO);
+
+            partInfoList.forEach(partInfo -> partInfo.setImage(getImage(partInfo.getImage())));
+
+            return partInfoList;
+        } catch (Exception e) {
+            log.error("getByComponent error", e);
+            return new ArrayList<PartInfo>(0);
+        }
+    }
 }

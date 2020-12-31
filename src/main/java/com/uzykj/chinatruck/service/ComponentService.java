@@ -21,4 +21,8 @@ public class ComponentService {
     public List<Component> getAll() {
         return mongoTemplate.findAll(Component.class, Constants.COMPONENT);
     }
+
+    public Component get(String id) {
+        return mongoTemplate.findById(id, Component.class, Constants.COMPONENT);
+    }
 }
