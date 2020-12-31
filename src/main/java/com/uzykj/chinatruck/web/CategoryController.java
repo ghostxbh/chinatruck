@@ -32,4 +32,11 @@ public class CategoryController {
         categoryService.batchSave(categoryList);
         return new JsonResult().success();
     }
+
+    @PostMapping("insert")
+    @ApiOperation("新增")
+    public JsonResult<?> insert(@RequestBody List<Category> categoryList) {
+        categoryService.nodeSave(categoryList);
+        return new JsonResult().success();
+    }
 }

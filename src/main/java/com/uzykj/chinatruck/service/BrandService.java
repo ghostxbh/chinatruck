@@ -1,5 +1,6 @@
 package com.uzykj.chinatruck.service;
 
+import com.uzykj.chinatruck.common.Constants;
 import com.uzykj.chinatruck.domain.Brand;
 import com.uzykj.chinatruck.domain.Component;
 import com.uzykj.chinatruck.domain.vo.Node;
@@ -40,8 +41,9 @@ public class BrandService {
         brands.forEach(brand -> {
             getNode(brand.getChildren());
             brand.setCreate_time(DateUtils.getCurrentTime());
+            mongoTemplate.save(brand);
         });
-        mongoTemplate.insertAll(brands);
+        log.info("add brands success");
     }
 
     private void getNode(List<Node> list){
@@ -54,8 +56,9 @@ public class BrandService {
                         .data_id(item.getData_id()[0])
                         .type(item.getType())
                         .create_time(DateUtils.getCurrentTime())
+                        .update_stamp(DateUtils.getCurrentTimeStamp())
                         .build();
-                Component save = mongoTemplate.save(component);
+                Component save = mongoTemplate.save(component, Constants.COMPONENT);
 
                 item.setId(save.get_id());
             }

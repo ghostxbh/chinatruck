@@ -99,6 +99,7 @@ public class QueueQueryService {
 
             mongoTemplate.findAndModify(query, update, Component.class);
         });
+        log.info("format data success!");
     }
 
     public static void main(String[] args) {

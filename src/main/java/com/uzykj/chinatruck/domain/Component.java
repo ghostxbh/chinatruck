@@ -30,4 +30,6 @@ public class Component {
     private Integer total;
 
     private String create_time;
+
+    private Long update_stamp;
 }

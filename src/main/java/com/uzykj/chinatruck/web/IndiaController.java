@@ -3,11 +3,13 @@ package com.uzykj.chinatruck.web;
 import com.uzykj.chinatruck.common.CategoryConstants;
 import com.uzykj.chinatruck.common.ResponseContants;
 import com.uzykj.chinatruck.domain.Brand;
+import com.uzykj.chinatruck.domain.Category;
 import com.uzykj.chinatruck.domain.Contact;
 import com.uzykj.chinatruck.domain.PartInfo;
 import com.uzykj.chinatruck.domain.dto.PartQueryDTO;
 import com.uzykj.chinatruck.domain.vo.Page;
 import com.uzykj.chinatruck.service.BrandService;
+import com.uzykj.chinatruck.service.CategoryService;
 import com.uzykj.chinatruck.service.ContactService;
 import com.uzykj.chinatruck.service.PartInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -15,10 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -28,9 +27,12 @@ import java.util.List;
  */
 @Slf4j
 @Controller
-public class ViewController {
+@RequestMapping("IDN")
+public class IndiaController {
     @Autowired
     private BrandService brandService;
+    @Autowired
+    private CategoryService categoryService;
     @Autowired
     private ContactService contactService;
     @Autowired
@@ -49,7 +51,8 @@ public class ViewController {
         model.addAttribute("chassisList", chassisList);
         model.addAttribute("engineList", engineList);
         model.addAttribute("electricalList", electricalList);
-        return "index";
+
+        return "india/index";
     }
 
     @GetMapping("/number.html")
@@ -74,29 +77,31 @@ public class ViewController {
                 .build();
 
         partInfoService.listByModel(queryDTO, model);
-        return "number";
+        return "india/number";
     }
 
     @GetMapping("/categories.html")
     public String categories(Model model) {
-        return "categories";
+        List<Category> categoryList = categoryService.list();
+        model.addAttribute("categoryList", categoryList);
+        return "india/categories";
     }
 
     @GetMapping("/part.html/{id}")
     public String part(Model model, @PathVariable String id) {
         PartInfo partInfo = partInfoService.get(id);
         model.addAttribute("partInfo", partInfo);
-        return "part";
+        return "india/part";
     }
 
     @GetMapping("/about.html")
     public String about() {
-        return "about";
+        return "india/about";
     }
 
     @GetMapping("/contact.html")
     public String contact() {
-        return "contact";
+        return "india/contact";
     }
 
     @PostMapping("/quotation.html")
@@ -127,7 +132,7 @@ public class ViewController {
             model.addAttribute("success", false);
             model.addAttribute("message", ResponseContants.QUOTATION_ERROR);
         }
-        return "sendStatus";
+        return "india/sendStatus";
     }
 
     @PostMapping("/submit.html")
@@ -154,11 +159,7 @@ public class ViewController {
             model.addAttribute("success", false);
             model.addAttribute("message", ResponseContants.ADVISORY_ERROR);
         }
-        return "sendStatus";
+        return "india/sendStatus";
     }
 
-    @GetMapping("/temp.html")
-    public String temp() {
-        return "temp";
-    }
 }
