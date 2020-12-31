@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="congo/include/header.html"></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title th:text="${partInfo.title}"></title>
+
+    <link type="text/css" rel="stylesheet" href="/css/jquery.fancybox.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery.fancybox-buttons.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery.fancybox-thumbs.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/product_view.css"/>
+
+    <script type="text/javascript" src="/js/jquery.fancybox.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="col-main name1" style="width: 1280px;margin: 0 auto;">
+        <div id="messages_product_view"></div>
+        <div class="product-view" itemscope itemtype="http://schema.org/Product">
+            <div class="product-essential">
+                <form action="#" method="post" id="product_addtocart_form">
+                    <input name="form_key" type="hidden" value="9urjle1ygni8BOSU" />
+                    <div class="no-display">
+                        <input type="hidden" name="product" value="11246" />
+                        <input type="hidden" name="related_product" id="related-products-field" value="" />
+                    </div>
+                    <div class="product-img-box">
+                        <!-- Begin magiczoomplus -->
+                        <div class="MagicToolboxContainer selectorsRight minWidth">
+                            <div class="MagicToolboxMainContainer">
+                                <a id="MagicZoomPlusImage11246" class="MagicZoom" href="#" th:title="${partInfo.title}" data-options="zoomDistance:10;hint:off;">
+                                    <img itemprop="image" th:src="${partInfo.image}" />
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End magiczoomplus -->
+                        <img id="image" th:src="${partInfo.image}" class="invisible" />
+                    </div>
+                    <div class="product-shop">
+                        <div class="catalog-product-name">
+                            <h1 itemprop="name" th:text="${partInfo.title}"></h1>
+                        </div>
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                    <a href="/" title="Go to Home Page" itemprop="url">
+                                        <span itemprop="title">Home</span>
+                                    </a>
+                                    <span>>> </span>
+                                </li>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                    <span itemprop="title">DAYUN</span>
+                                    <span>>> </span></li>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Dump Truck＆Tractor Head</span>
+                                    <span>>> </span></li>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">N8E</span>
+                                    <span>>> </span></li>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Cab</span>
+                                    <span>>> </span></li>
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">13.1-Headlight (General Edition）</span>
+                                    <span>>> </span></li>
+                                <li class="crumbsbold"><span itemprop="title"><strong th:text="${partInfo.title}"></strong></span></li>
+                            </ul>
+                        </div>
+                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <meta itemprop="priceCurrency" content="USD" />
+                            <meta itemprop="price" content="0.00" class="gw-shema-price"/>
+                            <link itemprop="availability" href="http://schema.org/InStock">
+                        </div>
+                        <div class="extra-info">
+                        </div>
+                    </div>
+                    <div class="add-to-cart-wrapper ">
+                        <div class="add-to-box">
+                            <div class="add-to-cart ">
+                                <label for="qty">Qty:</label>
+                                <div class="qty-wrapper quantity">
+                                    <a  id="Decrease" href="javascript:void(0)" class="reduceQty qtybtn reduceQty-hz" >-</a>
+                                    <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text input-text-hz qty" />
+                                    <a  id="Increase" href="javascript:void(0)" class="addQty qtybtn addQty-hz" >+</a>
+                                </div>
+                                Availability:100000
+                                <div class="price-info">
+                                    <input type="hidden" id="symbol" value="$">
+                                    <span class="tot">
+                                        Price(EXW):
+                                        <span  style="color: #FF0088;font-size: 20px;font-weight:500;padding-left: 5px;">
+                                            <div class="price-box">
+                                                <span class="regular-price" id="product-price-11246">
+                                                    <span class="price">$0.00</span>
+                                                </span>
+
+                                            </div>
+		                                </span>
+		                            </span>
+                                </div>
+                                <div class="add-to-cart-buttons ">
+                                    <button style="visibility: hidden" type="button" class="button btn-cart gw-add-to-cart-buttons" >
+                                        <span><span>Hidden button</span></span>
+                                    </button>
+                                    <!-- 这个是新加入的按钮 -->
+                                    <a href="#popwindow" style="position: relative;left: 5px;background-color: #84bbfe;top: -60px;" type="button" class="button" >
+                                        <span><span>Transport/Destination</span></span>
+                                    </a>
+                                    <button type="button" title="Add to Cart" class="button btn-cart gw-add-to-cart-buttons"  style="background:#f25f7b">
+                                        <span><span>Add to Cart</span></span>
+                                    </button>
+                                    <button type="button"
+                                            title="Buy now"
+                                            class="button btn-cart gw-buy-now-buttons"
+                                            onclick="productBuyNowForm.submit(this)" style="background:#ff8f00">
+                                        <span><span>Buy now</span></span>
+                                    </button>
+                                    <div class="paybottom">
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                              jQuery(".gw-add-to-cart-buttons").click(function(){
+                                jQuery("input#pp_checkout_url").val("https://www.chinatruckparts.com/checkout/cart/");
+                                var pro_price = jQuery.trim(jQuery('.totalprice').text()).replace(/,/g, "").substring(1);
+                                productAddToCartForm.submit();
+                              });
+                              jQuery(".gw-buy-now-buttons").click(function(){
+                                var pro_price = jQuery.trim(jQuery('.totalprice').text()).replace(/,/g, "").substring(1);
+                                productAddToCartForm.submit();
+                              });
+
+                            </script>
+
+                            <script>
+                              var productBuyNowForm = new VarienForm('product_addtocart_form');
+                              productBuyNowForm.submit = function (button, url) {
+                                if (this.validator.validate()) {
+                                  var form = this.form;
+                                  var oldUrl = form.action;
+                                  // alert(form.action);
+                                  if (url) {
+                                    form.action = url;
+                                  }
+
+                                  /* add return Url */
+                                  var inputreturn= document.createElement("input");
+                                  inputreturn.type = "hidden";
+                                  inputreturn.name = "return_url";
+                                  inputreturn.value = "https://www.chinatruckparts.com/firecheckout/";
+                                  document.getElementById('product_addtocart_form').appendChild(inputreturn);
+                                  /* add return Url */
+                                  // Append a line break
+                                  var e = null;
+                                  try {
+                                    this.form.submit();
+                                  } catch (e) {
+                                  }
+                                  this.form.action = oldUrl;
+                                  if (e) {
+                                    throw e;
+                                  }
+
+                                  if (button && button != 'undefined') {
+                                    button.disabled = true;
+                                  }
+                                }
+                              }.bind(productBuyNowForm);
+                              jQuery(function(){
+                                var oriprice = jQuery('.price-info .hiddeprice .price').text();
+                                jQuery('.price-info .totalprice').text(oriprice);
+                                jQuery("#qty").keyup(function(){
+                                  var qty = jQuery(this).val();
+                                  jQuery(this).val(qty.replace(/\D|^0/g,''));
+                                });
+                                jQuery("#qty").change(function(){
+                                  var qty = jQuery(this).val();
+                                  if(qty == ''){
+                                    jQuery(this).val('1');
+                                    var qty = 1;
+                                  }
+                                  var symbol = jQuery('#symbol').val();
+                                  var pricetext = jQuery('.price-info .hiddeprice .price').text();
+                                  if(pricetext.indexOf(symbol) > 0){
+                                    var rprice = jQuery.trim(pricetext.replace(symbol,'').replace(',','.'));
+                                    var totalprice = ((rprice*qty*10)/10).toFixed(2);
+                                    jQuery('.price-info .totalprice').text(totalprice.replace('.',',')+' '+symbol);
+                                  }else{
+                                    var rprice = pricetext.replace(symbol,'');
+                                    jQuery('.price-info .totalprice').text(symbol+((rprice* qty*10)/10).toFixed(2));
+                                  }
+                                });
+
+                              })
+                              function addQtyone(){
+                                var price = jQuery('.price-info .hiddeprice .price').text().replace('$','');
+                                var qtyPro=$('qty');
+                                qtyPro.value = parseInt(qtyPro.value)+1;
+                                var symbol = jQuery('#symbol').val();
+                                var pricetext = jQuery('.price-info .hiddeprice .price').text();
+                                if(pricetext.indexOf(symbol) > 0){
+                                  var rprice = jQuery.trim(pricetext.replace(symbol,'').replace(',','.'));
+                                  var totalprice = ((rprice*qtyPro.value*10)/10).toFixed(2);
+                                  jQuery('.price-info .totalprice').text(totalprice.replace('.',',')+' '+symbol);
+                                }else{
+                                  var rprice = pricetext.replace(symbol,'');
+                                  jQuery('.price-info .totalprice').text(symbol+((rprice* qtyPro.value*10)/10).toFixed(2));
+                                }
+
+                              }
+                              function redQtyone(){
+                                var price = jQuery('.price-info .hiddeprice .price').text().replace('$','');
+                                var qtyPro=$('qty');
+                                if(qtyPro.value<2){
+                                  return false;
+                                }else{
+                                  qtyPro.value = parseInt(qtyPro.value)-1;
+                                  var symbol = jQuery('#symbol').val();
+                                  var pricetext = jQuery('.price-info .hiddeprice .price').text();
+                                  if(pricetext.indexOf(symbol) > 0){
+                                    var rprice = jQuery.trim(pricetext.replace(symbol,'').replace(',','.'));
+                                    var totalprice = ((rprice*qtyPro.value*10)/10).toFixed(2);
+                                    jQuery('.price-info .totalprice').text(totalprice.replace('.',',')+' '+symbol);
+                                  }else{
+                                    var rprice = pricetext.replace(symbol,'');
+                                    jQuery('.price-info .totalprice').text(symbol+((rprice* qtyPro.value*10)/10).toFixed(2));
+                                  }
+
+                                }
+                              }
+                              jQuery(function(){
+                                jQuery('body').on('click','.reduceQty-hz',function(){
+                                  let nowValue= parseInt(jQuery('.input-text-hz').val());
+                                  nowValue--;
+                                  if(nowValue<1){
+                                    nowValue=1;
+                                  }
+                                  jQuery('.input-text-hz').val(nowValue);
+                                });
+                                jQuery('body').on('click','.addQty-hz',function(){
+                                  let nowValue= parseInt(jQuery('.input-text-hz').val());
+                                  nowValue++;
+                                  jQuery('.input-text-hz').val(nowValue);
+                                })
+
+                              })
+                            </script>
+                            <span class="or">OR</span>
+                        </div>
+                    </div>
+                </form>
+                <script type="text/javascript">
+                  var productAddToCartForm = new VarienForm('product_addtocart_form');
+                  productAddToCartForm.submit = function(button, url) {
+                    if (this.validator.validate()) {
+                      var form = this.form;
+                      var oldUrl = form.action;
+                      if (url) {
+                        form.action = url;
+                      }
+                      var e = null;
+                      try {
+                        this.form.submit();
+                      } catch (e) {
+                      }
+                      this.form.action = oldUrl;
+                      if (e) {
+                        throw e;
+                      }
+                      if (button && button != 'undefined') {
+                        button.disabled = true;
+                      }
+                    }
+                  }.bind(productAddToCartForm);
+
+                  productAddToCartForm.submitLight = function(button, url){
+                    if(this.validator) {
+                      var nv = Validation.methods;
+                      delete Validation.methods['required-entry'];
+                      delete Validation.methods['validate-one-required'];
+                      delete Validation.methods['validate-one-required-by-name'];
+                      // Remove custom datetime validators
+                      for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                          delete Validation.methods[methodName];
+                        }
+                      }
+                      if (this.validator.validate()) {
+                        if (url) {
+                          this.form.action = url;
+                        }
+                        this.form.submit();
+                      }
+                      Object.extend(Validation.methods, nv);
+                    }
+                  }.bind(productAddToCartForm);
+                </script>
+
+            </div>
+            <a id="popwindow"></a>
+            <div class="product-inquiry" name="2F"  id="2F">
+                <h2>Contact Supplier:</h2>
+                <form action="/COD/submit.html" id="productcontactForm" method="post">
+                    <input type="hidden" name="part_no" th:value="partInfo.title"/>
+                    <div class="">
+                        <ul class="form-list">
+                            <li class="fields">
+                                <div class="field">
+                                    <label for="customer_email" class="required lebelright"><em>*</em>nkave:</label>
+                                    <div class="input-box">
+                                        <input name="cust_email" id="customer_email" title="nkave" value="" class="input-text required-entry validate-email" type="text" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="fields">
+                                <div class="field">
+                                    <label for="personal_name" class="required lebelright"><em>*</em>nkumbu:</label>
+                                    <div class="input-box">
+                                        <input name="cust_name" id="personal_name" title="nkumbu" value="" style="width:185px !important;" class="required-entry input-text" type="text" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="fields">
+                                <div class="field">
+                                    <label for="phone" class="required lebelright">lusonokono kimosi:</label>
+                                    <div class="input-box">
+                                        <input name="cust_phone" id="phone" title="lusonokono kimosi" value="" class="input-text" type="text" />
+                                    </div>
+                                </div>
+                            </li>
+                            <span style="clear:both"></span>
+                            <li class="wide">
+                                <label for="detail" class="required"><em>*</em>kinkufika kia mpa:</label>
+                                <div class="input-box" style="display:block">
+                                    <textarea name="business" id="detail"
+                                              title="Type of Business" class="required-entry input-text"
+                                              cols="7" rows="5" placeholder="yambula nsongolo munu yi uzolele sadila kifuanisu kia mpahla yo."></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buttonsset">
+                        <p class="required">* masono</p>
+                        <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+                        <button type="submit"  title="Submit" class="button hz_detail_submitjs"><span><span>_tuma</span></span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+          $(".hz_detail_submitjs").click(function(){
+            fbq('trackCustom','Contact-Supplier');
+          })
+          jQuery(document).ready(function(){
+            var url_hash = window.location.hash;
+            if(url_hash == '#input-message-box'){
+              jQuery('.toggle-tabs li').each(function(e){
+                jQuery(this).removeClass('current');
+                if(e == 3){
+                  jQuery(this).addClass('current');
+                }
+              });
+              jQuery('.collateral-tabs dt').each(function(e){
+                jQuery(this).removeClass('current');
+                if(e == 3){
+                  jQuery(this).addClass('current');
+                }
+              });
+              jQuery('.collateral-tabs dd').each(function(e){
+                jQuery(this).removeClass('current');
+                if(e == 3){
+                  jQuery(this).addClass('current');
+                }
+              });
+              window.location.hash = "#input-message-box";
+            }
+          });
+        </script>
+        <style>
+            .col-main{
+                padding: 0px;
+            }
+        </style>
+
+        <style>
+            @media only screen and (max-width: 375px) {
+                #MagicToolboxSelectors18{
+                    height: 200px !important;
+                }
+            }
+        </style>
+
+        <script>
+          jQuery(document).ready(function(){
+            jQuery('.add-to-cart-buttons .gw-add-to-cart-buttons').click(function(){
+              pintrk('track', 'addtocart');
+            });
+            jQuery('.add-to-cart-buttons .gw-buy-now-buttons').click(function(){
+              pintrk('track', 'addtocart');
+            });
+            jQuery('.paypal-logo .gw-paypal-button').click(function(){
+              pintrk('track', 'addtocart');
+            });
+            jQuery('.paypal-logo .bml_button .gw-paypalbml-button').click(function(){
+              pintrk('track', 'addtocart');
+            });
+          });
+        </script>
+        <script type="text/javascript">
+          var lifetime = 3600;
+          var expireAt = Mage.Cookies.expires;
+          if (lifetime > 0) {
+            expireAt = new Date();
+            expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+          }
+          Mage.Cookies.set('external_no_cache', 1, expireAt);
+        </script>
+    </div>
+
+</div>
+<div th:include="congo/include/footer.html"></div>
+</body>
+</html>
+

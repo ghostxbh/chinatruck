@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="congo/include/header.html"></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title>fila nkave</title>
+</head>
+<body>
+<div class="wrapper" style="margin-top: 50px;">
+    <div class="wrap wrap-about">
+        <div class="main main-about">
+            <div class="about1">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <img class="lazy" src="/images/about-2.png" alt="">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="note" style="line-height: 10px">
+                                    <h2>
+                                        ma bila:
+                                        <h5 th:text="${message}"></h5>
+                                    </h2>
+
+                                    <h6 th:if="${success}">
+                                        olo vingila umosi
+                                    </h6>
+                                    <h6 th:if="${!success}">
+                                        toma tala bivunzuni biaku, bifuanisu biaku
+                                    </h6>
+                                </div>
+                                <div style="line-height: 10px">
+                                    <h4>tuku ku kiniema</h4>
+                                    <a href="/COD/" style="font-size: 20px">wazola</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="congo/include/footer.html"></div>
+</body>
+</html>

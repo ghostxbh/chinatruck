@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html lang="en" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" id="top" class="no-js ie9"> <![endif]-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="no-js">
+<head th:include="congo/include/header.html"></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title>sokukidi</title>
+</head>
+<body>
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="zy-banner" style="width: 100% !important;margin: 0 !important">
+            <img src="/images/parts_search.jpg">
+        </div>
+        <!-- 列表开始 -->
+        <div class="first-screen">
+            <div class="container pos-retive"
+                 style="position: relative;max-width: 1280px;width: 1280px;padding: 0;">
+                <div class="bran-tc f-left sidebar zy-sidebar_item-bg" style="overflow: auto;width: 100%;">
+                    <ul class="sidebar_item" th:each="category:${categoryList}">
+                        <li>
+                            <h1 style="margin: 0;">
+                                <a href="#"
+                                   style="margin: 0;padding:0;text-align: center;display: inline-block;">
+                                    <h3 style="height: auto; padding: 10px">
+                                        <span style="color:red;">+</span>
+                                        <span style="color: #636363; font-size: 14px; line-height: 24px;" th:text="${category.name}"></span>
+                                    </h3>
+                                </a>
+                                <s></s>
+                            </h1>
+                            <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
+                                <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
+                                    <ul class="tree_brand_list" style="mdrgin-bottom:0px !important"
+                                        th:if="${category.children != null}" th:each="brand:${category.children}">
+                                        <li>
+                                            <span style="position:relative;top: -7px;" th:text="${brand.name}">
+                                            </span>
+                                            <ul style="margin-top:-2px;" th:if="${brand.children != null}"
+                                                th:each="platfrom:${brand.children}">
+                                                <li class=" zy-requry1111 zy-requry222"
+                                                    style="line-height:20px !important">
+                                                    <span style="position:relative;top: -2px;height: 19px;"
+                                                          th:if="${platfrom.children != null}"
+                                                          th:text="${platfrom.name}">
+                                                    </span>
+                                                    <ul th:if="${platfrom.children != null}"
+                                                        th:each="type:${platfrom.children}">
+                                                        <li class="zy-requry1 zy-requry11"
+                                                            style="height: auto;line-height:20px !important ;">
+                                                            <span style="position:relative;top: -2px;height:10px;"
+                                                                  th:if="${type.children != null}"
+                                                                  th:text="${type.name}">
+                                                            </span>
+
+                                                            <ul style="margin-top:0" th:if="${type.children != null}"
+                                                                th:each="component:${type.children}">
+                                                                <li class="zy-requry4 zy-requry44"
+                                                                    style="height: auto;line-height:20px !important ;">
+                                                                    <span style="position:relative;top: -2px;">
+                                                                        <a href="#"
+                                                                           th:text="${component.name}"></a>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+
+                                                            <span style="position:relative;top: -2px;height:10px;"
+                                                                  th:if="${type.children == null}">
+                                                                        <a href="#" th:text="${type.name}"></a>
+                                                                    </span>
+                                                        </li>
+                                                    </ul>
+
+                                                    <span style="position:relative;top: -2px;height:10px;"
+                                                          th:if="${category.children == null}">
+                                                                <a href="#" th:text="${category.name}"></a>
+                                                            </span>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <script type="text/javascript">
+                                      jQuery(".tree_brand_list").treeview({
+                                        persist: "location",
+                                        collapsed: true,
+                                        unique: true
+                                      });
+                                    </script>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 列表结束 -->
+
+        <!-- 产品列表开始 -->
+        <div class="dialog" style="display:none;">
+            <div class="dialog-content"></div>
+        </div>
+        <!-- 产品结束 -->
+
+        <script>
+          var isClick = true;
+          var slideup = undefined;
+          jQuery('.catalog-content-bar').bind('click', function () {
+            if (slideup == jQuery(this).data('id')) {
+              jQuery(this).next('.catalog-content').slideToggle();
+              jQuery(this).next('.dialog').slideToggle();
+              return;
+            }else {
+              slideup = jQuery(this).data('id');
+            }
+            if (!isClick) return;
+            // 对其他元素进行缩回
+            jQuery(this).siblings('.catalog-content-bar').next('.catalog-content').slideUp();
+            jQuery(this).siblings('.catalog-content-bar').next('.dialog').slideUp();
+
+            jQuery('.catalog-list').text('+');
+
+            // 当前内容效果
+            jQuery(this).find('.catalog-list').text('-');
+            // 如果向下层还有列表直接显示
+            if (jQuery(this).next().is('.catalog-content')){
+              jQuery(this).next('.catalog-content').slideDown();
+            }else if(jQuery(this).next().is('.dialog')){
+              // 如果下层没有列表则请求接口内容，如果已经请求过这个内容则这个内容会保留在当前元素下方，直接显示即可
+              jQuery(this).next('.dialog').slideDown();
+            }else {
+              isClick = false;
+
+              var id = jQuery(this).data('id');
+              // 内容获取
+              s = jQuery(this);
+
+              var color = 0;
+              clearInterval(interval);
+              jQuery(this).siblings().andSelf().css('background', 'white');
+              var interval = setInterval(function () {
+                if (color ++ > 100) {
+                  clearInterval(interval);
+                  swal('', 'Please refresh the page and try again', 'error');
+                  s.css('background', 'red');
+                }
+                s.css('background', 'linear-gradient(to right, #e77461 ' + color + '%, white 1%)');
+              }, 300);
+              return;
+            }
+          });
+        </script>
+    </div>
+</div>
+
+<div th:include="congo/include/footer.html"></div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html lang="en" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" id="top" class="no-js ie9"> <![endif]-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="no-js">
+<head th:include="congo/include/header.html"></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="China Me Truck Parts">
+    <meta name="description" content="China Me Truck Parts">
+    <title>solola</title>
+
+    <link type="text/css" rel="stylesheet" href="/css/uzy_page.css"/>
+
+    <script type="text/javascript" src="/js/uzy_page.js"></script>
+    <script type="text/javascript" src="/js/demo.js"></script>
+</head>
+<body>
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="zy-banner" style="width: 100% !important;margin: 0 !important">
+            <img src="/images/parts number search.jpg">
+        </div>
+        <div class="container" style="margin-left:-9px">
+            <div class="joinbox">
+                <p class="gaishu" style=" text-align:left;">
+                    wazola
+                    <a href="#" class="col">kotisa</a>
+                    katulae siinsu kiki, mpavala yina.
+                </p>
+                <ul id="myinput-1">
+                    <li>
+                        <span>luse _didi<em>*</em></span><!-- 零件号是sku -->
+                        <input name="cityName1" id="cityName1" placeholder="" type="text" class="txt" th:value="${no!=null?no:''}">
+                    </li>
+                    <li>
+                        <span>ntambudi<em>*</em></span><!-- 品牌是描述 -->
+                        <input name="cityName2" id="cityName2" placeholder="" type="text" class="txt">
+                    </li>
+                    <li>
+                        <span>luwawanu mu sadila kisalasala kio</span><!-- 产品名是name -->
+                        <input name="cityName3" id="cityName3" placeholder="" type="text" class="txt" th:value="${keywords!=null?keywords:''}">
+                    </li>
+                    <li style="width: 9%;">
+                        <span> </span><!-- 产品名是name -->
+                        <input type="button" name="button" value="_mbuka" onclick="print()"/>
+                    </li>
+                </ul>
+                <script language="javascript">
+                  function print() {
+                    var a1 = document.getElementById("cityName1").value;
+                    var c3 = document.getElementById("cityName3").value;
+                    location.replace("/COD/number.html?type=2&no=" + a1 + "&keywords=" + c3)
+                  }
+                </script>
+                <div class="clear"></div>
+            </div>
+
+            <div class="uzy_page"></div>
+
+            <div class="prolist1">
+
+                <input type="hidden" id="param_page_no" th:value="${result.page_no}"/>
+                <input type="hidden" id="param_pages" th:value="${result.pages}"/>
+                <input type="hidden" id="param_type" th:value="${type}"/>
+                <input type="hidden" id="param_keywords" th:value="${keywords}"/>
+                <input type="hidden" id="param_brand" th:value="${brand}"/>
+                <input type="hidden" id="param_platfrom" th:value="${platfrom}"/>
+                <input type="hidden" id="param_category" th:value="${category}"/>
+                <input type="hidden" id="param_no" th:value="${no}"/>
+
+                <dl class="sz-prolist">
+                    <dd th:if="${result.records!=null && result.records.size()>0}" th:each="item:${result.records}">
+                        <div class="szproimg" style="width:200px ;height:200px;">
+                            <a th:href="@{'/COD/part.html/' + ${item._id}}">
+                                <img th:src="${item.image}">
+                            </a>
+                        </div>
+                        <div class="szprotext" style="white-space: inherit;">
+                            <h3>
+                                <a style="display: inline;word-wrap: break-word;word-break: normal;padding: 0;"
+                                   th:href="@{'/COD/part.html/' + ${item._id}}" th:text="${item.title}">
+                                </a>
+                            </h3>
+                            <p>
+                                <em th:text="${item.brand}"></em>
+                            </p>
+                            <p>
+                                <em th:text="${item.part}"></em>
+                            </p>
+                        </div>
+                    </dd>
+                </dl>
+                <div class="uzy_page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:include="congo/include/footer.html"></div>
+</body>
+</html>
