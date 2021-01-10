@@ -115,6 +115,8 @@ public class QueueQueryService {
 
     @Async
     public void transferData(TransferDataDTO transferDataDTO) {
+        log.info("transfer data started...");
+
         MongoInfoDTO source = transferDataDTO.getSource();
         MongoInfoDTO target = transferDataDTO.getTarget();
 
@@ -128,51 +130,66 @@ public class QueueQueryService {
                 .maxWaitTime(2 * 60 * 1000)
                 .build();
 
-        if (source.getIsAuth()) {
-            ServerAddress sourceAddress = new ServerAddress(source.getHost(), source.getPort());
+        try {
+            if (source.getIsAuth()) {
+                ServerAddress sourceAddress = new ServerAddress(source.getHost(), source.getPort());
 
-            MongoCredential sourceCredential = MongoCredential
-                    .createCredential(source.getUsername(), source.getAuthDb(), source.getPassword().toCharArray());
+                MongoCredential sourceCredential = MongoCredential
+                        .createCredential(source.getUsername(), source.getAuthDb(), source.getPassword().toCharArray());
 
-            sourceClient = new MongoClient(sourceAddress, sourceCredential, mongoClientOptions);
-        } else {
-            sourceClient = new MongoClient(source.getHost(), source.getPort());
+                sourceClient = new MongoClient(sourceAddress, sourceCredential, mongoClientOptions);
+            } else {
+                sourceClient = new MongoClient(source.getHost(), source.getPort());
+            }
+        } catch (Exception e) {
+            log.error("get source error", e);
+            throw new RuntimeException("获取源数据库错误");
         }
 
-        if (target.getIsAuth()) {
-            ServerAddress targetAddress = new ServerAddress(target.getHost(), target.getPort());
 
-            MongoCredential targetCredential = MongoCredential
-                    .createCredential(target.getUsername(), target.getAuthDb(), target.getPassword().toCharArray());
+        try {
+            if (target.getIsAuth()) {
+                ServerAddress targetAddress = new ServerAddress(target.getHost(), target.getPort());
 
-            targetClient = new MongoClient(targetAddress, targetCredential, mongoClientOptions);
-        } else {
-            targetClient = new MongoClient(target.getHost(), target.getPort());
+                MongoCredential targetCredential = MongoCredential
+                        .createCredential(target.getUsername(), target.getAuthDb(), target.getPassword().toCharArray());
+
+                targetClient = new MongoClient(targetAddress, targetCredential, mongoClientOptions);
+            } else {
+                targetClient = new MongoClient(target.getHost(), target.getPort());
+            }
+        } catch (Exception e) {
+            log.error("get target error", e);
+            throw new RuntimeException("获取目标数据库错误");
         }
 
-        MongoDatabase sourceDb = sourceClient.getDatabase(source.getDataBase());
+        try {
+            MongoDatabase sourceDb = sourceClient.getDatabase(source.getDataBase());
 
-        MongoDatabase targetDb = targetClient.getDatabase(target.getDataBase());
+            MongoDatabase targetDb = targetClient.getDatabase(target.getDataBase());
 
-        //要转移数据的表名
-        MongoCollection<Document> sourceDbCollection = sourceDb.getCollection(source.getCollectionName());
+            //要转移数据的表名
+            MongoCollection<Document> sourceDbCollection = sourceDb.getCollection(source.getCollectionName());
 
-        MongoCollection<Document> targetDbCollection = targetDb.getCollection(target.getCollectionName());
+            MongoCollection<Document> targetDbCollection = targetDb.getCollection(target.getCollectionName());
 
-        //iterator——迭代
-        FindIterable<Document> findIterable = sourceDbCollection.find();
+            //iterator——迭代
+            FindIterable<Document> findIterable = sourceDbCollection.find();
 
-        MongoCursor<Document> iterator = findIterable.iterator();
+            MongoCursor<Document> iterator = findIterable.iterator();
 
-        int size = 0;
-        //游标
-        //遍历每一条数据
-        while (iterator.hasNext()) {
-            Document document = iterator.next();
-            targetDbCollection.insertOne(document);
-            size++;
+            int size = 0;
+            //游标
+            //遍历每一条数据
+            while (iterator.hasNext()) {
+                Document document = iterator.next();
+                targetDbCollection.insertOne(document);
+                size++;
+            }
+            log.info("transfer data success! size: {}", size);
+        } catch (Exception e) {
+            log.error("transfer data error", e);
+            throw new RuntimeException("转移数据异常");
         }
-
-        log.info("transfer data success! size: {}", size);
     }
 }

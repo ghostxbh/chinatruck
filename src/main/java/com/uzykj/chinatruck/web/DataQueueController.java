@@ -9,6 +9,7 @@ import com.uzykj.chinatruck.service.PartInfoService;
 import com.uzykj.chinatruck.service.QueueQueryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.*;
 /**
  * @author ghostxbh
  */
+@Slf4j
 @RestController
 @RequestMapping("queue")
 @Api("数据队列")
@@ -51,9 +53,14 @@ public class DataQueueController {
     @PostMapping("transferData")
     @ApiOperation("转移数据")
     public JsonResult<?> transferData(@RequestBody TransferDataDTO transferDataDTO) {
-        Preconditions.checkNotNull(transferDataDTO.getSource(), "源数据不存在");
-        Preconditions.checkNotNull(transferDataDTO.getTarget(), "目标数据不存在");
-        queueQueryService.transferData(transferDataDTO);
-        return new JsonResult().success();
+        try {
+            Preconditions.checkNotNull(transferDataDTO.getSource(), "源数据不存在");
+            Preconditions.checkNotNull(transferDataDTO.getTarget(), "目标数据不存在");
+            queueQueryService.transferData(transferDataDTO);
+            return new JsonResult().success();
+        } catch (Exception e) {
+            log.error("transferData error");
+            return new JsonResult().error(e);
+        }
     }
 }
