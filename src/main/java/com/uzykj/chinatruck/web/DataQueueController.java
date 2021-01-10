@@ -49,8 +49,10 @@ public class DataQueueController {
     }
 
     @PostMapping("transferData")
-    @ApiOperation("整理数据")
+    @ApiOperation("转移数据")
     public JsonResult<?> transferData(@RequestBody TransferDataDTO transferDataDTO) {
+        Preconditions.checkNotNull(transferDataDTO.getSource(), "源数据不存在");
+        Preconditions.checkNotNull(transferDataDTO.getTarget(), "目标数据不存在");
         queueQueryService.transferData(transferDataDTO);
         return new JsonResult().success();
     }
