@@ -5,13 +5,24 @@ import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
 import com.uzykj.chinatruck.domain.Brand;
 import com.uzykj.chinatruck.domain.Component;
 import com.uzykj.chinatruck.domain.PartInfo;
 import com.uzykj.chinatruck.domain.Parts;
 import com.uzykj.chinatruck.domain.dto.DataQueueDTO;
+import com.uzykj.chinatruck.domain.dto.MongoInfoDTO;
+import com.uzykj.chinatruck.domain.dto.TransferDataDTO;
 import com.uzykj.chinatruck.domain.vo.Node;
 import lombok.extern.slf4j.Slf4j;
+import org.bson.Document;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -102,8 +113,66 @@ public class QueueQueryService {
         log.info("format data success!");
     }
 
-    public static void main(String[] args) {
-        String s = HttpUtil.get("https://www.chinatruckparts.com/productcontact/index/ceidfujia?zyid=1500");
-        System.out.println(s);
+    @Async
+    public void transferData(TransferDataDTO transferDataDTO) {
+        MongoInfoDTO source = transferDataDTO.getSource();
+        MongoInfoDTO target = transferDataDTO.getTarget();
+
+        MongoClient sourceClient;
+        MongoClient targetClient;
+
+        MongoClientOptions mongoClientOptions = new MongoClientOptions.Builder()
+                .connectionsPerHost(1000)
+                .minConnectionsPerHost(5)
+                .connectTimeout(60 * 1000)
+                .maxWaitTime(2 * 60 * 1000)
+                .build();
+
+        if (source.getIsAuth()) {
+            ServerAddress sourceAddress = new ServerAddress(source.getHost(), source.getPort());
+
+            MongoCredential sourceCredential = MongoCredential
+                    .createCredential(source.getUsername(), source.getAuthDb(), source.getPassword().toCharArray());
+
+            sourceClient = new MongoClient(sourceAddress, sourceCredential, mongoClientOptions);
+        } else {
+            sourceClient = new MongoClient(source.getHost(), source.getPort());
+        }
+
+        if (target.getIsAuth()) {
+            ServerAddress targetAddress = new ServerAddress(target.getHost(), target.getPort());
+
+            MongoCredential targetCredential = MongoCredential
+                    .createCredential(target.getUsername(), target.getAuthDb(), target.getPassword().toCharArray());
+
+            targetClient = new MongoClient(targetAddress, targetCredential, mongoClientOptions);
+        } else {
+            targetClient = new MongoClient(target.getHost(), target.getPort());
+        }
+
+        MongoDatabase sourceDb = sourceClient.getDatabase(source.getDataBase());
+
+        MongoDatabase targetDb = targetClient.getDatabase(target.getDataBase());
+
+        //要转移数据的表名
+        MongoCollection<Document> sourceDbCollection = sourceDb.getCollection(source.getCollectionName());
+
+        MongoCollection<Document> targetDbCollection = targetDb.getCollection(target.getCollectionName());
+
+        //iterator——迭代
+        FindIterable<Document> findIterable = sourceDbCollection.find();
+
+        MongoCursor<Document> iterator = findIterable.iterator();
+
+        int size = 0;
+        //游标
+        //遍历每一条数据
+        while (iterator.hasNext()) {
+            Document document = iterator.next();
+            targetDbCollection.insertOne(document);
+            size++;
+        }
+
+        log.info("transfer data success! size: {}", size);
     }
 }

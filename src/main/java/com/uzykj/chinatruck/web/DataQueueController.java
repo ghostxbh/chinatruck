@@ -3,6 +3,7 @@ package com.uzykj.chinatruck.web;
 import com.google.common.base.Preconditions;
 import com.uzykj.chinatruck.domain.PartInfo;
 import com.uzykj.chinatruck.domain.dto.DataQueueDTO;
+import com.uzykj.chinatruck.domain.dto.TransferDataDTO;
 import com.uzykj.chinatruck.domain.vo.JsonResult;
 import com.uzykj.chinatruck.service.PartInfoService;
 import com.uzykj.chinatruck.service.QueueQueryService;
@@ -44,6 +45,13 @@ public class DataQueueController {
     @ApiOperation("整理数据")
     public JsonResult<?> formatData() {
         queueQueryService.formatCateData();
+        return new JsonResult().success();
+    }
+
+    @PostMapping("transferData")
+    @ApiOperation("整理数据")
+    public JsonResult<?> transferData(@RequestBody TransferDataDTO transferDataDTO) {
+        queueQueryService.transferData(transferDataDTO);
         return new JsonResult().success();
     }
 }

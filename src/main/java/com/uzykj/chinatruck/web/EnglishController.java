@@ -95,7 +95,11 @@ public class EnglishController {
     public String component(Model model, @PathVariable String id) {
         Component component = componentService.get(id);
         List<PartInfo> partInfoList = partInfoService.getByComponent(id);
-        model.addAttribute("image", component.getImage());
+        String image = null;
+        if (component.getImage().contains("\"")) {
+            image = component.getImage().substring(1, component.getImage().length() - 1);
+        }
+        model.addAttribute("image", image);
         model.addAttribute("partInfoList", partInfoList);
         return "component";
     }
