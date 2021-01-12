@@ -50,6 +50,8 @@ public class Parts {
     private String image_label;
     // 地址
     private String url_path;
+    // brand
+    private String short_description;
 
     private String created_at;
     private String updated_at;
@@ -80,7 +82,6 @@ public class Parts {
 //    private String custom_design_from;
 //    private String custom_design_to;
 //    private String description;
-//    private String short_description;
 //    private String custom_layout_update;
 //    private String weight;
 //    private String price;

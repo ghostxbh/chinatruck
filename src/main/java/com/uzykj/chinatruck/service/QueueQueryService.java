@@ -13,6 +13,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.uzykj.chinatruck.common.Constants;
 import com.uzykj.chinatruck.domain.Brand;
 import com.uzykj.chinatruck.domain.Component;
 import com.uzykj.chinatruck.domain.PartInfo;
@@ -22,6 +23,7 @@ import com.uzykj.chinatruck.domain.dto.MongoInfoDTO;
 import com.uzykj.chinatruck.domain.dto.TransferDataDTO;
 import com.uzykj.chinatruck.domain.vo.Node;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.bson.Document;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -41,8 +43,12 @@ import java.util.Optional;
 @Slf4j
 @Service
 public class QueueQueryService {
-    private static String CATEIMAGEURL = "https://www.chinatruckparts.com/productcontact/index/ceidfujia?zyid=";
-    private static String CATEURL = "https://www.chinatruckparts.com/productcontact/index/indexfujia?zyid=";
+    public static String CATEIMAGEURL = "https://www.chinatruckparts.com/productcontact/index/ceidfujia?zyid=";
+    public static String CATEURL = "https://www.chinatruckparts.com/productcontact/index/indexfujia?zyid=";
+
+    public static String SOURCE_URL = "https://www.chinatruckparts.com/";
+    public static String NEW_IMAGE_URL = "https://chinametruckparts.com/parts_images/";
+
     @Resource
     private PartsService partsService;
     @Resource

@@ -1,16 +1,20 @@
 package com.uzykj.chinatruck.service;
 
-import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
+import com.alibaba.fastjson.JSONArray;
 import com.uzykj.chinatruck.common.Constants;
+import com.uzykj.chinatruck.domain.Component;
 import com.uzykj.chinatruck.domain.PartInfo;
+import com.uzykj.chinatruck.domain.Parts;
 import com.uzykj.chinatruck.domain.dto.PartQueryDTO;
 import com.uzykj.chinatruck.domain.vo.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -19,7 +23,7 @@ import org.springframework.util.CollectionUtils;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
+import java.util.Optional;
 
 /**
  * @author ghostxbh
@@ -29,6 +33,8 @@ import java.util.regex.Pattern;
 public class PartInfoService {
     @Resource
     private MongoTemplate mongoTemplate;
+    @Resource
+    private ComponentService componentService;
 
     public void save(PartInfo partInfo) {
         mongoTemplate.save(partInfo);
@@ -201,12 +207,63 @@ public class PartInfoService {
             query.addCriteria(criteria);
             List<PartInfo> partInfoList = mongoTemplate.find(query, PartInfo.class, Constants.PART_INFO);
 
-            partInfoList.forEach(partInfo -> partInfo.setImage(getImage(partInfo.getImage())));
-
-            return partInfoList;
+            if (CollectionUtils.isEmpty(partInfoList)) {
+                log.info("this component not found parts, go to miss data!");
+                this.getMissData(component);
+                return new ArrayList<PartInfo>(0);
+            } else {
+                partInfoList.forEach(partInfo -> partInfo.setImage(getImage(partInfo.getImage())));
+                return partInfoList;
+            }
         } catch (Exception e) {
             log.error("getByComponent error", e);
             return new ArrayList<PartInfo>(0);
         }
+    }
+
+    @Async
+    public void getMissData(String componentId) {
+        Component component = componentService.get(componentId);
+
+        String cateList = HttpUtil.get(QueueQueryService.CATEURL + component.getData_id());
+        List<Parts> parts = JSONArray.parseArray(cateList, Parts.class);
+
+        log.info("componentId: {} get miss data size: {}", componentId, parts != null ? parts.size() : 0);
+
+        Optional.ofNullable(parts)
+                .orElse(new ArrayList<Parts>(0))
+                .forEach(part -> {
+                    PartInfo byTitle = this.getByTitle(part.getName());
+                    if (byTitle != null) {
+                        Query query = Query.query(Criteria.where("_id").is(byTitle.get_id()));
+                        Update update = Update.update("component_id", componentId);
+                        mongoTemplate.upsert(query, update, Constants.PART_INFO);
+                        log.info("add part'name:{} component: {}", byTitle.getTitle(), componentId);
+                    } else {
+                        try {
+                            String image = part.getImage();
+                            if (!StringUtils.isEmpty(image) && image.contains("/")) {
+                                String[] split = image.split("/");
+                                image = split[split.length - 1];
+                            }
+
+                            PartInfo partInfo = PartInfo.builder()
+                                    .title(part.getName())
+                                    .brand(part.getShort_description())
+                                    .part(part.getSku())
+                                    .url(QueueQueryService.SOURCE_URL + part.getUrl_path())
+                                    .image(QueueQueryService.NEW_IMAGE_URL + image)
+                                    .component_id(componentId)
+                                    .build();
+
+                            log.info("componentId: {} add new part: {}", componentId, partInfo);
+
+                            mongoTemplate.save(partInfo);
+                        } catch (Exception e) {
+                            log.error("add new part error, componentId: {} ,title: {}", componentId, part.getName());
+                        }
+                    }
+                });
+        log.info("componentId: {} add miss data success!", componentId);
     }
 }
