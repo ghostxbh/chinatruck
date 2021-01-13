@@ -57,7 +57,7 @@ public class Parts {
     private String updated_at;
 
 
-//    private String has_options;
+    private String has_options;
 //    private String required_options;
 //    private String msrp_enabled;
 //    private String msrp_display_actual_price_type;
