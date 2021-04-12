@@ -1,0 +1,22 @@
+{
+  "source": {
+    "host": "34.121.152.60",
+    "port": 27017,
+    "username": "chinatruck",
+    "password": "zxcASDqwe",
+    "authDb": "admin",
+    "dataBase": "chinatruck",
+    "collectionName": "brand",
+    "isAuth": true
+  },
+  "target": {
+    "host": "192.30.242.218",
+    "port": 27017,
+    "username": "root",
+    "password": "zxcASDqwe",
+    "authDb": "admin",
+    "dataBase": "chinatruck",
+    "collectionName": "brand",
+    "isAuth": true
+  }
+}
