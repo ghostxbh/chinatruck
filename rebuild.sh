@@ -1,35 +1,31 @@
 #!/bin/bash
-
-src=/www/prod/chinatruck
 name=chinatruck
 port=9100
 
-cd $src
-
 echo "拉取新代码"
 git pull
-
 echo "以下为最新推送日志:"
-echo "======= 最近更新 ======"
+echo "===================="
 git log | head -n 10
-echo "======================"
+echo "===================="
 
-mvn clean package
+mvn clean install
 
-echo "停止容器"
-docker stop $name
+echo "停止 $name 容器"
+docker ps | grep "$name"  | awk '{print $1}' | xargs docker stop
 
-echo "删除容器"
-docker rm $name
+echo "删除 $name 容器"
+docker ps -a | grep "$name"  | awk '{print $1}' | xargs -t docker rm
 
-echo "删除镜像"
-docker rmi $name
+echo "删除 $name 镜像"
+docker images | awk '{print  $1"\t"$3}' | grep "$name" | awk '{print $2}' | xargs -t docker rmi
 
-echo "构建镜像"
+echo "打包镜像"
 docker build -t $name .
 
-echo "启动镜像"
+echo "运行容器"
 docker run -d -p $port:$port $name
 
-echo "docker启动 $name 成功"
+echo "docker启动chinatruck成功"
+
 
