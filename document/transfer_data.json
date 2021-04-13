@@ -6,7 +6,13 @@
     "password": "zxcASDqwe",
     "authDb": "admin",
     "dataBase": "chinatruck",
-    "collectionName": "brand",
+    "collectionName": [
+      "brand",
+      "category",
+      "component",
+      "contact",
+      "parts_info"
+    ],
     "isAuth": true
   },
   "target": {
@@ -16,7 +22,13 @@
     "password": "zxcASDqwe",
     "authDb": "admin",
     "dataBase": "chinatruck",
-    "collectionName": "brand",
+    "collectionName": [
+      "brand",
+      "category",
+      "component",
+      "contact",
+      "parts_info"
+    ],
     "isAuth": true
   }
 }
