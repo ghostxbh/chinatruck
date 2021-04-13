@@ -4,7 +4,6 @@ import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoCredential;
@@ -13,17 +12,13 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
-import com.uzykj.chinatruck.common.Constants;
-import com.uzykj.chinatruck.domain.Brand;
 import com.uzykj.chinatruck.domain.Component;
 import com.uzykj.chinatruck.domain.PartInfo;
 import com.uzykj.chinatruck.domain.Parts;
 import com.uzykj.chinatruck.domain.dto.DataQueueDTO;
 import com.uzykj.chinatruck.domain.dto.MongoInfoDTO;
 import com.uzykj.chinatruck.domain.dto.TransferDataDTO;
-import com.uzykj.chinatruck.domain.vo.Node;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.bson.Document;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -31,11 +26,10 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author ghostxbh
@@ -148,8 +142,8 @@ public class QueueQueryService {
                 sourceClient = new MongoClient(source.getHost(), source.getPort());
             }
         } catch (Exception e) {
-            log.error("get source error", e);
-            throw new RuntimeException("获取源数据库错误");
+            log.error("connection source database error", e);
+            throw new RuntimeException("连接源数据库错误");
         }
 
 
@@ -165,8 +159,8 @@ public class QueueQueryService {
                 targetClient = new MongoClient(target.getHost(), target.getPort());
             }
         } catch (Exception e) {
-            log.error("get target error", e);
-            throw new RuntimeException("获取目标数据库错误");
+            log.error("connection target database error", e);
+            throw new RuntimeException("连接目标数据库错误");
         }
 
         try {
@@ -174,28 +168,47 @@ public class QueueQueryService {
 
             MongoDatabase targetDb = targetClient.getDatabase(target.getDataBase());
 
-            //要转移数据的表名
-            MongoCollection<Document> sourceDbCollection = sourceDb.getCollection(source.getCollectionName());
-
-            MongoCollection<Document> targetDbCollection = targetDb.getCollection(target.getCollectionName());
-
-            //iterator——迭代
-            FindIterable<Document> findIterable = sourceDbCollection.find();
-
-            MongoCursor<Document> iterator = findIterable.iterator();
-
-            int size = 0;
-            //游标
-            //遍历每一条数据
-            while (iterator.hasNext()) {
-                Document document = iterator.next();
-                targetDbCollection.insertOne(document);
-                size++;
+            List<String> sourceCollectionNames = source.getCollectionNames();
+            List<String> targetCollectionNames = target.getCollectionNames();
+            if (CollectionUtils.isEmpty(sourceCollectionNames) && CollectionUtils.isEmpty(targetCollectionNames)) {
+                log.warn("transfer data this collection is empty");
+                return;
             }
-            log.info("transfer data success! size: {}", size);
+
+            if (sourceCollectionNames.size() != targetCollectionNames.size()) {
+                log.warn("transfer data source's collection size unequals target's collection size");
+                return;
+            }
+
+            for (int i = 0; i < sourceCollectionNames.size(); i++) {
+                String sourceCollectionName = sourceCollectionNames.get(i);
+                String targetCollectionName = targetCollectionNames.get(i);
+
+                //要转移数据的表名
+                MongoCollection<Document> sourceDbCollection = sourceDb.getCollection(sourceCollectionName);
+
+                MongoCollection<Document> targetDbCollection = targetDb.getCollection(targetCollectionName);
+
+                //iterator——迭代
+                FindIterable<Document> findIterable = sourceDbCollection.find();
+
+                MongoCursor<Document> iterator = findIterable.iterator();
+
+                int size = 0;
+                //游标
+                //遍历每一条数据
+                while (iterator.hasNext()) {
+                    Document document = iterator.next();
+                    targetDbCollection.insertOne(document);
+                    size++;
+                }
+                log.info("[{}] transfer to [{}] done! total: {}", sourceCollectionName, targetCollectionName, size);
+            }
+            log.info("transfer data success!");
         } catch (Exception e) {
             log.error("transfer data error", e);
             throw new RuntimeException("转移数据异常");
         }
+        log.info("transfer data end...");
     }
 }

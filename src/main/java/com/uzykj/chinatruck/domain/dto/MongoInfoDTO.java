@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * @author xbh
  * @date 2021/1/10
@@ -42,7 +44,7 @@ public class MongoInfoDTO {
     /**
      * 数据表
      */
-    private String collectionName;
+    private List<String> collectionNames;
     /**
      * 是否验证
      */
