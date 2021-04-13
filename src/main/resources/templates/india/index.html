@@ -87,12 +87,23 @@
                                 <div class="swiper-container banner-swiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <img src="/images/banner.jpg"/>
+                                            <img id="banner_background" src="/images/banner_1.jpg"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <script>
+                          var index = 1;
+                          //主页切换动画
+                          getTimer();
+                          setInterval(getTimer, 3000);
+                          function getTimer() {
+                            jQuery("#banner_background").attr("src", `/images/banner_${index}.jpg`);
+                            index++;
+                            index = index > 5 ? 1 : index;
+                          }
+                        </script>
                         <div class="f-lanmu f-right" style="position: absolute;right: 33px;">
                             <div class="tit">
                                 बुलेटिन बोर्ड：

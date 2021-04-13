@@ -8,6 +8,48 @@
     <meta name="keywords" content="China Me Truck Parts">
     <meta name="description" content="China Me Truck Parts">
     <title>China Me Truck Parts</title>
+    <style>
+        .index-banner {
+            /*height: 600px;*/
+            /*width: 54%;*/
+            margin-top: 20px;
+            background: #FFF;
+            background-position: center;
+            background-repeat: no-repeat
+        }
+
+        .index-banner .carousel-inner {
+            height: 600px
+        }
+
+        .carousel-image {
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 450px;
+            cursor: pointer
+        }
+
+        .index-banner .carousel-indicators .active {
+            width: 12px;
+            height: 12px;
+            margin: 0;
+            background-color: #F60D0D;
+        }
+
+        .index-banner .carousel-indicators li {
+            border: 1px solid #F60D0D;
+        }
+
+        .index-banner .glyphicon-chevron-left:before {
+            content: "\e079";
+            color: #F60D0D;
+        }
+
+        .index-banner .glyphicon-chevron-right:before {
+            content: "\e080";
+            color: #F60D0D;
+        }
+    </style>
 </head>
 <body>
 <div class="main">
@@ -36,35 +78,53 @@
                                     </h1>
                                     <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
                                         <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul class="tree_brand_list" style="mdrgin-bottom:0px !important" th:if="${brand.children != null}" th:each="platform:${brand.children}">
+                                            <ul class="tree_brand_list" style="mdrgin-bottom:0px !important"
+                                                th:if="${brand.children != null}" th:each="platform:${brand.children}">
                                                 <li>
-                                                    <span style="position:relative;top: -7px;" th:text="${platform.name}">
+                                                    <span style="position:relative;top: -7px;"
+                                                          th:text="${platform.name}">
                                                     </span>
-                                                    <ul style="margin-top:-2px;" th:if="${platform.children != null}" th:each="category:${platform.children}">
-                                                        <li class=" zy-requry1111 zy-requry222" style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;" th:if="${category.children != null}" th:text="${category.name}">
+                                                    <ul style="margin-top:-2px;" th:if="${platform.children != null}"
+                                                        th:each="category:${platform.children}">
+                                                        <li class=" zy-requry1111 zy-requry222"
+                                                            style="line-height:20px !important">
+                                                            <span style="position:relative;top: -2px;height: 19px;"
+                                                                  th:if="${category.children != null}"
+                                                                  th:text="${category.name}">
                                                             </span>
-                                                            <ul th:if="${category.children != null}" th:each="type:${category.children}">
-                                                                <li class="zy-requry1 zy-requry11" style="height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;" th:if="${type.children != null}" th:text="${type.name}">
+                                                            <ul th:if="${category.children != null}"
+                                                                th:each="type:${category.children}">
+                                                                <li class="zy-requry1 zy-requry11"
+                                                                    style="height: auto;line-height:20px !important ;">
+                                                                    <span style="position:relative;top: -2px;height:10px;"
+                                                                          th:if="${type.children != null}"
+                                                                          th:text="${type.name}">
                                                                     </span>
 
-                                                                    <ul style="margin-top:0" th:if="${type.children != null}" th:each="component:${type.children}">
-                                                                        <li class="zy-requry4 zy-requry44" style="height: auto;line-height:20px !important ;">
+                                                                    <ul style="margin-top:0"
+                                                                        th:if="${type.children != null}"
+                                                                        th:each="component:${type.children}">
+                                                                        <li class="zy-requry4 zy-requry44"
+                                                                            style="height: auto;line-height:20px !important ;">
                                                                             <span style="position:relative;top: -2px;">
-                                                                                <a th:href="@{'/component.html/' + ${component.id}}" th:text="${component.name}"></a>
+                                                                                <a th:href="@{'/component.html/' + ${component.id}}"
+                                                                                   th:text="${component.name}"></a>
                                                                             </span>
                                                                         </li>
                                                                     </ul>
 
-                                                                    <span style="position:relative;top: -2px;height:10px;" th:if="${type.children == null}">
-                                                                        <a th:href="@{'/component.html/' + ${type.id}}" th:text="${type.name}"></a>
+                                                                    <span style="position:relative;top: -2px;height:10px;"
+                                                                          th:if="${type.children == null}">
+                                                                        <a th:href="@{'/component.html/' + ${type.id}}"
+                                                                           th:text="${type.name}"></a>
                                                                     </span>
                                                                 </li>
                                                             </ul>
 
-                                                            <span style="position:relative;top: -2px;height:10px;" th:if="${category.children == null}">
-                                                                <a th:href="@{'/component.html/' + ${category.id}}" th:text="${category.name}"></a>
+                                                            <span style="position:relative;top: -2px;height:10px;"
+                                                                  th:if="${category.children == null}">
+                                                                <a th:href="@{'/component.html/' + ${category.id}}"
+                                                                   th:text="${category.name}"></a>
                                                             </span>
                                                         </li>
                                                     </ul>
@@ -80,791 +140,6 @@
                                         </div>
                                     </div>
                                 </li>
-
-                                <!--<li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/dongfeng_logo.jpg">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                DONGFENG
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="120" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">Tianlong</span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="128"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                Lorry Truck
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="139"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Cab">Cab</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="135"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Frame">Frame</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="136"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Transmission">Transmission/Gearbox</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="137"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Clutch">Clutch</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="138"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Steering">Steering Device</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="139"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Front">Front Axle</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="140"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Rear">Rear Axle</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="141"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Brake">Brake Device</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="142"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DONGFENG&category=Suspension">Suspension</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#120").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/sinotruk_logo.jpg">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                SINOTRUK
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="121" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">Howo</span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="130"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                Dump Truck
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="951"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Cabin">Cabin</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="952"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Gearbox">Gearbox</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="953"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Oil">Oil Pumps</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="954"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Clutch">Clutch</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="955"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Frontrear">Frontrear Suspension</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="956"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Front">Front Axle And Steering</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="957"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Drive">Drive Axle</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="958"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Electric">Electric Group</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="130"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                Tractor Head
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="961"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Cab">Cab</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="962"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Air">Air Intake Exhaust Mani Fold</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="963"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=Electric">Electric</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="964"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SINOTRUK&category=CNG">CNG & LNG Truck</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="130"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                <a href="/number.html?type=1&brand=SINOTRUK&category=Engine">Sinotruk Engine - EGR213KW</a>
-                                                            </span>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#121").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/shacman_logo.jpg">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                SHACMAN
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="122" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">F2000</span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="402"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                Tractor Truck
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="405"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SHACMAN&platfrom=F2000&category=Cab">Cab</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">O LONG</span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="403"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                Dump Truck
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11"
-                                                                    data-id="405"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=SHACMAN&platfrom=O&category=CAB">CAB</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#122").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/foton_logo.jpg">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                FOTON
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="123" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        ETX(New)
-                                                    </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="134"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                Dump Truck
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="1148"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=FOTON&category=Cab">Cabin</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="1149"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=FOTON&category=Frame">Frame</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="1150"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=FOTON&category=Electric">Electric</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#123").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/beiben_logo.png">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                BEIBEN
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="219" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        NG80
-                                                    </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="1341"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                <a href="/number.html?type=1&brand=BEIBEN&category=Cab">Cab</a>
-                                                            </span>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#219").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/liuzhou_logo.png">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                LIUZHOU
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="267" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">Cheng Long</span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222"
-                                                            data-id="1319"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                QS3452 XU Dump Truck
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="1323"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=LIUZHOU&category=Cab">Cab</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#267").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/hongyan_logo.jpg">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                HONGYAN
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="220" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        IVECO
-                                                    </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="1308"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                GENLYON
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="1309"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=HONGYAN&category=Cab">CAB</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#220").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/jac_logo.png">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                JAC
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="268" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        Gallop
-                                                    </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222"
-                                                            data-id="1311"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                Lorry Truck
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="1327"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=JAC&category=Cab">Cab</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#268").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/camc_logo.png">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                CAMC
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="269" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        CM6D
-                                                    </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="1325"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                <a href="/number.html?type=1&brand=CAMC&category=Cab">Cab</a>
-                                                            </span>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#269").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/c&c_logo.png">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                C&C
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="270" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        Dump Truck
-                                                    </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="1365"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                <a href="/number.html?type=1&brand=C%26C&category=Cab">Cab</a>
-                                                            </span>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#270").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/dayun_logo.png">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                DAYUN
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="271" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        Dump Truck＆Tractor Head
-                                                    </span>
-                                                    <ul style="margin-top:-2px;">
-                                                        <li class=" zy-requry1111 zy-requry222" data-id="2203"
-                                                            style="line-height:20px !important">
-                                                            <span style="position:relative;top: -2px;height: 19px;">
-                                                                N8E
-                                                            </span>
-                                                            <ul>
-                                                                <li class="zy-requry1 zy-requry11" data-id="2132"
-                                                                    style="  height: auto;line-height:20px !important ;">
-                                                                    <span style="position:relative;top: -2px;height:10px;">
-                                                                        <a href="/number.html?type=1&brand=DAYUN&category=Cab">Cab</a>
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#271").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/fast_logo.jpg">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                FAST
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="221" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        <a href="/number.html?type=1&brand=FAST&platfrom=12JS200T">12JS200T</a>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        <a href="/number.html?type=1&brand=FAST&platfrom=DC9J150TJ">DC9J150TJ</a>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        <a href="/number.html?type=1&brand=FAST&platfrom=9JS119">9JS119</a>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#221").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h1 style="margin: 0;width: 128px;">
-                                        <a href="#"
-                                           style="margin: 0;padding:0;text-align: center;display: inline-block;width: 100px;">
-                                            <img src="/images/media/brand/weichai_logo.jpg">
-                                            <h3 style="height: auto;">
-                                                <span style="color:#e67562;">+</span>
-                                                WEICHAI
-                                            </h3>
-                                        </a>
-                                        <s></s>
-                                    </h1>
-                                    <div class="sidebar_popup" style="position: initial;height: auto;display: none;">
-                                        <div class="a-drop" fillSpace="sidebar" style="padding: 5px 50px;">
-                                            <ul id="222" style="mdrgin-bottom:0px !important">
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        <a href="/number.html?type=1&brand=WEICHAI&platfrom=WD">WD 615（Euro 2</a>）
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        <a href="/number.html?type=1&brand=WEICHAI&platfrom=WP 10">WP 10 ENGINE</a>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span style="position:relative;top: -7px;">
-                                                        <a href="/number.html?type=1&brand=WEICHAI&platfrom=WP 12">WP 12 ENGINE</a>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                            <script type="text/javascript">
-                                              jQuery("#222").treeview({
-                                                persist: "location",
-                                                collapsed: true,
-                                                unique: true
-                                              });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </li>-->
-
                             </ul>
                         </div>
                         <div class="banner f-left" style="z-index: 3 !important;padding-right: 20px;">
@@ -872,12 +147,24 @@
                                 <div class="swiper-container banner-swiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <img src="/images/banner.jpg"/>
+                                            <img id="banner_background" src="/images/banner_1.jpg"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <script>
+                          var index = 1;
+                          //主页切换动画
+                          getTimer();
+                          setInterval(getTimer, 3000);
+                          function getTimer() {
+                            jQuery("#banner_background").attr("src", `/images/banner_${index}.jpg`);
+                            index++;
+                            index = index > 5 ? 1 : index;
+                          }
+                        </script>
+
                         <div class="f-lanmu f-right" style="position: absolute;right: 33px;">
                             <div class="tit">
                                 Bulletin Board：
