@@ -1300,6 +1300,7 @@ a.button:hover {
   }
 }
 .footer-container {
+  background-color: #EAEAEA;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -10860,7 +10861,7 @@ div.calendar table td.button {
 }
 /*********************Home style************************/
 .footercontent{
-    background-color: #EAEAEA;
+    /*background-color: #EAEAEA;*/
 }
 .footer .links .find-us{
      width: 70%;
