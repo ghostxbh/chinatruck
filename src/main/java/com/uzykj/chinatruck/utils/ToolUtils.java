@@ -7,6 +7,9 @@ import com.mongodb.client.*;
 import com.mongodb.MongoClient;
 import org.bson.Document;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -22,6 +25,23 @@ public class ToolUtils {
         }
         return vercode;
     }
+
+    //Object转Map
+    public static Map<String, Object> getObjectToMap(Object obj) throws IllegalAccessException {
+        Map<String, Object> map = new HashMap<String, Object>();
+        Class<?> cla = obj.getClass();
+        Field[] fields = cla.getDeclaredFields();
+        for (Field field : fields) {
+            field.setAccessible(true);
+            String keyName = field.getName();
+            Object value = field.get(obj);
+            if (value == null)
+                value = "";
+            map.put(keyName, value);
+        }
+        return map;
+    }
+
 
     public static void main(String[] args) {
 //        int i = 0;

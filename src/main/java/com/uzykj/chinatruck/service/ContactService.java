@@ -31,7 +31,7 @@ public class ContactService {
         contact.setCreate_time(DateUtils.getCurrentTime());
 
         Contact save = mongoTemplate.save(contact);
-        mailService.sendMail(save);
+        mailService.sendMailByApi(save);
     }
 
     public void update(String contact_id, Integer status) {

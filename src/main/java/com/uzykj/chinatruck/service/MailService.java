@@ -1,10 +1,13 @@
 package com.uzykj.chinatruck.service;
 
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpUtil;
+import com.uzykj.chinatruck.common.MailConstants;
 import com.uzykj.chinatruck.domain.Contact;
 import com.uzykj.chinatruck.domain.vo.EmailProperties;
+import com.uzykj.chinatruck.domain.vo.MailVo;
+import com.uzykj.chinatruck.utils.ToolUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.codec.binary.Base64;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,7 @@ import org.thymeleaf.context.Context;
 import javax.annotation.Resource;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import java.util.Map;
 
 /**
  * @author xbh
@@ -47,6 +51,20 @@ public class MailService {
         try {
             // 发送
             javaMailSender.send(message);
+            // 修改发送状态
+            contactService.update(contact.get_id(), 1);
+        } catch (Exception e) {
+            log.error("send mail error", e);
+            contactService.update(contact.get_id(), 2);
+        }
+    }
+
+    public void sendMailByApi(Contact contact) throws MessagingException {
+        try {
+            MailVo assembly = MailVo.assembly(contact);
+            Map<String, Object> body = ToolUtils.getObjectToMap(assembly);
+            String post = HttpUtil.post(MailConstants.HOST + "/mail/send", body);
+            log.info("[send mail]: " + post);
             // 修改发送状态
             contactService.update(contact.get_id(), 1);
         } catch (Exception e) {
