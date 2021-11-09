@@ -16,7 +16,7 @@ public class MailVo {
     /**
      * 收件地址
      */
-    private String toAddress;
+    private String receiveAddress;
     /**
      * 标题
      */
@@ -48,7 +48,7 @@ public class MailVo {
 
     public static MailVo assembly(Contact contact) {
         return MailVo.builder()
-                .toAddress(MailConstants.TO)
+                .receiveAddress(MailConstants.TO)
                 .subject("来自chinametruck.com的信息")
                 .content(setContent(contact))
                 .propertiesId(MailConstants.PROPERTIESID)
